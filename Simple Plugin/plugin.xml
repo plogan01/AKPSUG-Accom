@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://plugin.powerschool.pearson.com" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    description="AKPSUG PEAKS Accommodations" 
+    name="AKPSUG PEAKS" 
+    version="0.1.0" 
+    xsi:schemaLocation="http://plugin.powerschool.pearson.com plugin.xsd">
+  <publisher name="Alaska PowerSchool Users Group">
+    <contact email="plogan01@kibsd.org"/>
+  </publisher>
+</plugin>
