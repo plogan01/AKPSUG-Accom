@@ -87,22 +87,49 @@ JOIN Schools sch
     ON s.schoolid = sch.school_number
 LEFT OUTER JOIN S_AK_STU_X x
     ON s.dcid = x.studentsdcid
-LEFT OUTER JOIN U_PEAKS_DEFAULTS def
+LEFT OUTER JOIN U_AKPSUG_PEAKS_DEFAULTS def
     ON s.schoolid = def.schoolid
-LEFT OUTER JOIN U_PEAKS peaks
+JOIN U_AKPSUG_PEAKS peaks
     ON s.dcid = peaks.studentsdcid
 
-WHERE sch.state_excludefromreporting != 1
+WHERE s.schoolid = ~(curschoolid)
+  AND sch.state_excludefromreporting != 1
   AND s.enroll_status = 0
-  AND s.grade_level IN (3,4,5,6,7,8,9,10)  
-    
+  AND s.grade_level IN (3,4,5,6,7,8,9,10)
+  AND(
+        ((def.testtype = 'C' OR peaks.testtype = 'C') AND( peaks.ELA_TTS = 'Y' OR peaks.ELA_OTHER = 'Y' OR peaks.MATH_TTS = 'Y' OR peaks.MATH_OTHER = 'Y' OR peaks.SCIENCE_TTS = 'Y' OR peaks.SCIENCE_OTHER = 'Y'))
+    OR
+        ((def.testtype = 'P' OR peaks.testtype = 'P') AND( peaks.ELA_AUDIO_CD = 'Y' OR peaks.ELA_LARGE_PRINT = 'Y' OR peaks.ELA_BRAILLE = 'Y' OR peaks.MATH_AUDIO_CD = 'Y' OR peaks.MATH_LARGE_PRINT = 'Y' OR peaks.MATH_BRAILLE = 'Y' OR peaks.SCIENCE_AUDIO_CD = 'Y' OR peaks.SCIENCE_LARGE_PRINT = 'Y' OR peaks.SCIENCE_BRAILLE = 'Y' ))
+    )]
+
   {
-    
+
     "schoolid": "~(schoolid;json)",
     "name": "~(lastfirst;json)",
     "dcid": "~(dcid;json)",
     "grade": "~(grade_level;json)",
-    "science":  "~(science;json)",
-    "homeroom": "~(homeroom;json)"
+    "homeroom": "~(homeroom;json)",
+    "ell": "~(ell;json)",
+    "sp": "~(sp;json)",
+    "testtype": "~(testtype;json)",
+    "ela_tts": "~(elatts;json)",
+    "ela_other": "~(elaother;json)",
+    "ela_cd": "~(elacd;json)",
+    "ela_lp": "~(elalargeprint;json)",
+    "ela_braille": "~(elabraille;json)",
+    "math_tts": "~(mathtts;json)",
+    "math_other": "~(mathother;json)",
+    "math_cd": "~(mathcd;json)",
+    "math_lp": "~(mathlargeprint;json)",
+    "math_braille": "~(mathbraille;json)",
+    "sci_tts": "~(scitts;json)",
+    "sci_other": "~(sciother;json)",
+    "sci_cd": "~(scicd;json)",
+    "sci_lp": "~(scilargeprint;json)",
+    "sci_braille": "~(scibraille;json)",
+    "ela_non": "~(eli_non_embed;json)",
+    "math_non": "~(math_non_embed;json)",
+    "sci_non": "~(sci_non_embed;json)",
+    "school": "~(name;json)"
   },
 [/tlist_sql]{}]

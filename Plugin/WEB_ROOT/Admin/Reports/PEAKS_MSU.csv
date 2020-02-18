@@ -107,9 +107,9 @@ District Code,School Code,AKSID,District Student ID,Student Last Name,Student Fi
     ON st.dcid = ak.StudentsDCID
   LEFT OUTER JOIN Schools sch
     ON st.schoolid = sch.school_number
-  LEFT OUTER JOIN U_PEAKS_DEFAULTS def
+  LEFT OUTER JOIN U_AKPSUG_PEAKS_DEFAULTS def
     ON st.schoolid = def.schoolid
-  LEFT OUTER JOIN U_PEAKS peaks
+  LEFT OUTER JOIN U_AKPSUG_PEAKS peaks
     ON st.dcid = peaks.studentsdcid
   WHERE sch.state_excludefromreporting != 1
   AND st.enroll_status = 0

@@ -10,7 +10,7 @@
         WHEN 'P' THEN 'Paper'
         ELSE NULL
     END AS testtype
-    from Schools s LEFT OUTER JOIN U_PEAKS_DEFAULTS d ON s.school_number = d.schoolid WHERE state_ExcludeFromReporting = 0 ORDER BY s.school_number]
+    from Schools s LEFT OUTER JOIN U_AKPSUG_PEAKS_DEFAULTS d ON s.school_number = d.schoolid WHERE state_ExcludeFromReporting = 0 ORDER BY s.school_number]
   {
     "schoolid": "~(schoolid;json)",
     "name": "~(name;json)",

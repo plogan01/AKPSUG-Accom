@@ -33,35 +33,35 @@
                             <option value="C">Computer</option>
                             <option value="P">Paper</option>
                         </select>
-                        <input type="hidden" name="[STUDENTS.U_PEAKS]testtype" value="" id="testtype" />
+                        <input type="hidden" name="[STUDENTS.U_AKPSUG_PEAKS]testtype" value="" id="testtype" />
                     </td>
                 </tr>
             </table>
             <table class="grid" ng-if="mode === 'C'">
                 <tr>
                     <th>Computer Based Accommodations</th>
-                    <th ng-if="grade != '10'">ELA</th>
-                    <th ng-if="grade != '10'">Math</th>
+                    <th>ELA</th>
+                    <th>Math</th>
                     <th ng-if="science == 'true'">Science</th>
                 </tr>
                 <tr>
                     <td>Text To Speech</td>
                     <td ng-if="grade != '10'">
-                        <select name="[STUDENTS.U_PEAKS]ELA_TTS">
+                        <select name="[STUDENTS.U_AKPSUG_PEAKS]ELA_TTS">
                             <option></option>
                             <option value="Y">Yes</option>
                             <option value="N">No</option>
                         </select>
                     </td>
                     <td ng-if="grade != '10'">
-                        <select name="[STUDENTS.U_PEAKS]MATH_TTS">
+                        <select name="[STUDENTS.U_AKPSUG_PEAKS]MATH_TTS">
                             <option></option>
                             <option value="Y">Yes</option>
                             <option value="N">No</option>
                         </select>
                     </td>
                     <td ng-if="science == 'true'">
-                        <select name="[STUDENTS.U_PEAKS]SCIENCE_TTS">
+                        <select name="[STUDENTS.U_AKPSUG_PEAKS]SCIENCE_TTS">
                             <option></option>
                             <option value="Y">Yes</option>
                             <option value="N">No</option>
@@ -71,21 +71,21 @@
                 <tr>
                     <td>Other Non-Embedded (please add below)</td>
                     <td ng-if="grade != '10'">
-                        <select name="[STUDENTS.U_PEAKS]ELA_OTHER">
+                        <select name="[STUDENTS.U_AKPSUG_PEAKS]ELA_OTHER">
                             <option></option>
                             <option value="Y">Yes</option>
                             <option value="N">No</option>
                         </select>
                     </td>
                     <td ng-if="grade != '10'">
-                        <select name="[STUDENTS.U_PEAKS]MATH_OTHER">
+                        <select name="[STUDENTS.U_AKPSUG_PEAKS]MATH_OTHER">
                             <option></option>
                             <option value="Y">Yes</option>
                             <option value="N">No</option>
                         </select>
                     </td>
                     <td ng-if="science == 'true'">
-                        <select name="[STUDENTS.U_PEAKS]SCIENCE_OTHER">
+                        <select name="[STUDENTS.U_AKPSUG_PEAKS]SCIENCE_OTHER">
                             <option></option>
                             <option value="Y">Yes</option>
                             <option value="N">No</option>
@@ -95,13 +95,13 @@
                 <tr>
                     <td>Description</td>
                     <td ng-if="grade != '10'">
-                        <textarea name="[STUDENTS.U_PEAKS]ELA_NON_EMBED" class="computer" id="elaOther"></textarea>
+                        <textarea name="[STUDENTS.U_AKPSUG_PEAKS]ELA_NON_EMBED" class="computer" id="elaOther"></textarea>
                     </td>
                     <td ng-if="grade != '10'">
-                        <textarea name="[STUDENTS.U_PEAKS]MATH_NON_EMBED" class="computer" id="mathOther"></textarea>
+                        <textarea name="[STUDENTS.U_AKPSUG_PEAKS]MATH_NON_EMBED" class="computer" id="mathOther"></textarea>
                     </td>
                     <td ng-if="science == 'true'">
-                        <textarea name="[STUDENTS.U_PEAKS]SCIENCE_NON_EMBED" class="computer" id="scienceOther"></textarea>
+                        <textarea name="[STUDENTS.U_AKPSUG_PEAKS]SCIENCE_NON_EMBED" class="computer" id="scienceOther"></textarea>
                     </td>
                 </tr>
             </table>
@@ -115,21 +115,21 @@
                 <tr>
                     <td>Audio CD</td>
                     <td ng-if="grade != '10'">
-                        <select name="[STUDENTS.U_PEAKS]ELA_AUDIO_CD" class="paper">
+                        <select name="[STUDENTS.U_AKPSUG_PEAKS]ELA_AUDIO_CD" class="paper">
                             <option></option>
                             <option value="Y">Yes</option>
                             <option value="N">No</option>
                         </select>
                     </td>
                     <td ng-if="grade != '10'">
-                        <select name="[STUDENTS.U_PEAKS]MATH_AUDIO_CD" class="paper">
+                        <select name="[STUDENTS.U_AKPSUG_PEAKS]MATH_AUDIO_CD" class="paper">
                             <option></option>
                             <option value="Y">Yes</option>
                             <option value="N">No</option>
                         </select>
                     </td>
                     <td ng-if="science == 'true'">
-                        <select name="[STUDENTS.U_PEAKS]SCIENCE_AUDIO_CD" class="paper science">
+                        <select name="[STUDENTS.U_AKPSUG_PEAKS]SCIENCE_AUDIO_CD" class="paper science">
                             <option></option>
                             <option value="Y">Yes</option>
                             <option value="N">No</option>
@@ -139,21 +139,21 @@
                 <tr>
                     <td>Large Print</td>
                     <td ng-if="grade != '10'">
-                        <select name="[STUDENTS.U_PEAKS]ELA_LARGE_PRINT" class="paper">
+                        <select name="[STUDENTS.U_AKPSUG_PEAKS]ELA_LARGE_PRINT" class="paper">
                             <option></option>
                             <option value="Y">Yes</option>
                             <option value="N">No</option>
                         </select>
                     </td>
                     <td ng-if="grade != '10'">
-                        <select name="[STUDENTS.U_PEAKS]MATH_LARGE_PRINT" class="paper">
+                        <select name="[STUDENTS.U_AKPSUG_PEAKS]MATH_LARGE_PRINT" class="paper">
                             <option></option>
                             <option value="Y">Yes</option>
                             <option value="N">No</option>
                         </select>
                     </td>
                     <td ng-if="science == 'true'">
-                        <select name="[STUDENTS.U_PEAKS]SCIENCE_LARGE_PRINT" class="paper science">
+                        <select name="[STUDENTS.U_AKPSUG_PEAKS]SCIENCE_LARGE_PRINT" class="paper science">
                             <option></option>
                             <option value="Y">Yes</option>
                             <option value="N">No</option>
@@ -163,21 +163,21 @@
                 <tr>
                     <td>Paper Braille</td>
                     <td ng-if="grade != '10'">
-                        <select name="[STUDENTS.U_PEAKS]ELA_BRAILLE" class="paper">
+                        <select name="[STUDENTS.U_AKPSUG_PEAKS]ELA_BRAILLE" class="paper">
                             <option></option>
                             <option value="Y">Yes</option>
                             <option value="N">No</option>
                         </select>
                     </td>
                     <td ng-if="grade != '10'">
-                        <select name="[STUDENTS.U_PEAKS]MATH_BRAILLE" class="paper">
+                        <select name="[STUDENTS.U_AKPSUG_PEAKS]MATH_BRAILLE" class="paper">
                             <option></option>
                             <option value="Y">Yes</option>
                             <option value="N">No</option>
                         </select>
                     </td>
                     <td ng-if="science == 'true'">
-                        <select name="[STUDENTS.U_PEAKS]SCIENCE_BRAILLE" class="paper science">
+                        <select name="[STUDENTS.U_AKPSUG_PEAKS]SCIENCE_BRAILLE" class="paper science">
                             <option></option>
                             <option value="Y">Yes</option>
                             <option value="N">No</option>

@@ -12,13 +12,12 @@
         ELSE p.testtype
     END AS testtype
 FROM students s
-LEFT OUTER JOIN U_PEAKS_DEFAULTS d
+LEFT OUTER JOIN U_AKPSUG_PEAKS_DEFAULTS d
     ON s.schoolid = d.schoolid
-LEFT OUTER JOIN U_PEAKS p
+LEFT OUTER JOIN U_AKPSUG_PEAKS p
     ON s.dcid = p.studentsdcid
 WHERE s.dcid = ~(gpv.dcid)]
   {
-    
     "schoolid": "~(schoolid;json)",
     "student_number": "~(student_number;json)",
     "dcid": "~(dcid;json)",

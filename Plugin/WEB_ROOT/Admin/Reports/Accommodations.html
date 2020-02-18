@@ -6,12 +6,9 @@
     ~[wc:commonscripts]
     <!-- Required style sheets: screen.css, and print.css -->
     <link href="/images/css/screen.css" rel="stylesheet" media="screen">
-    <script type="text/javascript" src="/admin/lep/scripts/html2CSV.js"></script>
+    <script type="text/javascript" src="/scripts/akpsug/html2CSV.js"></script>
     <style>
-        .col-btn {
-            width: 30px !important;
-        }
-
+        
         .button {
             font: bold 11px Arial;
             text-decoration: none;
@@ -27,43 +24,164 @@
 </head>
 <body>
     ~[wc:admin_header_css]
-    <!-- breadcrumb start --><a href="/admin/home.html" target="_top">Start Page</a> &gt; <a href="/admin/LEP/elapadmin.html" target="_top">ELAP Administration</a> &gt; Student Accommodations<!-- breadcrumb end -->
+    <!-- breadcrumb start --><a href="/admin/home.html" target="_top">Start Page</a> &gt; <a href="/admin/Reports/runreports.html" target="_top">System Reports</a> &gt; Student PEAKS Accommodations<!-- breadcrumb end -->
     <!-- start of main menu and content -->
     ~[wc:admin_navigation_css]
     <!-- Start of Page -->
-    <h1>English Language Acquisition Program Student Accommodations</h1>
+    <h1>PEAKS Student Accommodations</h1>
     <!-- start of content area -->
-
-    <div class="box-round" ng-controller="reportCont" data-require-path="/scripts/akpsug/report.js" data-module-name="reportApp">
-        <div>
-            <a href="#" id="xx" class="button">Export Table data into Excel</a><br /> <br />
-        </div>
-        <table class="grid" id="output">
-            <tr>
-                <th>
-                    <a href="" ng-click='sort="name"; sortReverse = !sortReverse'>Student</a>
-                </th>
-                <th>
-                    <a href="" ng-click='sort="grade"; sortReverse = !sortReverse'>Grade</a>
-                </th>
-                <th class="report" ng-repeat="accoms in accomList | orderBy:'catid' : true | filter: side"><a href="" title="{{accoms.accom}}">{{accoms.abbr}}</a></th>
-                <th class="check-element animate-show-hide" ng-show="elap_teacher">
-                    <a href="" ng-click='sort="elap_teacher"; sortReverse = !sortReverse'>ELAP Teacher</a>
-                </th>
-                <th class="check-element animate-show-hide" ng-show="homeroom">
-                    <a href="" ng-click='sort="homeroom"; sortReverse = !sortReverse'>Home Room</a>
-                </th>
-            </tr>
-            <tr ng-repeat="stu in stuAccoms | orderBy:sort:sortReverse | filter:search">
-                <td><a href="/admin/students/home.html?frn=001{{stu.id}}">{{stu.name}}</a></td>
-                <td class="check-element animate-show-hide" ng-show="status">{{stu.status}}</td>
-                <td class="check-element animate-show-hide" ng-show="grade">{{stu.grade}}</td>
-                <td ng-repeat="accoms in accomList | orderBy:'catid' : true | filter: side"><p class="check-element animate-show-hide" ng-show="stu.accoms.indexOf(accoms.id)!=-1">X</p></td>
-                <td class="check-element animate-show-hide" ng-show="elap_teacher">{{stu.elap_teacher}}</td>
-                <td class="check-element animate-show-hide" ng-show="homeroom">{{stu.homeroom}}</td>
-            </tr>
-        </table>
+~[if#notDistrict.~(curschoolid)=0]
+    <div class="box-round">
+        <h2>This report cannot be run at the district level</h2>
     </div>
+[else#notDistrict]
+    <div class="box-round" ng-controller="reportCont" data-require-path="/scripts/akpsug/report.js" data-module-name="reportApp" ng-cloak>
+        <div ng-if="accomList.length > 0">
+            <div ng-if="(accomList | filter: {testtype: 'C'}).length > 0">
+                <div>
+                    <a href="#" id="xx" class="button">Export Table data into Excel</a><br /> <br />
+                </div>
+                <table class="grid" id="computer">
+                    <tr>
+                        <th colspan="13">PEAKS Computer Based Test Accommodations for {{accomList[0].school}}</th>
+                    </tr>
+                    <tr>
+                        <th>
+                            <a href="" ng_click='sort="name"; sortReverse = !sortReverse'>Student</a>
+                        </th>
+                        <th>
+                            <a href="" ng_click='sort="grade"; sortReverse = !sortReverse'>Grade</a>
+                        </th>
+                        <th>
+                            <a href="" ng_click='sort="ell"; sortReverse = !sortReverse'>ELL</a>
+                        </th>
+                        <th>
+                            <a href="" ng_click='sort="sp"; sortReverse = !sortReverse'>IEP</a>
+                        </th>
+                        <th>
+                            <a href="" ng_click='sort="ela_tts"; sortReverse = !sortReverse'>ELA TTS</a>
+                        </th>
+                        <th>
+                            <a href="" ng_click='sort="ela_other"; sortReverse = !sortReverse'>ELA Other<br />Non-Embedded</a>
+                        </th>
+                        <th>
+                            <a href="" ng_click='sort="ela_non"; sortReverse = !sortReverse'>ELA Other<br />Description</a>
+                        </th>
+                        <th>
+                            <a href="" ng_click='sort="math_tts"; sortReverse = !sortReverse'>Math TTS</a>
+                        </th>
+                        <th>
+                            <a href="" ng_click='sort="math_other"; sortReverse = !sortReverse'>Math Other<br />Non-Embedded</a>
+                        </th>
+                        <th>
+                            <a href="" ng_click='sort="math_non"; sortReverse = !sortReverse'>Math Other<br />Description</a>
+                        </th>
+                        <th>
+                            <a href="" ng_click='sort="sci_tts"; sortReverse = !sortReverse'>Science TTS</a>
+                        </th>
+                        <th>
+                            <a href="" ng_click='sort="sci_other"; sortReverse = !sortReverse'>Science Other<br />Non-Embedded</a>
+                        </th>
+                        <th>
+                            <a href="" ng_click='sort="sci_non"; sortReverse = !sortReverse'>Science Other<br />Description</a>
+                        </th>
+                    </tr>
+                    <tr ng_repeat="a in accomList | orderBy:sort:sortReverse | filter: { testtype: 'C' }">
+                        <td><a href="/admin/students/home.html?frn=001{{a.dcid}}" target="_blank">{{a.name}}</a></td>
+                        <td>{{a.grade}}</td>
+                        <td>{{a.ell}}</td>
+                        <td>{{a.sp}}</td>
+                        <td>{{a.ela_tts}}</td>
+                        <td>{{a.ela_other}}</td>
+                        <td>
+                            <span ng-if="a.ela_other === 'Y'">{{a.ela_non}}</span>
+                            <span ng-if="a.ela_other === 'N'">N/A</span>
+                        </td>
+                        <td>{{a.math_tts}}</td>
+                        <td>{{a.math_other}}</td>
+                        <td>
+                            <span ng-if="a.math_other === 'Y'">{{a.math_non}}</span>
+                            <span ng-if="a.math_other === 'N'">N/A</span>
+                        </td>
+                        <td>{{a.sci_tts}}</td>
+                        <td>{{a.sci_other}}</td>
+                        <td>
+                            <span ng-if="a.sci_other === 'Y'">{{a.sci_non}}</span>
+                            <span ng-if="a.sci_other === 'N'">N/A</span>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div ng-if="(accomList | filter: {testtype: 'P'}).length > 0">
+                <div>
+                    <a href="#" id="xy" class="button">Export Table data into Excel</a><br /> <br />
+                </div>
+                <table class="grid" id="paper">
+                    <tr>
+                        <th colspan="13">PEAKS Paper Based Test Accommodations for {{accomList[0].school}}</th>
+                    </tr>
+                    <tr>
+                        <th>
+                            <a href="" ng_click='sort="name"; sortReverse = !sortReverse'>Student</a>
+                        </th>
+                        <th>
+                            <a href="" ng_click='sort="grade"; sortReverse = !sortReverse'>Grade</a>
+                        </th>
+                        <th>
+                            <a href="" ng_click='sort="ell"; sortReverse = !sortReverse'>ELL</a>
+                        </th>
+                        <th>
+                            <a href="" ng_click='sort="sp"; sortReverse = !sortReverse'>IEP</a>
+                        </th>
+                        <th>
+                            <a href="" ng_click='sort="ela_cd"; sortReverse = !sortReverse'>ELA<br />Audio CD</a>
+                        </th>
+                        <th>
+                            <a href="" ng_click='sort="ela_lp"; sortReverse = !sortReverse'>ELA<br />Large Print</a>
+                        </th>
+                        <th>
+                            <a href="" ng_click='sort="ela_braille"; sortReverse = !sortReverse'>ELA<br />Braille</a>
+                        </th>
+                        <th>
+                            <a href="" ng_click='sort="math_cd"; sortReverse = !sortReverse'>Math<br />Audio CD</a>
+                        </th>
+                        <th>
+                            <a href="" ng_click='sort="math_lp"; sortReverse = !sortReverse'>Math<br />Large Print</a>
+                        </th>
+                        <th>
+                            <a href="" ng_click='sort="math_braille"; sortReverse = !sortReverse'>Math<br />Braille</a>
+                        </th>
+                        <th>
+                            <a href="" ng_click='sort="sci_cd"; sortReverse = !sortReverse'>Science<br />Audio CD</a>
+                        </th>
+                        <th>
+                            <a href="" ng_click='sort="sci_lp"; sortReverse = !sortReverse'>Science<br />Large Print</a>
+                        </th>
+                        <th>
+                            <a href="" ng_click='sort="sci_braille"; sortReverse = !sortReverse'>Science<br />Braille</a>
+                        </th>
+                    </tr>
+                    <tr ng_repeat="a in accomList | orderBy:sort:sortReverse | filter: { testtype: 'P' }">
+                        <td><a href="/admin/students/home.html?frn=001{{a.dcid}}" target="_blank">{{a.name}}</a></td>
+                        <td>{{a.grade}}</td>
+                        <td>{{a.ell}}</td>
+                        <td>{{a.sp}}</td>
+                        <td>{{a.ela_cd}}</td>
+                        <td>{{a.ela_lp}}</td>
+                        <td>{{a.ela_braille}}</td>
+                        <td>{{a.math_cd}}</td>
+                        <td>{{a.math_lp}}</td>
+                        <td>{{a.math_braille}}</td>
+                        <td>{{a.sci_cd}}</td>
+                        <td>{{a.sci_lp}}</td>
+                        <td>{{a.sci_braille}}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div ng-if="accomList.length == 0"><h2>There are no accommodations for this school.</h2></div>
+    </div>
+[/if#notDistrict]
     <!-- end of content area -->
     ~[wc:admin_footer_css]
 </body>

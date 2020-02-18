@@ -6,19 +6,17 @@ define(['angular', 'components/shared/index'], function (angular) {
   //This will create a controller which will be used in our app
 	reportApp.controller('reportCont', function($scope, getService){
 
-	    
-	
 		$scope.accomList=[];
 
 		loadingDialog();
 
-		getService.getData('/admin/repoprts/accom.json').then(function(retData){
+		getService.getData('/admin/reports/accom.json').then(function(retData){
 			retData.pop();
 			$scope.accomList = retData;
 			closeLoading();
 		});
 				
-		$scope.catSort = '';
+		$scope.sort = '';
 		$scope.sortRev = false;
 		
 	}); //Close controller

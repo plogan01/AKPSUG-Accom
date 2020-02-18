@@ -57,7 +57,15 @@
     // This must be a hyperlink
     $j("#xx").on('click', function (event) {
 
-        exportTableToCSV.apply(this, [$j('#output'), 'PEAKS_Accomodations.csv']);
+        exportTableToCSV.apply(this, [$j('#computer'), 'PEAKS_Computer_Accomodations.csv']);
+
+        // IF CSV, don't do event.preventDefault() or return false
+        // We actually need this to be a typical hyperlink
+    });
+
+    $j("#xy").on('click', function (event) {
+
+        exportTableToCSV.apply(this, [$j('#paper'), 'PEAKS_Paper_Accomodations.csv']);
 
         // IF CSV, don't do event.preventDefault() or return false
         // We actually need this to be a typical hyperlink
