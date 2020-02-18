@@ -1,0 +1,20 @@
+[~[tlist_sql;SELECT 
+    s.school_number, 
+    s.name, 
+    CASE 
+        WHEN d.id IS NULL THEN -1 
+        ELSE d.id 
+    END AS id, 
+    CASE d.testtype
+        WHEN 'C' THEN 'Computer'
+        WHEN 'P' THEN 'Paper'
+        ELSE NULL
+    END AS testtype
+    from Schools s LEFT OUTER JOIN U_PEAKS_DEFAULTS d ON s.school_number = d.schoolid WHERE state_ExcludeFromReporting = 0 ORDER BY s.school_number]
+  {
+    "schoolid": "~(schoolid;json)",
+    "name": "~(name;json)",
+    "id": "~(id;json)",
+    "testtype": "~(testtype;json)"
+  },
+[/tlist_sql]{}]

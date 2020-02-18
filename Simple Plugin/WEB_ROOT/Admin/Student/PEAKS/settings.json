@@ -1,6 +1,0 @@
-[~[tlist_sql;SELECT ID, cat_desc, cat_abbr, cat_inactive FROM U_LEP_ACCOM_CAT]
-{"id":"~(id;json)",
-"name":"~(desc;json)",
-"abbr":"~(abbr;json)",
-"inactive":"~(inactive;json)"},
-[/tlist_sql]{}]

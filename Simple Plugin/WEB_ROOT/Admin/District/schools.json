@@ -1,4 +1,0 @@
-[~[tlist_sql;SELECT school_number, name from Schools WHERE state_ExcludeFromReporting = 0]
-{"schoolid":"~(schoolid;json)",
-"name":"~(name;json)"},
-[/tlist_sql]{}]

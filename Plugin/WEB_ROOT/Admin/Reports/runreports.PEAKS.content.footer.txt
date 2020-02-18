@@ -1,0 +1,5 @@
+<script>
+	$j(document).ready(function(){
+		$j('.linkDescList :last' ).after('<table class="linkDescList"><tr><th>PEAKS Reports</th><th>Description</th></tr><tr><td><a href="/admin/reports/accommodations.html">PEAKS Accommodataions</a></td><td>Generate a report of PEAKS Accommodations by site</td></tr>');
+	});
+</script>

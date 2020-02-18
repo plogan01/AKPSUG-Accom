@@ -1,0 +1,5 @@
+<script>
+	$j(document).ready(function(){
+		$j('.linkDescList :first' ).append('<tr><td><a href="/admin/reports/peaks_msu.csv">PEAKS MSU File</a></td><td>1.0</td><td>Generate a csv file for upload to DRC</td></tr>');
+	});
+</script>

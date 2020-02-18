@@ -16,9 +16,22 @@
     <!-- Start of Page -->
     <h1>PEAKS Test Administration Defaults</h1>
     <!-- start of content area -->
-    <div class="box-round">
+    <div class="box-round" ng-controller="defaultCont" data-require-path="/scripts/AKPSUG/default.js" data-module-name="defaultApp">
         <h2>Default Test Mode</h2>
-        
+        <table class="grid">
+            <tr>
+                <th></th>
+                <th>School Number</th>
+                <th>School Name</th>
+                <th>Current Default</th>
+            </tr>
+            <tr ng-repeat="s in schoolList">
+                <td><a class="button" title="Edit" href="" ng-click="openDialog(s.id, s.schoolid, s.name)">Edit</a></td>
+                <td>{{s.schoolid}}</td>
+                <td>{{s.name}}</td>
+                <td>{{s.testtype}}</td>
+            </tr>
+        </table>
     </div>
     <!-- end of content area -->
     ~[wc:admin_footer_css]

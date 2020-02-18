@@ -1,0 +1,29 @@
+[~[tlist_sql;SELECT 
+    s.schoolid, 
+    s.student_number, 
+    s.dcid, 
+    s.grade_level,
+    CASE 
+        WHEN s.grade_level IN (4,8,10) THEN 'true'
+        ELSE 'false'
+    END AS Science,
+    CASE  
+        WHEN p.testtype IS NULL THEN d.testtype
+        ELSE p.testtype
+    END AS testtype
+FROM students s
+LEFT OUTER JOIN U_PEAKS_DEFAULTS d
+    ON s.schoolid = d.schoolid
+LEFT OUTER JOIN U_PEAKS p
+    ON s.dcid = p.studentsdcid
+WHERE s.dcid = ~(gpv.dcid)]
+  {
+    
+    "schoolid": "~(schoolid;json)",
+    "student_number": "~(student_number;json)",
+    "dcid": "~(dcid;json)",
+    "grade": "~(grade_level;json)",
+    "science":  "~(science;json)",
+    "testtype": "~(testtype;json)"
+  },
+[/tlist_sql]{}]

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PEAKS Student Accommodations</title>
+    <!-- required scripts -->
+    ~[wc:commonscripts]
+    <!-- Required style sheets: screen.css, and print.css -->
+    <link href="/images/css/screen.css" rel="stylesheet" media="screen">
+    <script type="text/javascript" src="/admin/lep/scripts/html2CSV.js"></script>
+    <style>
+        .col-btn {
+            width: 30px !important;
+        }
+
+        .button {
+            font: bold 11px Arial;
+            text-decoration: none;
+            background-color: #EEEEEE;
+            color: #333333;
+            padding: 2px 6px 2px 6px;
+            border-top: 1px solid #CCCCCC;
+            border-right: 1px solid #333333;
+            border-bottom: 1px solid #333333;
+            border-left: 1px solid #CCCCCC;
+        }
+    </style>
+</head>
+<body>
+    ~[wc:admin_header_css]
+    <!-- breadcrumb start --><a href="/admin/home.html" target="_top">Start Page</a> &gt; <a href="/admin/LEP/elapadmin.html" target="_top">ELAP Administration</a> &gt; Student Accommodations<!-- breadcrumb end -->
+    <!-- start of main menu and content -->
+    ~[wc:admin_navigation_css]
+    <!-- Start of Page -->
+    <h1>English Language Acquisition Program Student Accommodations</h1>
+    <!-- start of content area -->
+
+    <div class="box-round" ng-controller="reportCont" data-require-path="/scripts/akpsug/report.js" data-module-name="reportApp">
+        <div>
+            <a href="#" id="xx" class="button">Export Table data into Excel</a><br /> <br />
+        </div>
+        <table class="grid" id="output">
+            <tr>
+                <th>
+                    <a href="" ng-click='sort="name"; sortReverse = !sortReverse'>Student</a>
+                </th>
+                <th>
+                    <a href="" ng-click='sort="grade"; sortReverse = !sortReverse'>Grade</a>
+                </th>
+                <th class="report" ng-repeat="accoms in accomList | orderBy:'catid' : true | filter: side"><a href="" title="{{accoms.accom}}">{{accoms.abbr}}</a></th>
+                <th class="check-element animate-show-hide" ng-show="elap_teacher">
+                    <a href="" ng-click='sort="elap_teacher"; sortReverse = !sortReverse'>ELAP Teacher</a>
+                </th>
+                <th class="check-element animate-show-hide" ng-show="homeroom">
+                    <a href="" ng-click='sort="homeroom"; sortReverse = !sortReverse'>Home Room</a>
+                </th>
+            </tr>
+            <tr ng-repeat="stu in stuAccoms | orderBy:sort:sortReverse | filter:search">
+                <td><a href="/admin/students/home.html?frn=001{{stu.id}}">{{stu.name}}</a></td>
+                <td class="check-element animate-show-hide" ng-show="status">{{stu.status}}</td>
+                <td class="check-element animate-show-hide" ng-show="grade">{{stu.grade}}</td>
+                <td ng-repeat="accoms in accomList | orderBy:'catid' : true | filter: side"><p class="check-element animate-show-hide" ng-show="stu.accoms.indexOf(accoms.id)!=-1">X</p></td>
+                <td class="check-element animate-show-hide" ng-show="elap_teacher">{{stu.elap_teacher}}</td>
+                <td class="check-element animate-show-hide" ng-show="homeroom">{{stu.homeroom}}</td>
+            </tr>
+        </table>
+    </div>
+    <!-- end of content area -->
+    ~[wc:admin_footer_css]
+</body>
+</html>

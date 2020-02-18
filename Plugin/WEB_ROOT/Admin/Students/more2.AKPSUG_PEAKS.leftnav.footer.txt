@@ -1,0 +1,10 @@
+<script>
+    $j(document).ready(function(){ 
+        $j("a[href*='testlist.html']").attr("href", "ap/testlist.html?frn=~(studentfrn)");
+		~[if#gradel.~([Students]grade_level)>2]
+			~[if#gradeh.~([Students]grade_level)<11]
+				$j('ul#std_administration li a:contains("Net Access")').closest('li').after('<li><a href="peaks/accomm.html?frn=~(studentfrn)">PEAKS Accommodations</a></li>');
+			[/if#gradeh]
+		[/if#gradel]
+    });
+</script>
