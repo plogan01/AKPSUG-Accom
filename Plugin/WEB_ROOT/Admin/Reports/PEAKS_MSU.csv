@@ -2,8 +2,8 @@ District Code,School Code,AKSID,District Student ID,Student Last Name,Student Fi
 ~[tlist_sql;SELECT 
   (SELECT value FROM PREFS WHERE name='districtnumber' AND ROWNUM = 1) AS "District",
   st.schoolid AS "SchoolCode",
-  st.student_number AS "AKSID",
-  st.id AS "DistrictID",
+  st.state_studentnumber AS "AKSID",
+  st.student_number AS "DistrictID",
   st.Last_Name as "Last Name",
   st.First_Name AS "First Name",
   st.Middle_Name AS "Middle Name",
