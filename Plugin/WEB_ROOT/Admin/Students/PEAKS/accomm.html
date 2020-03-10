@@ -40,8 +40,8 @@
             <table class="grid" ng-if="mode === 'C'">
                 <tr>
                     <th>Computer Based Accommodations</th>
-                    <th>ELA</th>
-                    <th>Math</th>
+                    <th ng-if="grade != '10'">ELA</th>
+                    <th ng-if="grade != '10'">Math</th>
                     <th ng-if="science == 'true'">Science</th>
                 </tr>
                 <tr>
@@ -108,9 +108,9 @@
             <table class="grid" ng-if="mode === 'P'">
                 <tr>
                     <th>Paper Based Accommodations</th>
-                    <th>ELA</th>
-                    <th>Math</th>
-                    <th>Science</th>
+                    <th ng-if="grade != '10'">ELA</th>
+                    <th ng-if="grade != '10'">Math</th>
+                    <th ng-if="science == 'true'">Science</th>
                 </tr>
                 <tr>
                     <td>Audio CD</td>
