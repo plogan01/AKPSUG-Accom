@@ -3,7 +3,7 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
     description="AKPSUG PEAKS Accommodations" 
     name="AKPSUG PEAKS" 
-    version="1.0.1" 
+    version="1.0.3" 
     xsi:schemaLocation="http://plugin.powerschool.pearson.com plugin.xsd">
   <publisher name="Alaska PowerSchool Users Group">
     <contact email="plogan01@kibsd.org"/>

@@ -4,9 +4,9 @@ District Code,School Code,AKSID,District Student ID,Student Last Name,Student Fi
   st.schoolid AS "SchoolCode",
   st.state_studentnumber AS "AKSID",
   st.student_number AS "DistrictID",
-  st.Last_Name as "Last Name",
-  st.First_Name AS "First Name",
-  st.Middle_Name AS "Middle Name",
+  REGEXP_REPLACE(st.Last_Name, '[^a-zA-Z|-]', ' ') AS "Last Name",
+  REGEXP_REPLACE(st.First_Name, '[^a-zA-Z|-]', ' ') AS "First Name",
+  REGEXP_REPLACE(st.Middle_Name, '[^a-zA-Z|-]', ' ') AS "Middle Name",
   ak.suffix AS "Suffix",
   st.Gender AS "Gender",
   st.DOB AS "Date of Birth",
@@ -18,6 +18,8 @@ District Code,School Code,AKSID,District Student ID,Student Last Name,Student Fi
   st.Ethnicity AS "Race",
   CASE 
     WHEN ak.Disability_Code IS NULL THEN '00'
+    WHEN ak.Disability_Code = '15' THEN '00'
+    WHEN ak.Disability_Code = '16' THEN '00'
     ELSE TO_CHAR(ak.Disability_Code)
   END AS "Disability",
   CASE 
@@ -114,5 +116,6 @@ District Code,School Code,AKSID,District Student ID,Student Last Name,Student Fi
   WHERE sch.state_excludefromreporting != 1
   AND st.enroll_status = 0
   AND st.grade_level IN (3,4,5,6,7,8,9,10)
+  AND (ak.AlternateAssessment !='Y' OR ak.AlternateAssessment IS NULL)
   ORDER BY sch.school_number, st.grade_level, st.last_name;]~(district),~(school),~(aksid),~(student_id),~(last),~(first),~(middle),~(suffix),~(gender),~(dob),~(grade),~(mode),~(race),~(disability),~(504),~(ell),~(econ),~(migrant),~(military),~(ela_tts),~(ela_other),~(ela_cd),~(ela_print),~(ela_braille),~(math_tts),~(math_other),~(math_cd),~(math_print),~(math_braille),~(sci_tts),~(sci_other),~(sci_cd),~(sci_print),~(sci_braille),~(group)
 [/tlist_sql]
