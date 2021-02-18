@@ -24,7 +24,6 @@ District Code,School Code,AKSID,District Student ID,Student Last Name,Student Fi
               END AS "Disability",
               CASE 
                 WHEN ak.Section504 = 'Y' THEN 'Y'
-                WHEN ak.Section504 = '1' THEN 'Y'
                 ELSE 'N'
               END AS "504",
               CASE 

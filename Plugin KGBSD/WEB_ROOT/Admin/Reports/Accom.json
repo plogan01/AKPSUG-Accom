@@ -1,6 +1,10 @@
 [~[tlist_sql;SELECT
     s.schoolid,
-    s.lastfirst,
+    CASE
+    	WHEN scf.pscore_legal_last_name IS NOT NULL
+    	THEN scf.pscore_legal_last_name || ', ' || scf.pscore_legal_first_name || ' ' || scf.pscore_legal_middle_name
+    	ELSE s.lastfirst
+    END AS lastfirst,
     s.dcid,
     s.grade_level,
     s.home_room,
@@ -91,6 +95,8 @@ LEFT OUTER JOIN U_AKPSUG_PEAKS_DEFAULTS def
     ON s.schoolid = def.schoolid
 JOIN U_AKPSUG_PEAKS peaks
     ON s.dcid = peaks.studentsdcid
+                LEFT OUTER JOIN studentcorefields scf ON scf.studentsdcid=s.dcid
+
 
 WHERE s.schoolid = ~(curschoolid)
   AND sch.state_excludefromreporting != 1
