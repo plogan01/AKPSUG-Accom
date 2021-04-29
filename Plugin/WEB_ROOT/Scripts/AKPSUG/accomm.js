@@ -25,8 +25,7 @@ define(['angular', 'components/shared/index'], function (angular) {
         };
 
     }); //Close controller
-
-    
+        
     peaksApp.factory('getService', function ($http) {
         return {
             getData: function (dataFile) {

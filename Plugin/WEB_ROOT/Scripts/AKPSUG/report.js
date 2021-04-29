@@ -20,6 +20,37 @@ define(['angular', 'components/shared/index'], function (angular) {
 		$scope.sortRev = false;
 		
 	}); //Close controller
+
+	reportApp.directive('exportToCsv',function(){
+  	    return {
+    	    restrict: 'A',
+    	    link: function (scope, element, attrs) {
+    		    var el = element[0];
+	            element.bind('click', function(e){
+	        	    var table = e.target.nextElementSibling;
+	        	    var csvString = '';
+	        	    for(var i=0; i<table.rows.length;i++){
+	        		    var rowData = table.rows[i].cells;
+	        		    for(var j=0; j<rowData.length;j++){
+							t = rowData[j].innerText;
+							t = t.replace(/\s+/g, ' ').trim();
+	        			    csvString = csvString + '"' + t + '",';
+	        		    }
+	        		    csvString = csvString.substring(0,csvString.length - 1);
+	        		    csvString = csvString + "\n";
+			        }
+	         	    csvString = csvString.substring(0, csvString.length - 1);
+	         	    var a = $j('<a/>', {
+		                style:'display:none',
+		                href:'data:application/octet-stream;base64,'+btoa(csvString),
+		                download:'Accommodations.csv'
+		            }).appendTo('body')
+		            a[0].click()
+		            a.remove();
+	            });
+    	    }
+  	    }
+	});
   
 	reportApp.factory('getService', function($http) {
 		return {

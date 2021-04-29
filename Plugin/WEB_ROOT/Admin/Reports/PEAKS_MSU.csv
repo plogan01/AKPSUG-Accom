@@ -1,122 +1,154 @@
 District Code,School Code,AKSID,District Student ID,Student Last Name,Student First Name,Student Middle Name,Suffix,Gender,Date of Birth,Grade,Test Mode,Race/Ethnicity,Disability Status,504 Plan,English Learner Status,Economically Disadvantaged Status,Migrant Status,Parent/Guardian on Active Duty Military Status,ELA - Text-To-Speech (Not Including ELA Reading Passages),ELA - Student provided non-embedded accommodation(s) as noted in IEP or 504 plan.,ELA - Audio CD,ELA - Paper Large Print,ELA - Paper Braille,Math - Text-To-Speech (Not Including ELA Reading Passages),Math - Student provided non-embedded accommodation(s) as noted in IEP or 504 plan.,Math - Audio CD,Math - Paper Large Print,Math - Paper Braille,Science - Text-To-Speech (Not Including ELA Reading Passages),Science - Student provided non-embedded accommodation(s) as noted in IEP or 504 plan.,Science - Audio CD,Science - Paper Large Print,Science - Paper Braille,GroupBy
 ~[tlist_sql;SELECT 
-              (SELECT value FROM PREFS WHERE name='districtnumber' AND ROWNUM = 1) AS "District",
-              st.schoolid AS "SchoolCode",
-              st.state_studentnumber AS "AKSID",
-              st.student_number AS "DistrictID",
-              st.last_name AS "Last Name",
-              st.first_name AS "First Name",
-              st.middle_name AS "Middle Name",
-              ak.suffix AS "Suffix",
-              st.Gender AS "Gender",
-              to_char(st.DOB,'MM/DD/YYYY') AS "Date of Birth",
-              st.Grade_Level AS "Grade",
-              CASE 
-                WHEN peaks.testtype IS NOT NULL THEN peaks.testtype
-                ELSE def.testtype
-              END AS "Mode",
-              st.Ethnicity AS "Race",
-              CASE 
-                WHEN ak.Disability_Code IS NULL THEN '00'
-                WHEN ak.Disability_Code = '15' THEN '00'
-                WHEN ak.Disability_Code = '16' THEN '00'
-                ELSE TO_CHAR(ak.Disability_Code)
-              END AS "Disability",
-              CASE 
-                WHEN ak.Section504 = 'Y' THEN 'Y'
-                WHEN ak.Section504 = '1' THEN 'Y'
-                ELSE 'N'
-              END AS "504",
-              CASE 
-                WHEN ak.LEP IS NOT NULL THEN ak.LEP
-                ELSE 'X' 
-              END AS "ELL" ,
-              CASE 
-                WHEN st.LunchStatus IN('F','FDC','R') THEN 'Y'  
-                ELSE 'N' 
-              END AS "Econ",
-              CASE 
-                WHEN ak.Migrant IS NULL THEN 'N' 
-                ELSE ak.Migrant
-              END AS "Migrant",
-              CASE 
-                WHEN ak.Activeduty_pg IS NOT NULL THEN ak.Activeduty_pg
-                ELSE 'N'
-              END AS "Military",
-              CASE 
-                WHEN peaks.ELA_TTS IS NOT NULL AND (peaks.testtype = 'C' OR (peaks.testtype IS NULL AND def.testtype = 'C')) THEN peaks.ELA_TTS
-                ELSE 'N'
-              END AS "ELATTS",
-              CASE 
-                WHEN peaks.ELA_OTHER IS NOT NULL AND (peaks.testtype = 'C' OR (peaks.testtype IS NULL AND def.testtype = 'C')) THEN peaks.ELA_OTHER
-                ELSE 'N'
-              END AS "ELAOther",
-              CASE 
-                WHEN peaks.ELA_AUDIO_CD IS NOT NULL AND (peaks.testtype = 'P' OR (peaks.testtype IS NULL AND def.testtype = 'P')) THEN peaks.ELA_AUDIO_CD
-                ELSE 'N'
-              END AS "ELACD",
-              CASE 
-                WHEN peaks.ELA_LARGE_PRINT IS NOT NULL AND (peaks.testtype = 'P' OR (peaks.testtype IS NULL AND def.testtype = 'P')) THEN peaks.ELA_LARGE_PRINT
-                ELSE 'N'
-              END AS "ELALargePrint",
-              CASE 
-                WHEN peaks.ELA_BRAILLE IS NOT NULL AND (peaks.testtype = 'P' OR (peaks.testtype IS NULL AND def.testtype = 'P')) THEN peaks.ELA_BRAILLE
-                ELSE 'N'
-              END AS "ELABraille",
-              CASE 
-                WHEN peaks.MATH_TTS IS NOT NULL AND (peaks.testtype = 'C' OR (peaks.testtype IS NULL AND def.testtype = 'C')) THEN peaks.MATH_TTS
-                ELSE 'N'
-              END AS "MATHTTS",
-              CASE 
-                WHEN peaks.MATH_OTHER IS NOT NULL AND (peaks.testtype = 'C' OR (peaks.testtype IS NULL AND def.testtype = 'C')) THEN peaks.MATH_OTHER
-                ELSE 'N'
-              END AS "MATHOther",
-              CASE 
-                WHEN peaks.MATH_AUDIO_CD IS NOT NULL AND (peaks.testtype = 'P' OR (peaks.testtype IS NULL AND def.testtype = 'P')) THEN peaks.MATH_AUDIO_CD
-                ELSE 'N'
-              END AS "MATHCD",
-              CASE 
-                WHEN peaks.MATH_LARGE_PRINT IS NOT NULL AND (peaks.testtype = 'P' OR (peaks.testtype IS NULL AND def.testtype = 'P')) THEN peaks.MATH_LARGE_PRINT
-                ELSE 'N'
-              END AS "MATHLarge",
-              CASE 
-                WHEN peaks.MATH_BRAILLE IS NOT NULL AND (peaks.testtype = 'P' OR (peaks.testtype IS NULL AND def.testtype = 'P')) THEN peaks.MATH_BRAILLE
-                ELSE 'N'
-              END AS "MATHBraille",
-              CASE 
-                WHEN peaks.SCIENCE_TTS IS NOT NULL AND (peaks.testtype = 'C' OR (peaks.testtype IS NULL AND def.testtype = 'C')) THEN peaks.SCIENCE_TTS
-                ELSE 'N'
-              END AS "SCIENCETTS",
-              CASE 
-                WHEN peaks.SCIENCE_OTHER IS NOT NULL AND (peaks.testtype = 'C' OR (peaks.testtype IS NULL AND def.testtype = 'C')) THEN peaks.SCIENCE_OTHER
-                ELSE 'N'
-              END AS "SCIENCEOther",
-              CASE 
-                WHEN peaks.SCIENCE_AUDIO_CD IS NOT NULL AND (peaks.testtype = 'P' OR (peaks.testtype IS NULL AND def.testtype = 'P')) THEN peaks.SCIENCE_AUDIO_CD
-                ELSE 'N'
-              END AS "SCIENCECD",
-              CASE 
-                WHEN peaks.SCIENCE_LARGE_PRINT IS NOT NULL AND (peaks.testtype = 'P' OR (peaks.testtype IS NULL AND def.testtype = 'P')) THEN peaks.SCIENCE_LARGE_PRINT
-                ELSE 'N'
-              END AS "SCIENCELarge",
-              CASE 
-                WHEN peaks.SCIENCE_BRAILLE IS NOT NULL AND (peaks.testtype = 'P' OR (peaks.testtype IS NULL AND def.testtype = 'P')) THEN peaks.SCIENCE_BRAILLE
-                ELSE 'N'
-              END AS "SCIENCEBraille",
-              '' AS "GroupBy"
+                (SELECT value FROM PREFS WHERE name='districtnumber' AND ROWNUM = 1) AS "District",
+                CASE 
+                    WHEN sch.alternate_school_number > 0 THEN sch.alternate_school_number
+                    ELSE sch.school_number 
+                END AS "SchoolCode",
+                st.state_studentnumber AS "AKSID",
+                st.student_number AS "DistrictID",
+                CASE
+                    WHEN scf.pscore_legal_last_name IS NOT NULL
+                        THEN scf.pscore_legal_last_name
+                    ELSE st.last_name
+                END AS "Last Name",
+                CASE
+                    WHEN scf.pscore_legal_first_name IS NOT NULL
+                        THEN scf.pscore_legal_first_name
+                    ELSE st.first_name
+                END AS "First Name",
+                CASE
+                    WHEN scf.pscore_legal_middle_name IS NOT NULL
+                        THEN scf.pscore_legal_middle_name
+                    ELSE st.middle_name
+                END AS "Middle Name",
+                ak.suffix AS "Suffix",
+                CASE
+                    WHEN scf.pscore_legal_gender IS NOT NULL
+                        THEN scf.pscore_legal_gender
+                    ELSE st.gender
+                END AS "Gender",
+                to_char(st.DOB,'MM/DD/YYYY') AS "Date of Birth",
+                st.Grade_Level AS "Grade",
+                CASE 
+                    WHEN peaks.testtype IS NOT NULL THEN peaks.testtype
+                    ELSE def.testtype
+                END AS "Mode",
+                st.Ethnicity AS "Race",
+                CASE 
+                    WHEN ak.Disability_Code IS NULL THEN '00'
+                    WHEN ak.Disability_Code = '15' THEN '00'
+                    WHEN ak.Disability_Code = '16' THEN '00'
+                    ELSE TO_CHAR(ak.Disability_Code)
+                END AS "Disability",
+                CASE 
+                    WHEN ak.Section504 = 'Y' THEN 'Y'
+                    WHEN ak.Section504 = '1' THEN 'Y'
+                    ELSE 'N'
+                END AS "504",
+                CASE 
+                    WHEN ak.LEP IS NOT NULL THEN ak.LEP
+                    ELSE 'X' 
+                END AS "ELL" ,
+                CASE 
+                    WHEN ak.Econ = 'Y' THEN 'Y'  
+                    ELSE 'N' 
+                END AS "Econ",
+                CASE 
+                    WHEN ak.Migrant IS NULL THEN 'N' 
+                    ELSE ak.Migrant
+                    END AS "Migrant",
+                CASE 
+                    WHEN ak.Activeduty_pg IS NOT NULL THEN ak.Activeduty_pg
+                    ELSE 'N'
+                END AS "Military",
+                CASE 
+                    WHEN st.grade_level < 10 AND peaks.ELA_TTS IS NOT NULL AND (peaks.testtype = 'C' OR (peaks.testtype IS NULL AND def.testtype = 'C')) THEN peaks.ELA_TTS
+                    ELSE 'N'
+                END AS "ELATTS",
+                CASE 
+                    WHEN st.grade_level < 10 AND peaks.ELA_OTHER IS NOT NULL AND (peaks.testtype = 'C' OR (peaks.testtype IS NULL AND def.testtype = 'C')) THEN peaks.ELA_OTHER
+                    ELSE 'N'
+                END AS "ELAOther",
+                CASE 
+                    WHEN st.grade_level < 10 AND peaks.ELA_AUDIO_CD IS NOT NULL AND (peaks.testtype = 'P' OR (peaks.testtype IS NULL AND def.testtype = 'P')) THEN peaks.ELA_AUDIO_CD
+                    ELSE 'N'
+                END AS "ELACD",
+                CASE 
+                    WHEN st.grade_level < 10 AND peaks.ELA_LARGE_PRINT IS NOT NULL AND (peaks.testtype = 'P' OR (peaks.testtype IS NULL AND def.testtype = 'P')) THEN peaks.ELA_LARGE_PRINT
+                    ELSE 'N'
+                END AS "ELALargePrint",
+                CASE 
+                    WHEN st.grade_level < 10 AND peaks.ELA_BRAILLE IS NOT NULL AND (peaks.testtype = 'P' OR (peaks.testtype IS NULL AND def.testtype = 'P')) THEN peaks.ELA_BRAILLE
+                    ELSE 'N'
+                END AS "ELABraille",
+                CASE 
+                    WHEN st.grade_level < 10 AND peaks.MATH_TTS IS NOT NULL AND (peaks.testtype = 'C' OR (peaks.testtype IS NULL AND def.testtype = 'C')) THEN peaks.MATH_TTS
+                    ELSE 'N'
+                END AS "MATHTTS",
+                CASE 
+                    WHEN st.grade_level < 10 AND peaks.MATH_OTHER IS NOT NULL AND (peaks.testtype = 'C' OR (peaks.testtype IS NULL AND def.testtype = 'C')) THEN peaks.MATH_OTHER
+                    ELSE 'N'
+                END AS "MATHOther",
+                CASE 
+                    WHEN st.grade_level < 10 AND peaks.MATH_AUDIO_CD IS NOT NULL AND (peaks.testtype = 'P' OR (peaks.testtype IS NULL AND def.testtype = 'P')) THEN peaks.MATH_AUDIO_CD
+                    ELSE 'N'
+                END AS "MATHCD",
+                CASE 
+                    WHEN st.grade_level < 10 AND peaks.MATH_LARGE_PRINT IS NOT NULL AND (peaks.testtype = 'P' OR (peaks.testtype IS NULL AND def.testtype = 'P')) THEN peaks.MATH_LARGE_PRINT
+                    ELSE 'N'
+                END AS "MATHLarge",
+                CASE 
+                    WHEN st.grade_level < 10 AND peaks.MATH_BRAILLE IS NOT NULL AND (peaks.testtype = 'P' OR (peaks.testtype IS NULL AND def.testtype = 'P')) THEN peaks.MATH_BRAILLE
+                    ELSE 'N'
+                END AS "MATHBraille",
+                CASE 
+                    WHEN st.grade_level IN (5,8,10) THEN
+                        CASE 
+                            WHEN peaks.SCIENCE_TTS IS NOT NULL AND (peaks.testtype = 'C' OR (peaks.testtype IS NULL AND def.testtype = 'C')) THEN peaks.SCIENCE_TTS
+                            ELSE 'N' END
+                    ELSE 'N'
+                END AS "SCIENCETTS",
+                CASE WHEN st.grade_level IN (5,8,10) THEN
+                    CASE 
+                        WHEN peaks.SCIENCE_OTHER IS NOT NULL AND (peaks.testtype = 'C' OR (peaks.testtype IS NULL AND def.testtype = 'C')) THEN peaks.SCIENCE_OTHER
+                        ELSE 'N' END
+                    ELSE 'N'
+                END AS "SCIENCEOther",
+                CASE WHEN st.grade_level IN (5,8,10) THEN
+                    CASE 
+                        WHEN peaks.SCIENCE_AUDIO_CD IS NOT NULL AND (peaks.testtype = 'P' OR (peaks.testtype IS NULL AND def.testtype = 'P')) THEN peaks.SCIENCE_AUDIO_CD
+                        ELSE 'N' END
+                    Else 'N'
+                END AS "SCIENCECD",
+                CASE WHEN st.grade_level IN (5,8,10) THEN
+                    CASE 
+                        WHEN peaks.SCIENCE_LARGE_PRINT IS NOT NULL AND (peaks.testtype = 'P' OR (peaks.testtype IS NULL AND def.testtype = 'P')) THEN peaks.SCIENCE_LARGE_PRINT
+                        ELSE 'N' END
+                    ELSE 'N'
+                END AS "SCIENCELarge",
+                CASE WHEN st.grade_level IN (5,8,10) THEN
+                    CASE 
+                        WHEN peaks.SCIENCE_BRAILLE IS NOT NULL AND (peaks.testtype = 'P' OR (peaks.testtype IS NULL AND def.testtype = 'P')) THEN peaks.SCIENCE_BRAILLE
+                        ELSE 'N' END
+                    ELSE 'N'
+                END AS "SCIENCEBraille",
+                'Grade ' || st.grade_level AS "GroupBy"
   
-              FROM Students st
-              JOIN S_AK_STU_X ak
-                ON st.dcid = ak.StudentsDCID
-              LEFT OUTER JOIN Schools sch
-                ON st.schoolid = sch.school_number
-              LEFT OUTER JOIN U_AKPSUG_PEAKS_DEFAULTS def
-                ON st.schoolid = def.schoolid
-              LEFT OUTER JOIN U_AKPSUG_PEAKS peaks
-                ON st.dcid = peaks.studentsdcid
-              WHERE sch.state_excludefromreporting != 1
-              AND st.enroll_status = 0
-              AND st.grade_level IN (3,4,5,6,7,8,9,10)
-              AND (ak.AlternateAssessment !='Y' OR ak.AlternateAssessment IS NULL)
-              ORDER BY sch.school_number, st.grade_level, st.last_name]~(district),~(school),~(aksid),~(student_id),~(last),~(first),~(middle),~(suffix),~(gender),~(dob),~(grade),~(mode),~(race),~(disability),~(504),~(ell),~(econ),~(migrant),~(military),~(ela_tts),~(ela_other),~(ela_cd),~(ela_print),~(ela_braille),~(math_tts),~(math_other),~(math_cd),~(math_print),~(math_braille),~(sci_tts),~(sci_other),~(sci_cd),~(sci_print),~(sci_braille),~(group)
+            FROM Students st
+                JOIN S_AK_STU_X ak
+                    ON st.dcid = ak.StudentsDCID
+                LEFT OUTER JOIN Schools sch
+                    ON st.schoolid = sch.school_number
+                LEFT OUTER JOIN U_AKPSUG_PEAKS_DEFAULTS def
+                    ON st.schoolid = def.schoolid
+                LEFT OUTER JOIN U_AKPSUG_PEAKS peaks
+                    ON st.dcid = peaks.studentsdcid
+                LEFT OUTER JOIN StudentCoreFields scf
+                    ON st.dcid = scf.studentsdcid
+            WHERE sch.state_excludefromreporting != 1
+                AND st.enroll_status = 0
+                AND st.grade_level IN (3,4,5,6,7,8,9,10)
+                AND (ak.AlternateAssessment !='Y' OR ak.AlternateAssessment IS NULL)
+            ORDER BY sch.school_number, st.grade_level, st.last_name]~(district),~(school),~(aksid),~(student_id),~(last),~(first),~(middle),~(suffix),~(gender),~(dob),~(grade),~(mode),~(race),~(disability),~(504),~(ell),~(econ),~(migrant),~(military),~(ela_tts),~(ela_other),~(ela_cd),~(ela_print),~(ela_braille),~(math_tts),~(math_other),~(math_cd),~(math_print),~(math_braille),~(sci_tts),~(sci_other),~(sci_cd),~(sci_print),~(sci_braille),~(group)
 [/tlist_sql]

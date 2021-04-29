@@ -1,6 +1,10 @@
 [~[tlist_sql;SELECT
     s.schoolid,
-    s.lastfirst,
+    CASE
+    	WHEN scf.pscore_legal_last_name IS NOT NULL
+    	THEN scf.pscore_legal_last_name || ', ' || scf.pscore_legal_first_name || ' ' || scf.pscore_legal_middle_name
+    	ELSE s.lastfirst
+    END AS lastfirst,
     s.dcid,
     s.grade_level,
     s.home_room,
@@ -57,29 +61,41 @@
         WHEN peaks.MATH_BRAILLE IS NOT NULL AND (peaks.testtype = 'P' OR (peaks.testtype IS NULL AND def.testtype = 'P')) THEN peaks.MATH_BRAILLE
         ELSE 'N'
     END AS "MATHBraille",
-    CASE 
-        WHEN peaks.SCIENCE_TTS IS NOT NULL AND (peaks.testtype = 'C' OR (peaks.testtype IS NULL AND def.testtype = 'C')) THEN peaks.SCIENCE_TTS
+    CASE WHEN s.grade_level IN (5,8,10) THEN
+        CASE 
+            WHEN peaks.SCIENCE_TTS IS NOT NULL AND (peaks.testtype = 'C' OR (peaks.testtype IS NULL AND def.testtype = 'C')) THEN peaks.SCIENCE_TTS
+            ELSE 'N' END
         ELSE 'N'
     END AS "SCIENCETTS",
-    CASE 
-        WHEN peaks.SCIENCE_OTHER IS NOT NULL AND (peaks.testtype = 'C' OR (peaks.testtype IS NULL AND def.testtype = 'C')) THEN peaks.SCIENCE_OTHER
-        ELSE 'N'
+    CASE WHEN s.grade_level IN (5,8,10) THEN
+        CASE 
+            WHEN peaks.SCIENCE_OTHER IS NOT NULL AND (peaks.testtype = 'C' OR (peaks.testtype IS NULL AND def.testtype = 'C')) THEN peaks.SCIENCE_OTHER
+            ELSE 'N' END
+        ELSE 'N'        
     END AS "SCIENCEOther",
-    CASE 
-        WHEN peaks.SCIENCE_AUDIO_CD IS NOT NULL AND (peaks.testtype = 'P' OR (peaks.testtype IS NULL AND def.testtype = 'P')) THEN peaks.SCIENCE_AUDIO_CD
+    CASE WHEN s.grade_level IN (5,8,10) THEN
+        CASE 
+            WHEN peaks.SCIENCE_AUDIO_CD IS NOT NULL AND (peaks.testtype = 'P' OR (peaks.testtype IS NULL AND def.testtype = 'P')) THEN peaks.SCIENCE_AUDIO_CD
+            ELSE 'N' END
         ELSE 'N'
     END AS "SCIENCECD",
-    CASE 
-        WHEN peaks.SCIENCE_LARGE_PRINT IS NOT NULL AND (peaks.testtype = 'P' OR (peaks.testtype IS NULL AND def.testtype = 'P')) THEN peaks.SCIENCE_LARGE_PRINT
+    CASE WHEN s.grade_level IN (5,8,10) THEN
+        CASE 
+            WHEN peaks.SCIENCE_LARGE_PRINT IS NOT NULL AND (peaks.testtype = 'P' OR (peaks.testtype IS NULL AND def.testtype = 'P')) THEN peaks.SCIENCE_LARGE_PRINT
+            ELSE 'N' END
         ELSE 'N'
     END AS "SCIENCELarge",
-    CASE 
-        WHEN peaks.SCIENCE_BRAILLE IS NOT NULL AND (peaks.testtype = 'P' OR (peaks.testtype IS NULL AND def.testtype = 'P')) THEN peaks.SCIENCE_BRAILLE
+    CASE WHEN s.grade_level IN (5,8,10) THEN
+        CASE 
+            WHEN peaks.SCIENCE_BRAILLE IS NOT NULL AND (peaks.testtype = 'P' OR (peaks.testtype IS NULL AND def.testtype = 'P')) THEN peaks.SCIENCE_BRAILLE
+            ELSE 'N' END
         ELSE 'N'
     END AS "SCIENCEBraille",
     peaks.ELA_NON_EMBED,
     peaks.MATH_NON_EMBED,
-    peaks.SCIENCE_NON_EMBED,
+    CASE WHEN s.grade_level IN (5,8,10) THEN peaks.SCIENCE_NON_EMBED
+        ELSE NULL
+    END AS SCIENCE_NON_EMBED,   
     sch.name
 
 FROM Students s
@@ -91,6 +107,8 @@ LEFT OUTER JOIN U_AKPSUG_PEAKS_DEFAULTS def
     ON s.schoolid = def.schoolid
 JOIN U_AKPSUG_PEAKS peaks
     ON s.dcid = peaks.studentsdcid
+LEFT OUTER JOIN studentcorefields scf 
+    ON scf.studentsdcid=s.dcid
 
 WHERE s.schoolid = ~(curschoolid)
   AND sch.state_excludefromreporting != 1

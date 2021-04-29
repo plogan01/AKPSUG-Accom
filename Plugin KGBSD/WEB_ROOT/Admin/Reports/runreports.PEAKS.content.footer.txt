@@ -1,8 +1,0 @@
-~[if#notDistrict.~(curschoolid)=0]
-[else#notDistrict]
-	<script>
-		$j(document).ready(function(){
-			$j('.button-row' ).before('<table class="linkDescList"><tr><th>PEAKS Reports</th><th>Description</th></tr><tr><td><a href="/admin/reports/accommodations.html">PEAKS Accommodations</a></td><td>Generate a report of PEAKS Accommodations by site</td></tr></table>');
-		});
-	</script>
-[/if#notDistrict]

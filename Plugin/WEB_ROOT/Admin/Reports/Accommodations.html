@@ -6,20 +6,6 @@
     ~[wc:commonscripts]
     <!-- Required style sheets: screen.css, and print.css -->
     <link href="/images/css/screen.css" rel="stylesheet" media="screen">
-    <script type="text/javascript" src="/scripts/akpsug/html2CSV.js"></script>
-    <style>
-        .button {
-            font: bold 11px Arial;
-            text-decoration: none;
-            background-color: #EEEEEE;
-            color: #333333;
-            padding: 2px 6px 2px 6px;
-            border-top: 1px solid #CCCCCC;
-            border-right: 1px solid #333333;
-            border-bottom: 1px solid #333333;
-            border-left: 1px solid #CCCCCC;
-        }
-    </style>
 </head>
 <body>
     ~[wc:admin_header_css]
@@ -37,9 +23,7 @@
     <div class="box-round" ng-controller="reportCont" data-require-path="/scripts/akpsug/report.js" data-module-name="reportApp" ng-cloak>
         <div ng-if="accomList.length > 0">
             <div ng-if="(accomList | filter: {testtype: 'C'}).length > 0">
-                <div>
-                    <a href="#" id="xx" class="button">Export Table data into Excel</a><br /> <br />
-                </div>
+                <button export-to-csv>Export to Excel</button>
                 <table class="grid" id="computer">
                     <tr>
                         <th colspan="13">PEAKS Computer Based Test Accommodations for {{accomList[0].school}}</th>
@@ -112,9 +96,7 @@
                 </table>
             </div>
             <div ng-if="(accomList | filter: {testtype: 'P'}).length > 0">
-                <div>
-                    <a href="#" id="xy" class="button">Export Table data into Excel</a><br /> <br />
-                </div>
+                <button export-to-csv>Export to Excel</button>
                 <table class="grid" id="paper">
                     <tr>
                         <th colspan="13">PEAKS Paper Based Test Accommodations for {{accomList[0].school}}</th>
