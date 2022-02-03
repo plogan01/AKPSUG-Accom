@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PEAKS Student Accommodations</title>
+    <!-- required scripts -->
+    ~[wc:commonscripts]
+    <!-- Required style sheets: screen.css, and print.css -->
+    <link href="/images/css/screen.css" rel="stylesheet" media="screen">
+</head>
+<body>
+    ~[wc:admin_header_css]
+    <!-- breadcrumb start --><a href="/admin/home.html" target="_top">Start Page</a> &gt; <a href="/admin/Reports/runreports.html" target="_top">System Reports</a> &gt; Student PEAKS Accommodations<!-- breadcrumb end -->
+    <!-- start of main menu and content -->
+    ~[wc:admin_navigation_css]
+    <!-- Start of Page -->
+    <h1>PEAKS Student Accommodations</h1>
+    <!-- start of content area -->
+    ~[if#notDistrict.~(curschoolid)=0]
+    <div class="box-round">
+        <h2>This report cannot be run at the district level</h2>
+    </div>
+    [else#notDistrict]
+    <div class="box-round" ng-controller="reportCont" data-require-path="/scripts/akpsug/report.js" data-module-name="reportApp" ng-cloak>
+        <div ng-if="accomList.length > 0">
+            <div ng-if="(accomList | filter: {schoolid: schoolID}).length > 0">
+                <button export-to-csv>Export to Excel</button>
+                <table class="grid" id="computer">
+                    <tr>
+                        <th colspan="16">AK STAR Student Test Accommodations for ~(schoolname)</th>
+                    </tr>
+                    <tr>
+                        <th>
+                            <a href="" ng_click='sort="lastfirst"; sortReverse = !sortReverse'>Student</a>
+                        </th>
+                        <th>
+                            <a href="" ng_click='sort="grade_level"; sortReverse = !sortReverse'>Grade</a>
+                        </th>
+                        <th>
+                            <a href="" ng_click='sort="ell"; sortReverse = !sortReverse'>ELL</a>
+                        </th>
+                        <th>
+                            <a href="" ng_click='sort="sp"; sortReverse = !sortReverse'>IEP</a>
+                        </th>
+                        <th>
+                            <a href="" ng_click='sort="elatts"; sortReverse = !sortReverse'>ELA TTS</a>
+                        </th>
+                        <th>
+                            <a href="" ng_click='sort="elaasl"; sortReverse = !sortReverse'>ELA ASL</a>
+                        </th>
+                        <th>
+                            <a href="" ng_click='sort="elapod"; sortReverse = !sortReverse'>ELA Print<br />On Demand</a>
+                        </th>
+                        <th>
+                            <a href="" ng_click='sort="elabraille"; sortReverse = !sortReverse'>ELA Braille</a>
+                        </th>
+                        <th>
+                            <a href="" ng_click='sort="elaone"; sortReverse = !sortReverse'>ELA<br />Non-Embedded</a>
+                        </th>
+                        <th>
+                            <a href="" ng_click='sort="matts"; sortReverse = !sortReverse'>MATH TTS</a>
+                        </th>
+                        <th>
+                            <a href="" ng_click='sort="maasl"; sortReverse = !sortReverse'>MATH ASL</a>
+                        </th>
+                        <th>
+                            <a href="" ng_click='sort="mapod"; sortReverse = !sortReverse'>MATH Print<br />On Demand</a>
+                        </th>
+                        <th>
+                            <a href="" ng_click='sort="mabraille"; sortReverse = !sortReverse'>MATH Braille</a>
+                        </th>
+                        <th>
+                            <a href="" ng_click='sort="maone"; sortReverse = !sortReverse'>MATH<br />Non-Embedded</a>
+                        </th>
+                        <th>
+                            <a href="" ng_click='sort="elaoverride"; sortReverse = !sortReverse'>ELA<br />Not Testing</a>
+                        </th>
+                        <th>
+                            <a href="" ng_click='sort="maoverride"; sortReverse = !sortReverse'>MATH<br />Not Testing</a>
+                        </th>
+                    </tr>
+                    <tr ng_repeat="a in accomList | filter: {schoolid: schoolID} | orderBy:sort:sortReverse ">
+                        <td><a href="/admin/students/home.html?frn=001{{a.dcid}}" target="_blank">{{a.lastfirst}}</a></td>
+                        <td>{{a.grade_level}}</td>
+                        <td>{{a.ell}}</td>
+                        <td>{{a.sp}}</td>
+                        <td>{{a.elatts}}</td>
+                        <td>{{a.elaasl}}</td>
+                        <td>{{a.elapod}}</td>
+                        <td>{{a.elabraille}}</td>
+                        <td>
+                            <span ng-if="a.elaone === 'Y'">{{a.elanote}}</span>
+                            <span ng-if="a.elaone === 'N'">N/A</span>
+                        </td>
+                        <td>{{a.matts}}</td>
+                        <td>{{a.maasl}}</td>
+                        <td>{{a.mapod}}</td>
+                        <td>{{a.mabraille}}</td>
+                        <td>
+                            <span ng-if="a.maone === 'Y'">{{a.manote}}</span>
+                            <span ng-if="a.maone === 'N'">N/A</span>
+                        </td>
+                        <td>{{a.elaoverride}}<span ng-if="a.elaoverride === 'N'"> - {{a.elanotest}}</span></td>
+                        <td>{{a.maoverride}}<span ng-if="a.maoverride === 'N'"> - {{a.manotest}}</span></td>
+                    </tr>
+                </table>
+            </div>
+            <div ng-if="(accomList | filter: {schoolid: '!' +schoolID} : false).length > 0">
+                <button export-to-csv>Export to Excel</button>
+                <table class="grid" id="paper">
+                    <tr>
+                        <th colspan="18">AK STAR Student Test Accommodations for students testing at other schools or districts</th>
+                    </tr>
+                    <tr>
+                        <th>
+                            <a href="" ng_click='sort="district"; sortReverse = !sortReverse'>District</a>
+                        </th>
+                        <th>
+                            <a href="" ng_click='sort="school"; sortReverse = !sortReverse'>School</a>
+                        </th>
+                        <th>
+                            <a href="" ng_click='sort="lastfirst"; sortReverse = !sortReverse'>Student</a>
+                        </th>
+                        <th>
+                            <a href="" ng_click='sort="grade_level"; sortReverse = !sortReverse'>Grade</a>
+                        </th>
+                        <th>
+                            <a href="" ng_click='sort="ell"; sortReverse = !sortReverse'>ELL</a>
+                        </th>
+                        <th>
+                            <a href="" ng_click='sort="sp"; sortReverse = !sortReverse'>IEP</a>
+                        </th>
+                        <th>
+                            <a href="" ng_click='sort="elatts"; sortReverse = !sortReverse'>ELA TTS</a>
+                        </th>
+                        <th>
+                            <a href="" ng_click='sort="elaasl"; sortReverse = !sortReverse'>ELA ASL</a>
+                        </th>
+                        <th>
+                            <a href="" ng_click='sort="elapod"; sortReverse = !sortReverse'>ELA Print<br />On Demand</a>
+                        </th>
+                        <th>
+                            <a href="" ng_click='sort="elabraille"; sortReverse = !sortReverse'>ELA Braille</a>
+                        </th>
+                        <th>
+                            <a href="" ng_click='sort="elaone"; sortReverse = !sortReverse'>ELA<br />Non-Embedded</a>
+                        </th>
+                        <th>
+                            <a href="" ng_click='sort="matts"; sortReverse = !sortReverse'>MATH TTS</a>
+                        </th>
+                        <th>
+                            <a href="" ng_click='sort="maasl"; sortReverse = !sortReverse'>MATH ASL</a>
+                        </th>
+                        <th>
+                            <a href="" ng_click='sort="mapod"; sortReverse = !sortReverse'>MATH Print<br />On Demand</a>
+                        </th>
+                        <th>
+                            <a href="" ng_click='sort="mabraille"; sortReverse = !sortReverse'>MATH Braille</a>
+                        </th>
+                        <th>
+                            <a href="" ng_click='sort="maone"; sortReverse = !sortReverse'>MATH<br />Non-Embedded</a>
+                        </th>
+                        <th>
+                            <a href="" ng_click='sort="elaoverride"; sortReverse = !sortReverse'>ELA<br />Not Testing</a>
+                        </th>
+                        <th>
+                            <a href="" ng_click='sort="maoverride"; sortReverse = !sortReverse'>MATH<br />Not Testing</a>
+                        </th>
+                    </tr>
+                    <tr ng_repeat="a in accomList | orderBy:sort:sortReverse | filter: {schoolid: '!' + schoolID}">
+                        <td>{{a.district}}</td>
+                        <td>{{a.school}}</td>
+                        <td><a href="/admin/students/home.html?frn=001{{a.dcid}}" target="_blank">{{a.lastfirst}}</a></td>
+                        <td>{{a.grade_level}}</td>
+                        <td>{{a.ell}}</td>
+                        <td>{{a.sp}}</td>
+                        <td>{{a.elatts}}</td>
+                        <td>{{a.elaasl}}</td>
+                        <td>{{a.elapod}}</td>
+                        <td>{{a.elabraille}}</td>
+                        <td>
+                            <span ng-if="a.elaone === 'Y'">{{a.elanote}}</span>
+                            <span ng-if="a.elaone === 'N'">N/A</span>
+                        </td>
+                        <td>{{a.matts}}</td>
+                        <td>{{a.maasl}}</td>
+                        <td>{{a.mapod}}</td>
+                        <td>{{a.mabraille}}</td>
+                        <td>
+                            <span ng-if="a.maone === 'Y'">{{a.manote}}</span>
+                            <span ng-if="a.maone === 'N'">N/A</span>
+                        </td>
+                        <td>{{a.elaoverride}}<span ng-if="a.elaoverride === 'N'"> - {{a.elanotest}}</span></td>
+                        <td>{{a.maoverride}}<span ng-if="a.maoverride === 'N'"> - {{a.manotest}}</span></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div ng-if="accomList.length == 0"><h2>There are no accommodations for this school.</h2></div>
+    </div>
+    <input class="hidden" id="schoolid" value="~(curschoolid)" />
+    [/if#notDistrict]
+    <!-- end of content area -->
+    ~[wc:admin_footer_css]
+</body>
+</html>

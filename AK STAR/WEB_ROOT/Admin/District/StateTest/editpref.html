@@ -1,0 +1,19 @@
+<form id="ajaxSubmit">
+    ~[DirectTable.Select:U_AKPSUG_AKSTAR_PREF;id:~(gpv.id)]
+    <fieldset id="svcForm">
+        <div>
+            <label>Test Administration Code for ~(gpv.year)</label>
+            <input type="text" value="" name="[U_AKPSUG_AKSTAR_PREF]TESTCODE" />
+            <input type="hidden" name="[U_AKPSUG_AKSTAR_PREF]yearid" value="~(gpv.yearid)" />
+        </div>
+        <input type="hidden" name="ac" value="prim">
+    </fieldset>
+</form>
+<form id="deleteForm">
+    <input type="hidden" name="ac" value="prim">
+    <input type="hidden" name="DD-U_AKPSUG_AKSTAR_PREF.ID:~(gpv.id;encodehtml)" value="1">
+</form>
+<div class="button-row">
+    <button type="button" ng-click="codeSubmit('#deleteForm');" class="confirmationReq">Delete</button>
+    <button type="button" ng-click="codeSubmit('#ajaxSubmit');" name="btnSubmit">Submit</button>
+</div>

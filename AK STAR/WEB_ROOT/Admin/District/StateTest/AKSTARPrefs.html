@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AK STAR Test Codes</title>
+    <!-- required scripts -->
+    ~[wc:commonscripts]
+    <!-- Required style sheets: screen.css, and print.css -->
+    <link href="/images/css/screen.css" rel="stylesheet" media="screen">
+    <link href="/images/css/print.css" rel="stylesheet" media="print">
+</head>
+<body>
+    ~[wc:admin_header_css]
+    <a href="/admin/home.html" target="_top">Start Page</a> &gt; <a href="/admin/district/home.html">District Setup</a> &gt; AK STAR Test Codes
+    <!-- start of main menu and content -->
+    ~[wc:admin_navigation_css]
+    <!-- Start of Page -->
+    <h1>AK STAR Test Administration Codes</h1>
+    <!-- start of content area -->
+    <div class="box-round" ng-controller="defaultCont" data-require-path="/scripts/AKPSUG/default.js" data-module-name="defaultApp">
+        <h2>Test Codes</h2>
+        <table class="grid" ng-cloak>
+            <tr>
+                <th><a class="button" title="Edit" href="" ng-click="openDialog(-1, yearid, year)">Add Code</a></th>
+                <th>School Year</th>
+                <th>Test Code</th>
+            </tr>
+            <tr ng-repeat="c in codeList">
+                <td><a class="button" title="Edit" href="" ng-click="openDialog(c.id, c.yearid, c.year)">Edit</a></td>
+                <td>{{c.year}}</td>
+                <td>{{c.testcode}}</td>
+            </tr>
+        </table>
+    </div>
+
+    <input class="hidden" id="yearid" value="~(curyearid)" />
+    <!-- end of content area -->
+    ~[wc:admin_footer_css]
+</body>
+</html>

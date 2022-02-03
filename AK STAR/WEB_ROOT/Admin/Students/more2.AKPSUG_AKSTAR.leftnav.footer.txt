@@ -1,0 +1,9 @@
+<script>
+    $j(document).ready(function(){ 
+		~[if#gradel.~([Students]grade_level)>2]
+			~[if#gradeh.~([Students]grade_level)<11]
+				$j('ul#std_administration').prepend('<li><a href="statetest/accomm.html?frn=~(studentfrn)">AK STAR Administration</a></li>');
+			[/if#gradeh]
+		[/if#gradel]
+    });
+</script>

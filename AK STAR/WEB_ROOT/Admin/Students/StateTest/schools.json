@@ -1,0 +1,3004 @@
+﻿{
+  "data": [
+    {
+      "DistrictID": "2",
+      "DistrictName": "Denali Borough Schools",
+      "SchoolID": "20010",
+      "SchoolName": "Anderson School"
+    },
+    {
+      "DistrictID": "2",
+      "DistrictName": "Denali Borough Schools",
+      "SchoolID": "20030",
+      "SchoolName": "Cantwell School"
+    },
+    {
+      "DistrictID": "2",
+      "DistrictName": "Denali Borough Schools",
+      "SchoolID": "20040",
+      "SchoolName": "Tri-Valley School"
+    },
+    {
+      "DistrictID": "2",
+      "DistrictName": "Denali Borough Schools",
+      "SchoolID": "28010",
+      "SchoolName": "Denali PEAK"
+    },
+    {
+      "DistrictID": "3",
+      "DistrictName": "Alaska Gateway Schools",
+      "SchoolID": "30010",
+      "SchoolName": "Dot Lake School"
+    },
+    {
+      "DistrictID": "3",
+      "DistrictName": "Alaska Gateway Schools",
+      "SchoolID": "30020",
+      "SchoolName": "Eagle Community School"
+    },
+    {
+      "DistrictID": "3",
+      "DistrictName": "Alaska Gateway Schools",
+      "SchoolID": "30030",
+      "SchoolName": "Mentasta Lake School"
+    },
+    {
+      "DistrictID": "3",
+      "DistrictName": "Alaska Gateway Schools",
+      "SchoolID": "30040",
+      "SchoolName": "Walter Northway School"
+    },
+    {
+      "DistrictID": "3",
+      "DistrictName": "Alaska Gateway Schools",
+      "SchoolID": "30050",
+      "SchoolName": "Tanacross School"
+    },
+    {
+      "DistrictID": "3",
+      "DistrictName": "Alaska Gateway Schools",
+      "SchoolID": "30060",
+      "SchoolName": "Tok School"
+    },
+    {
+      "DistrictID": "3",
+      "DistrictName": "Alaska Gateway Schools",
+      "SchoolID": "30070",
+      "SchoolName": "Tetlin School"
+    },
+    {
+      "DistrictID": "3",
+      "DistrictName": "Alaska Gateway Schools",
+      "SchoolID": "38010",
+      "SchoolName": "Alaska REACH Academy"
+    },
+    {
+      "DistrictID": "4",
+      "DistrictName": "Aleutian Region Schools",
+      "SchoolID": "40020",
+      "SchoolName": "Yakov E. Netsvetov School"
+    },
+    {
+      "DistrictID": "4",
+      "DistrictName": "Aleutian Region Schools",
+      "SchoolID": "40080",
+      "SchoolName": "Adak School"
+    },
+    {
+      "DistrictID": "5",
+      "DistrictName": "Anchorage Schools",
+      "SchoolID": "50010",
+      "SchoolName": "Abbott Loop Elementary"
+    },
+    {
+      "DistrictID": "5",
+      "DistrictName": "Anchorage Schools",
+      "SchoolID": "50020",
+      "SchoolName": "Airport Heights Elementary"
+    },
+    {
+      "DistrictID": "5",
+      "DistrictName": "Anchorage Schools",
+      "SchoolID": "50030",
+      "SchoolName": "Klatt Elementary"
+    },
+    {
+      "DistrictID": "5",
+      "DistrictName": "Anchorage Schools",
+      "SchoolID": "50050",
+      "SchoolName": "Bartlett High School"
+    },
+    {
+      "DistrictID": "5",
+      "DistrictName": "Anchorage Schools",
+      "SchoolID": "50060",
+      "SchoolName": "Baxter Elementary"
+    },
+    {
+      "DistrictID": "5",
+      "DistrictName": "Anchorage Schools",
+      "SchoolID": "50070",
+      "SchoolName": "Birchwood ABC Elementary"
+    },
+    {
+      "DistrictID": "5",
+      "DistrictName": "Anchorage Schools",
+      "SchoolID": "50080",
+      "SchoolName": "Campbell STEM Elementary"
+    },
+    {
+      "DistrictID": "5",
+      "DistrictName": "Anchorage Schools",
+      "SchoolID": "50100",
+      "SchoolName": "Central Middle School of Science"
+    },
+    {
+      "DistrictID": "5",
+      "DistrictName": "Anchorage Schools",
+      "SchoolID": "50110",
+      "SchoolName": "Chester Valley Elementary"
+    },
+    {
+      "DistrictID": "5",
+      "DistrictName": "Anchorage Schools",
+      "SchoolID": "50120",
+      "SchoolName": "Chinook Elementary"
+    },
+    {
+      "DistrictID": "5",
+      "DistrictName": "Anchorage Schools",
+      "SchoolID": "50130",
+      "SchoolName": "Chugach Optional Elementary"
+    },
+    {
+      "DistrictID": "5",
+      "DistrictName": "Anchorage Schools",
+      "SchoolID": "50140",
+      "SchoolName": "Gruening Middle School"
+    },
+    {
+      "DistrictID": "5",
+      "DistrictName": "Anchorage Schools",
+      "SchoolID": "50150",
+      "SchoolName": "Chugiak Elementary"
+    },
+    {
+      "DistrictID": "5",
+      "DistrictName": "Anchorage Schools",
+      "SchoolID": "50160",
+      "SchoolName": "Chugiak High School"
+    },
+    {
+      "DistrictID": "5",
+      "DistrictName": "Anchorage Schools",
+      "SchoolID": "50170",
+      "SchoolName": "College Gate Elementary"
+    },
+    {
+      "DistrictID": "5",
+      "DistrictName": "Anchorage Schools",
+      "SchoolID": "50180",
+      "SchoolName": "Creekside Park Elementary"
+    },
+    {
+      "DistrictID": "5",
+      "DistrictName": "Anchorage Schools",
+      "SchoolID": "50190",
+      "SchoolName": "Denali Montessori Elementary"
+    },
+    {
+      "DistrictID": "5",
+      "DistrictName": "Anchorage Schools",
+      "SchoolID": "50200",
+      "SchoolName": "Dimond High School"
+    },
+    {
+      "DistrictID": "5",
+      "DistrictName": "Anchorage Schools",
+      "SchoolID": "50210",
+      "SchoolName": "Eagle River Elementary"
+    },
+    {
+      "DistrictID": "5",
+      "DistrictName": "Anchorage Schools",
+      "SchoolID": "50220",
+      "SchoolName": "Bettye Davis East Anchorage High School"
+    },
+    {
+      "DistrictID": "5",
+      "DistrictName": "Anchorage Schools",
+      "SchoolID": "50240",
+      "SchoolName": "Aurora Elementary"
+    },
+    {
+      "DistrictID": "5",
+      "DistrictName": "Anchorage Schools",
+      "SchoolID": "50250",
+      "SchoolName": "Orion Elementary School"
+    },
+    {
+      "DistrictID": "5",
+      "DistrictName": "Anchorage Schools",
+      "SchoolID": "50300",
+      "SchoolName": "Dr. Etheldra Davis - Fairview Elementary School"
+    },
+    {
+      "DistrictID": "5",
+      "DistrictName": "Anchorage Schools",
+      "SchoolID": "50340",
+      "SchoolName": "Ursa Major Elementary"
+    },
+    {
+      "DistrictID": "5",
+      "DistrictName": "Anchorage Schools",
+      "SchoolID": "50350",
+      "SchoolName": "Ursa Minor Elementary"
+    },
+    {
+      "DistrictID": "5",
+      "DistrictName": "Anchorage Schools",
+      "SchoolID": "50360",
+      "SchoolName": "Girdwood School"
+    },
+    {
+      "DistrictID": "5",
+      "DistrictName": "Anchorage Schools",
+      "SchoolID": "50370",
+      "SchoolName": "Gladys Wood Elementary"
+    },
+    {
+      "DistrictID": "5",
+      "DistrictName": "Anchorage Schools",
+      "SchoolID": "50380",
+      "SchoolName": "Government Hill Elementary"
+    },
+    {
+      "DistrictID": "5",
+      "DistrictName": "Anchorage Schools",
+      "SchoolID": "50400",
+      "SchoolName": "Homestead Elementary"
+    },
+    {
+      "DistrictID": "5",
+      "DistrictName": "Anchorage Schools",
+      "SchoolID": "50420",
+      "SchoolName": "Huffman Elementary"
+    },
+    {
+      "DistrictID": "5",
+      "DistrictName": "Anchorage Schools",
+      "SchoolID": "50430",
+      "SchoolName": "Inlet View Elementary"
+    },
+    {
+      "DistrictID": "5",
+      "DistrictName": "Anchorage Schools",
+      "SchoolID": "50450",
+      "SchoolName": "Lake Otis Elementary"
+    },
+    {
+      "DistrictID": "5",
+      "DistrictName": "Anchorage Schools",
+      "SchoolID": "50480",
+      "SchoolName": "Mountain View Elementary"
+    },
+    {
+      "DistrictID": "5",
+      "DistrictName": "Anchorage Schools",
+      "SchoolID": "50490",
+      "SchoolName": "Muldoon Elementary"
+    },
+    {
+      "DistrictID": "5",
+      "DistrictName": "Anchorage Schools",
+      "SchoolID": "50500",
+      "SchoolName": "North Star Elementary"
+    },
+    {
+      "DistrictID": "5",
+      "DistrictName": "Anchorage Schools",
+      "SchoolID": "50510",
+      "SchoolName": "Northern Lights ABC K-8 School"
+    },
+    {
+      "DistrictID": "5",
+      "DistrictName": "Anchorage Schools",
+      "SchoolID": "50520",
+      "SchoolName": "Northwood ABC"
+    },
+    {
+      "DistrictID": "5",
+      "DistrictName": "Anchorage Schools",
+      "SchoolID": "50530",
+      "SchoolName": "Nunaka Valley Elementary"
+    },
+    {
+      "DistrictID": "5",
+      "DistrictName": "Anchorage Schools",
+      "SchoolID": "50540",
+      "SchoolName": "O'Malley Elementary"
+    },
+    {
+      "DistrictID": "5",
+      "DistrictName": "Anchorage Schools",
+      "SchoolID": "50550",
+      "SchoolName": "Ocean View Elementary"
+    },
+    {
+      "DistrictID": "5",
+      "DistrictName": "Anchorage Schools",
+      "SchoolID": "50560",
+      "SchoolName": "Clark Middle School"
+    },
+    {
+      "DistrictID": "5",
+      "DistrictName": "Anchorage Schools",
+      "SchoolID": "50580",
+      "SchoolName": "Ptarmigan Elementary"
+    },
+    {
+      "DistrictID": "5",
+      "DistrictName": "Anchorage Schools",
+      "SchoolID": "50590",
+      "SchoolName": "Rabbit Creek Elementary"
+    },
+    {
+      "DistrictID": "5",
+      "DistrictName": "Anchorage Schools",
+      "SchoolID": "50600",
+      "SchoolName": "Rogers Park Elementary"
+    },
+    {
+      "DistrictID": "5",
+      "DistrictName": "Anchorage Schools",
+      "SchoolID": "50610",
+      "SchoolName": "Romig Middle School"
+    },
+    {
+      "DistrictID": "5",
+      "DistrictName": "Anchorage Schools",
+      "SchoolID": "50620",
+      "SchoolName": "Russian Jack Elementary"
+    },
+    {
+      "DistrictID": "5",
+      "DistrictName": "Anchorage Schools",
+      "SchoolID": "50640",
+      "SchoolName": "Sand Lake Elementary"
+    },
+    {
+      "DistrictID": "5",
+      "DistrictName": "Anchorage Schools",
+      "SchoolID": "50650",
+      "SchoolName": "Scenic Park Elementary"
+    },
+    {
+      "DistrictID": "5",
+      "DistrictName": "Anchorage Schools",
+      "SchoolID": "50660",
+      "SchoolName": "Service High School"
+    },
+    {
+      "DistrictID": "5",
+      "DistrictName": "Anchorage Schools",
+      "SchoolID": "50670",
+      "SchoolName": "Steller Secondary School"
+    },
+    {
+      "DistrictID": "5",
+      "DistrictName": "Anchorage Schools",
+      "SchoolID": "50680",
+      "SchoolName": "Susitna Elementary"
+    },
+    {
+      "DistrictID": "5",
+      "DistrictName": "Anchorage Schools",
+      "SchoolID": "50690",
+      "SchoolName": "Taku Elementary"
+    },
+    {
+      "DistrictID": "5",
+      "DistrictName": "Anchorage Schools",
+      "SchoolID": "50700",
+      "SchoolName": "Tudor Elementary"
+    },
+    {
+      "DistrictID": "5",
+      "DistrictName": "Anchorage Schools",
+      "SchoolID": "50710",
+      "SchoolName": "Turnagain Elementary"
+    },
+    {
+      "DistrictID": "5",
+      "DistrictName": "Anchorage Schools",
+      "SchoolID": "50720",
+      "SchoolName": "Wendler Middle School"
+    },
+    {
+      "DistrictID": "5",
+      "DistrictName": "Anchorage Schools",
+      "SchoolID": "50730",
+      "SchoolName": "West High School"
+    },
+    {
+      "DistrictID": "5",
+      "DistrictName": "Anchorage Schools",
+      "SchoolID": "50750",
+      "SchoolName": "Williwaw Elementary"
+    },
+    {
+      "DistrictID": "5",
+      "DistrictName": "Anchorage Schools",
+      "SchoolID": "50760",
+      "SchoolName": "Willow Crest Elementary"
+    },
+    {
+      "DistrictID": "5",
+      "DistrictName": "Anchorage Schools",
+      "SchoolID": "50770",
+      "SchoolName": "Wonder Park Elementary"
+    },
+    {
+      "DistrictID": "5",
+      "DistrictName": "Anchorage Schools",
+      "SchoolID": "50800",
+      "SchoolName": "Bayshore Elementary"
+    },
+    {
+      "DistrictID": "5",
+      "DistrictName": "Anchorage Schools",
+      "SchoolID": "50810",
+      "SchoolName": "Ravenwood Elementary"
+    },
+    {
+      "DistrictID": "5",
+      "DistrictName": "Anchorage Schools",
+      "SchoolID": "50820",
+      "SchoolName": "Bear Valley Elementary"
+    },
+    {
+      "DistrictID": "5",
+      "DistrictName": "Anchorage Schools",
+      "SchoolID": "50870",
+      "SchoolName": "Hanshew Middle School"
+    },
+    {
+      "DistrictID": "5",
+      "DistrictName": "Anchorage Schools",
+      "SchoolID": "50880",
+      "SchoolName": "Fire Lake Elementary"
+    },
+    {
+      "DistrictID": "5",
+      "DistrictName": "Anchorage Schools",
+      "SchoolID": "50890",
+      "SchoolName": "Spring Hill Elementary"
+    },
+    {
+      "DistrictID": "5",
+      "DistrictName": "Anchorage Schools",
+      "SchoolID": "50940",
+      "SchoolName": "Mears Middle School"
+    },
+    {
+      "DistrictID": "5",
+      "DistrictName": "Anchorage Schools",
+      "SchoolID": "50970",
+      "SchoolName": "Bowman Elementary"
+    },
+    {
+      "DistrictID": "5",
+      "DistrictName": "Anchorage Schools",
+      "SchoolID": "50990",
+      "SchoolName": "Polaris K-12 School"
+    },
+    {
+      "DistrictID": "5",
+      "DistrictName": "Anchorage Schools",
+      "SchoolID": "51000",
+      "SchoolName": "Alpenglow Elementary"
+    },
+    {
+      "DistrictID": "5",
+      "DistrictName": "Anchorage Schools",
+      "SchoolID": "51010",
+      "SchoolName": "Kasuun Elementary"
+    },
+    {
+      "DistrictID": "5",
+      "DistrictName": "Anchorage Schools",
+      "SchoolID": "51020",
+      "SchoolName": "Kincaid Elementary"
+    },
+    {
+      "DistrictID": "5",
+      "DistrictName": "Anchorage Schools",
+      "SchoolID": "51030",
+      "SchoolName": "Lake Hood Elementary"
+    },
+    {
+      "DistrictID": "5",
+      "DistrictName": "Anchorage Schools",
+      "SchoolID": "51040",
+      "SchoolName": "William Tyson Elementary"
+    },
+    {
+      "DistrictID": "5",
+      "DistrictName": "Anchorage Schools",
+      "SchoolID": "51050",
+      "SchoolName": "Goldenview Middle School"
+    },
+    {
+      "DistrictID": "5",
+      "DistrictName": "Anchorage Schools",
+      "SchoolID": "51060",
+      "SchoolName": "Mirror Lake Middle School"
+    },
+    {
+      "DistrictID": "5",
+      "DistrictName": "Anchorage Schools",
+      "SchoolID": "51110",
+      "SchoolName": "Trailside Elementary"
+    },
+    {
+      "DistrictID": "5",
+      "DistrictName": "Anchorage Schools",
+      "SchoolID": "51120",
+      "SchoolName": "South Anchorage High School"
+    },
+    {
+      "DistrictID": "5",
+      "DistrictName": "Anchorage Schools",
+      "SchoolID": "51130",
+      "SchoolName": "Eagle River High School"
+    },
+    {
+      "DistrictID": "5",
+      "DistrictName": "Anchorage Schools",
+      "SchoolID": "51150",
+      "SchoolName": "Nicholas J. Begich Middle School"
+    },
+    {
+      "DistrictID": "5",
+      "DistrictName": "Anchorage Schools",
+      "SchoolID": "56010",
+      "SchoolName": "Family Partnership Charter School"
+    },
+    {
+      "DistrictID": "5",
+      "DistrictName": "Anchorage Schools",
+      "SchoolID": "57010",
+      "SchoolName": "Alaska State School for Deaf and Hard of Hearing"
+    },
+    {
+      "DistrictID": "5",
+      "DistrictName": "Anchorage Schools",
+      "SchoolID": "57020",
+      "SchoolName": "McLaughlin Secondary School"
+    },
+    {
+      "DistrictID": "5",
+      "DistrictName": "Anchorage Schools",
+      "SchoolID": "57100",
+      "SchoolName": "Benson Secondary/S.E.A.R.C.H."
+    },
+    {
+      "DistrictID": "5",
+      "DistrictName": "Anchorage Schools",
+      "SchoolID": "57110",
+      "SchoolName": "Martin Luther King Jr. Technical High School"
+    },
+    {
+      "DistrictID": "5",
+      "DistrictName": "Anchorage Schools",
+      "SchoolID": "57130",
+      "SchoolName": "S.A.V.E. High School"
+    },
+    {
+      "DistrictID": "5",
+      "DistrictName": "Anchorage Schools",
+      "SchoolID": "57140",
+      "SchoolName": "Whaley School"
+    },
+    {
+      "DistrictID": "5",
+      "DistrictName": "Anchorage Schools",
+      "SchoolID": "57220",
+      "SchoolName": "The New Path High School"
+    },
+    {
+      "DistrictID": "5",
+      "DistrictName": "Anchorage Schools",
+      "SchoolID": "57230",
+      "SchoolName": "Alaska Middle College School"
+    },
+    {
+      "DistrictID": "5",
+      "DistrictName": "Anchorage Schools",
+      "SchoolID": "59010",
+      "SchoolName": "Aquarian Charter School"
+    },
+    {
+      "DistrictID": "5",
+      "DistrictName": "Anchorage Schools",
+      "SchoolID": "59050",
+      "SchoolName": "Frontier Charter School"
+    },
+    {
+      "DistrictID": "5",
+      "DistrictName": "Anchorage Schools",
+      "SchoolID": "59060",
+      "SchoolName": "Highland Academy Charter"
+    },
+    {
+      "DistrictID": "5",
+      "DistrictName": "Anchorage Schools",
+      "SchoolID": "59070",
+      "SchoolName": "Winterberry School"
+    },
+    {
+      "DistrictID": "5",
+      "DistrictName": "Anchorage Schools",
+      "SchoolID": "59080",
+      "SchoolName": "Eagle Academy Charter School"
+    },
+    {
+      "DistrictID": "5",
+      "DistrictName": "Anchorage Schools",
+      "SchoolID": "59090",
+      "SchoolName": "Rilke Schule Charter School"
+    },
+    {
+      "DistrictID": "5",
+      "DistrictName": "Anchorage Schools",
+      "SchoolID": "59100",
+      "SchoolName": "Alaska Native Cultural Charter School"
+    },
+    {
+      "DistrictID": "5",
+      "DistrictName": "Anchorage Schools",
+      "SchoolID": "59110",
+      "SchoolName": "PAIDEIA Cooperative School"
+    },
+    {
+      "DistrictID": "5",
+      "DistrictName": "Anchorage Schools",
+      "SchoolID": "59120",
+      "SchoolName": "Anchorage STrEaM Academy"
+    },
+    {
+      "DistrictID": "6",
+      "DistrictName": "Annette Island Schools",
+      "SchoolID": "60020",
+      "SchoolName": "Charles R. Leask Sr. Middle School"
+    },
+    {
+      "DistrictID": "6",
+      "DistrictName": "Annette Island Schools",
+      "SchoolID": "60030",
+      "SchoolName": "Richard Johnson Elementary"
+    },
+    {
+      "DistrictID": "6",
+      "DistrictName": "Annette Island Schools",
+      "SchoolID": "60040",
+      "SchoolName": "Metlakatla High School"
+    },
+    {
+      "DistrictID": "7",
+      "DistrictName": "Bering Strait Schools",
+      "SchoolID": "70010",
+      "SchoolName": "Brevig Mission School"
+    },
+    {
+      "DistrictID": "7",
+      "DistrictName": "Bering Strait Schools",
+      "SchoolID": "70040",
+      "SchoolName": "Aniguiin School"
+    },
+    {
+      "DistrictID": "7",
+      "DistrictName": "Bering Strait Schools",
+      "SchoolID": "70050",
+      "SchoolName": "Diomede School"
+    },
+    {
+      "DistrictID": "7",
+      "DistrictName": "Bering Strait Schools",
+      "SchoolID": "70060",
+      "SchoolName": "Martin L. Olson School"
+    },
+    {
+      "DistrictID": "7",
+      "DistrictName": "Bering Strait Schools",
+      "SchoolID": "70070",
+      "SchoolName": "Koyuk-Malimiut School"
+    },
+    {
+      "DistrictID": "7",
+      "DistrictName": "Bering Strait Schools",
+      "SchoolID": "70080",
+      "SchoolName": "Anthony A. Andrews School"
+    },
+    {
+      "DistrictID": "7",
+      "DistrictName": "Bering Strait Schools",
+      "SchoolID": "70100",
+      "SchoolName": "Shaktoolik School"
+    },
+    {
+      "DistrictID": "7",
+      "DistrictName": "Bering Strait Schools",
+      "SchoolID": "70110",
+      "SchoolName": "Shishmaref School"
+    },
+    {
+      "DistrictID": "7",
+      "DistrictName": "Bering Strait Schools",
+      "SchoolID": "70120",
+      "SchoolName": "Tukurngailnguq School"
+    },
+    {
+      "DistrictID": "7",
+      "DistrictName": "Bering Strait Schools",
+      "SchoolID": "70130",
+      "SchoolName": "James C. Isabell School"
+    },
+    {
+      "DistrictID": "7",
+      "DistrictName": "Bering Strait Schools",
+      "SchoolID": "70150",
+      "SchoolName": "Wales School"
+    },
+    {
+      "DistrictID": "7",
+      "DistrictName": "Bering Strait Schools",
+      "SchoolID": "70160",
+      "SchoolName": "White Mountain School"
+    },
+    {
+      "DistrictID": "7",
+      "DistrictName": "Bering Strait Schools",
+      "SchoolID": "70180",
+      "SchoolName": "Gambell School"
+    },
+    {
+      "DistrictID": "7",
+      "DistrictName": "Bering Strait Schools",
+      "SchoolID": "70200",
+      "SchoolName": "Hogarth Kingeekuk Sr. Memorial School"
+    },
+    {
+      "DistrictID": "7",
+      "DistrictName": "Bering Strait Schools",
+      "SchoolID": "70260",
+      "SchoolName": "Unalakleet School"
+    },
+    {
+      "DistrictID": "8",
+      "DistrictName": "Bristol Bay Borough Schools",
+      "SchoolID": "80010",
+      "SchoolName": "Bristol Bay Middle/High School"
+    },
+    {
+      "DistrictID": "8",
+      "DistrictName": "Bristol Bay Borough Schools",
+      "SchoolID": "80020",
+      "SchoolName": "Naknek Elementary"
+    },
+    {
+      "DistrictID": "8",
+      "DistrictName": "Bristol Bay Borough Schools",
+      "SchoolID": "88010",
+      "SchoolName": "Bristol Bay Correspondence"
+    },
+    {
+      "DistrictID": "9",
+      "DistrictName": "Chatham Schools",
+      "SchoolID": "90010",
+      "SchoolName": "Angoon School"
+    },
+    {
+      "DistrictID": "9",
+      "DistrictName": "Chatham Schools",
+      "SchoolID": "90030",
+      "SchoolName": "Gustavus School"
+    },
+    {
+      "DistrictID": "9",
+      "DistrictName": "Chatham Schools",
+      "SchoolID": "90090",
+      "SchoolName": "Klukwan School"
+    },
+    {
+      "DistrictID": "9",
+      "DistrictName": "Chatham Schools",
+      "SchoolID": "98010",
+      "SchoolName": "Chatham Correspondence"
+    },
+    {
+      "DistrictID": "10",
+      "DistrictName": "Chugach Schools",
+      "SchoolID": "100010",
+      "SchoolName": "Tatitlek Community School"
+    },
+    {
+      "DistrictID": "10",
+      "DistrictName": "Chugach Schools",
+      "SchoolID": "100020",
+      "SchoolName": "Whittier Community School"
+    },
+    {
+      "DistrictID": "10",
+      "DistrictName": "Chugach Schools",
+      "SchoolID": "100030",
+      "SchoolName": "Chenega School"
+    },
+    {
+      "DistrictID": "10",
+      "DistrictName": "Chugach Schools",
+      "SchoolID": "108010",
+      "SchoolName": "FOCUS Homeschool"
+    },
+    {
+      "DistrictID": "11",
+      "DistrictName": "Copper River Schools",
+      "SchoolID": "110060",
+      "SchoolName": "Glennallen Elementary"
+    },
+    {
+      "DistrictID": "11",
+      "DistrictName": "Copper River Schools",
+      "SchoolID": "110070",
+      "SchoolName": "Glennallen Jr/Sr High School"
+    },
+    {
+      "DistrictID": "11",
+      "DistrictName": "Copper River Schools",
+      "SchoolID": "110100",
+      "SchoolName": "Kenny Lake School"
+    },
+    {
+      "DistrictID": "11",
+      "DistrictName": "Copper River Schools",
+      "SchoolID": "110110",
+      "SchoolName": "Slana School"
+    },
+    {
+      "DistrictID": "11",
+      "DistrictName": "Copper River Schools",
+      "SchoolID": "118010",
+      "SchoolName": "Upstream Learning Correspondence"
+    },
+    {
+      "DistrictID": "12",
+      "DistrictName": "Cordova City Schools",
+      "SchoolID": "120010",
+      "SchoolName": "Cordova Jr/Sr High School"
+    },
+    {
+      "DistrictID": "12",
+      "DistrictName": "Cordova City Schools",
+      "SchoolID": "120020",
+      "SchoolName": "Mt. Eccles Elementary"
+    },
+    {
+      "DistrictID": "12",
+      "DistrictName": "Cordova City Schools",
+      "SchoolID": "128010",
+      "SchoolName": "Cordova School District Innovative Learning"
+    },
+    {
+      "DistrictID": "13",
+      "DistrictName": "Craig City Schools",
+      "SchoolID": "130010",
+      "SchoolName": "Craig High School"
+    },
+    {
+      "DistrictID": "13",
+      "DistrictName": "Craig City Schools",
+      "SchoolID": "130020",
+      "SchoolName": "Craig Elementary"
+    },
+    {
+      "DistrictID": "13",
+      "DistrictName": "Craig City Schools",
+      "SchoolID": "130030",
+      "SchoolName": "Craig Middle School"
+    },
+    {
+      "DistrictID": "13",
+      "DistrictName": "Craig City Schools",
+      "SchoolID": "138010",
+      "SchoolName": "PACE Correspondence"
+    },
+    {
+      "DistrictID": "14",
+      "DistrictName": "Delta/Greely Schools",
+      "SchoolID": "140020",
+      "SchoolName": "Delta Junction Elementary"
+    },
+    {
+      "DistrictID": "14",
+      "DistrictName": "Delta/Greely Schools",
+      "SchoolID": "140030",
+      "SchoolName": "Delta Junction Senior High School"
+    },
+    {
+      "DistrictID": "14",
+      "DistrictName": "Delta/Greely Schools",
+      "SchoolID": "140090",
+      "SchoolName": "Gerstle River School"
+    },
+    {
+      "DistrictID": "14",
+      "DistrictName": "Delta/Greely Schools",
+      "SchoolID": "140100",
+      "SchoolName": "Delta Junction Junior High School"
+    },
+    {
+      "DistrictID": "14",
+      "DistrictName": "Delta/Greely Schools",
+      "SchoolID": "148010",
+      "SchoolName": "Alaska Homeschool"
+    },
+    {
+      "DistrictID": "15",
+      "DistrictName": "Dillingham City Schools",
+      "SchoolID": "150010",
+      "SchoolName": "Dillingham Elementary"
+    },
+    {
+      "DistrictID": "15",
+      "DistrictName": "Dillingham City Schools",
+      "SchoolID": "150020",
+      "SchoolName": "Dillingham Middle/High School"
+    },
+    {
+      "DistrictID": "16",
+      "DistrictName": "Fairbanks North Star Borough Schools",
+      "SchoolID": "160010",
+      "SchoolName": "Pearl Creek Elementary"
+    },
+    {
+      "DistrictID": "16",
+      "DistrictName": "Fairbanks North Star Borough Schools",
+      "SchoolID": "160020",
+      "SchoolName": "Barnette Magnet School"
+    },
+    {
+      "DistrictID": "16",
+      "DistrictName": "Fairbanks North Star Borough Schools",
+      "SchoolID": "160050",
+      "SchoolName": "Denali Elementary"
+    },
+    {
+      "DistrictID": "16",
+      "DistrictName": "Fairbanks North Star Borough Schools",
+      "SchoolID": "160060",
+      "SchoolName": "Lathrop High School"
+    },
+    {
+      "DistrictID": "16",
+      "DistrictName": "Fairbanks North Star Borough Schools",
+      "SchoolID": "160070",
+      "SchoolName": "Weller Elementary"
+    },
+    {
+      "DistrictID": "16",
+      "DistrictName": "Fairbanks North Star Borough Schools",
+      "SchoolID": "160080",
+      "SchoolName": "Anderson Elementary"
+    },
+    {
+      "DistrictID": "16",
+      "DistrictName": "Fairbanks North Star Borough Schools",
+      "SchoolID": "160090",
+      "SchoolName": "Ben Eielson Jr/Sr High School"
+    },
+    {
+      "DistrictID": "16",
+      "DistrictName": "Fairbanks North Star Borough Schools",
+      "SchoolID": "160130",
+      "SchoolName": "North Pole High School"
+    },
+    {
+      "DistrictID": "16",
+      "DistrictName": "Fairbanks North Star Borough Schools",
+      "SchoolID": "160170",
+      "SchoolName": "Midnight Sun Elementary School"
+    },
+    {
+      "DistrictID": "16",
+      "DistrictName": "Fairbanks North Star Borough Schools",
+      "SchoolID": "160180",
+      "SchoolName": "Hunter Elementary"
+    },
+    {
+      "DistrictID": "16",
+      "DistrictName": "Fairbanks North Star Borough Schools",
+      "SchoolID": "160200",
+      "SchoolName": "Joy Elementary"
+    },
+    {
+      "DistrictID": "16",
+      "DistrictName": "Fairbanks North Star Borough Schools",
+      "SchoolID": "160210",
+      "SchoolName": "West Valley High School"
+    },
+    {
+      "DistrictID": "16",
+      "DistrictName": "Fairbanks North Star Borough Schools",
+      "SchoolID": "160220",
+      "SchoolName": "Tanana Middle School"
+    },
+    {
+      "DistrictID": "16",
+      "DistrictName": "Fairbanks North Star Borough Schools",
+      "SchoolID": "160230",
+      "SchoolName": "Nordale Elementary"
+    },
+    {
+      "DistrictID": "16",
+      "DistrictName": "Fairbanks North Star Borough Schools",
+      "SchoolID": "160240",
+      "SchoolName": "North Pole Elementary"
+    },
+    {
+      "DistrictID": "16",
+      "DistrictName": "Fairbanks North Star Borough Schools",
+      "SchoolID": "160250",
+      "SchoolName": "North Pole Middle School"
+    },
+    {
+      "DistrictID": "16",
+      "DistrictName": "Fairbanks North Star Borough Schools",
+      "SchoolID": "160260",
+      "SchoolName": "Ryan Middle School"
+    },
+    {
+      "DistrictID": "16",
+      "DistrictName": "Fairbanks North Star Borough Schools",
+      "SchoolID": "160270",
+      "SchoolName": "Salcha Elementary"
+    },
+    {
+      "DistrictID": "16",
+      "DistrictName": "Fairbanks North Star Borough Schools",
+      "SchoolID": "160280",
+      "SchoolName": "Two Rivers School"
+    },
+    {
+      "DistrictID": "16",
+      "DistrictName": "Fairbanks North Star Borough Schools",
+      "SchoolID": "160290",
+      "SchoolName": "University Park Elementary"
+    },
+    {
+      "DistrictID": "16",
+      "DistrictName": "Fairbanks North Star Borough Schools",
+      "SchoolID": "160300",
+      "SchoolName": "Woodriver Elementary"
+    },
+    {
+      "DistrictID": "16",
+      "DistrictName": "Fairbanks North Star Borough Schools",
+      "SchoolID": "160340",
+      "SchoolName": "Ticasuk Brown Elementary"
+    },
+    {
+      "DistrictID": "16",
+      "DistrictName": "Fairbanks North Star Borough Schools",
+      "SchoolID": "160350",
+      "SchoolName": "Ladd Elementary"
+    },
+    {
+      "DistrictID": "16",
+      "DistrictName": "Fairbanks North Star Borough Schools",
+      "SchoolID": "160360",
+      "SchoolName": "Arctic Light Elementary"
+    },
+    {
+      "DistrictID": "16",
+      "DistrictName": "Fairbanks North Star Borough Schools",
+      "SchoolID": "160380",
+      "SchoolName": "Anne Wien Elementary"
+    },
+    {
+      "DistrictID": "16",
+      "DistrictName": "Fairbanks North Star Borough Schools",
+      "SchoolID": "160400",
+      "SchoolName": "Crawford Elementary"
+    },
+    {
+      "DistrictID": "16",
+      "DistrictName": "Fairbanks North Star Borough Schools",
+      "SchoolID": "160410",
+      "SchoolName": "Randy Smith Middle School"
+    },
+    {
+      "DistrictID": "16",
+      "DistrictName": "Fairbanks North Star Borough Schools",
+      "SchoolID": "167010",
+      "SchoolName": "Alternative Learning Systems"
+    },
+    {
+      "DistrictID": "16",
+      "DistrictName": "Fairbanks North Star Borough Schools",
+      "SchoolID": "167020",
+      "SchoolName": "Golden Heart Academy"
+    },
+    {
+      "DistrictID": "16",
+      "DistrictName": "Fairbanks North Star Borough Schools",
+      "SchoolID": "167030",
+      "SchoolName": "Hutchison High School"
+    },
+    {
+      "DistrictID": "16",
+      "DistrictName": "Fairbanks North Star Borough Schools",
+      "SchoolID": "168010",
+      "SchoolName": "Fairbanks B.E.S.T."
+    },
+    {
+      "DistrictID": "16",
+      "DistrictName": "Fairbanks North Star Borough Schools",
+      "SchoolID": "169010",
+      "SchoolName": "Chinook Montessori Charter School"
+    },
+    {
+      "DistrictID": "16",
+      "DistrictName": "Fairbanks North Star Borough Schools",
+      "SchoolID": "169040",
+      "SchoolName": "Effie Kokrine Charter School"
+    },
+    {
+      "DistrictID": "16",
+      "DistrictName": "Fairbanks North Star Borough Schools",
+      "SchoolID": "169050",
+      "SchoolName": "Watershed Charter School"
+    },
+    {
+      "DistrictID": "16",
+      "DistrictName": "Fairbanks North Star Borough Schools",
+      "SchoolID": "169060",
+      "SchoolName": "Boreal Sun Charter School"
+    },
+    {
+      "DistrictID": "16",
+      "DistrictName": "Fairbanks North Star Borough Schools",
+      "SchoolID": "169070",
+      "SchoolName": "Discovery Peak Charter School"
+    },
+    {
+      "DistrictID": "17",
+      "DistrictName": "Galena City Schools",
+      "SchoolID": "170010",
+      "SchoolName": "Sidney C. Huntington Elementary"
+    },
+    {
+      "DistrictID": "17",
+      "DistrictName": "Galena City Schools",
+      "SchoolID": "170020",
+      "SchoolName": "Sidney C. Huntington Jr/Sr High School"
+    },
+    {
+      "DistrictID": "17",
+      "DistrictName": "Galena City Schools",
+      "SchoolID": "178010",
+      "SchoolName": "Interior Distance Education of Alaska (IDEA)"
+    },
+    {
+      "DistrictID": "17",
+      "DistrictName": "Galena City Schools",
+      "SchoolID": "179010",
+      "SchoolName": "Galena Interior Learning Academy (GILA)"
+    },
+    {
+      "DistrictID": "18",
+      "DistrictName": "Haines Borough Schools",
+      "SchoolID": "180010",
+      "SchoolName": "Haines Elementary"
+    },
+    {
+      "DistrictID": "18",
+      "DistrictName": "Haines Borough Schools",
+      "SchoolID": "180020",
+      "SchoolName": "Haines High School"
+    },
+    {
+      "DistrictID": "18",
+      "DistrictName": "Haines Borough Schools",
+      "SchoolID": "188010",
+      "SchoolName": "Haines Home School"
+    },
+    {
+      "DistrictID": "19",
+      "DistrictName": "Hoonah City Schools",
+      "SchoolID": "190010",
+      "SchoolName": "Hoonah City School"
+    },
+    {
+      "DistrictID": "20",
+      "DistrictName": "Hydaburg City Schools",
+      "SchoolID": "200010",
+      "SchoolName": "Hydaburg School"
+    },
+    {
+      "DistrictID": "20",
+      "DistrictName": "Hydaburg City Schools",
+      "SchoolID": "208010",
+      "SchoolName": "Totem Correspondence School"
+    },
+    {
+      "DistrictID": "21",
+      "DistrictName": "Iditarod Area Schools",
+      "SchoolID": "210010",
+      "SchoolName": "Blackwell School"
+    },
+    {
+      "DistrictID": "21",
+      "DistrictName": "Iditarod Area Schools",
+      "SchoolID": "210030",
+      "SchoolName": "Jeffery A. Bader Memorial School"
+    },
+    {
+      "DistrictID": "21",
+      "DistrictName": "Iditarod Area Schools",
+      "SchoolID": "210050",
+      "SchoolName": "Takotna Community School"
+    },
+    {
+      "DistrictID": "21",
+      "DistrictName": "Iditarod Area Schools",
+      "SchoolID": "210060",
+      "SchoolName": "McGrath School"
+    },
+    {
+      "DistrictID": "21",
+      "DistrictName": "Iditarod Area Schools",
+      "SchoolID": "210080",
+      "SchoolName": "Top of the Kuskokwim School"
+    },
+    {
+      "DistrictID": "21",
+      "DistrictName": "Iditarod Area Schools",
+      "SchoolID": "210090",
+      "SchoolName": "Innoko River School"
+    },
+    {
+      "DistrictID": "21",
+      "DistrictName": "Iditarod Area Schools",
+      "SchoolID": "210120",
+      "SchoolName": "David Louis Memorial School"
+    },
+    {
+      "DistrictID": "21",
+      "DistrictName": "Iditarod Area Schools",
+      "SchoolID": "218010",
+      "SchoolName": "Distance Learning/Corresp. Ctr."
+    },
+    {
+      "DistrictID": "22",
+      "DistrictName": "Juneau Borough Schools",
+      "SchoolID": "220010",
+      "SchoolName": "Auke Bay Elementary"
+    },
+    {
+      "DistrictID": "22",
+      "DistrictName": "Juneau Borough Schools",
+      "SchoolID": "220020",
+      "SchoolName": "Dzantik'i Heeni Middle School"
+    },
+    {
+      "DistrictID": "22",
+      "DistrictName": "Juneau Borough Schools",
+      "SchoolID": "220030",
+      "SchoolName": "Floyd Dryden Middle School"
+    },
+    {
+      "DistrictID": "22",
+      "DistrictName": "Juneau Borough Schools",
+      "SchoolID": "220040",
+      "SchoolName": "Sayéik: Gastineau Community School"
+    },
+    {
+      "DistrictID": "22",
+      "DistrictName": "Juneau Borough Schools",
+      "SchoolID": "220050",
+      "SchoolName": "Sít' Eetí Shaanáx̱ - Glacier Valley Elementary"
+    },
+    {
+      "DistrictID": "22",
+      "DistrictName": "Juneau Borough Schools",
+      "SchoolID": "220060",
+      "SchoolName": "Harborview Elementary"
+    },
+    {
+      "DistrictID": "22",
+      "DistrictName": "Juneau Borough Schools",
+      "SchoolID": "220070",
+      "SchoolName": "Juneau-Douglas High School: Yadaa.at Kalé"
+    },
+    {
+      "DistrictID": "22",
+      "DistrictName": "Juneau Borough Schools",
+      "SchoolID": "220100",
+      "SchoolName": "Riverbend Elementary"
+    },
+    {
+      "DistrictID": "22",
+      "DistrictName": "Juneau Borough Schools",
+      "SchoolID": "220140",
+      "SchoolName": "Mendenhall River Community School"
+    },
+    {
+      "DistrictID": "22",
+      "DistrictName": "Juneau Borough Schools",
+      "SchoolID": "220150",
+      "SchoolName": "Thunder Mountain High School"
+    },
+    {
+      "DistrictID": "22",
+      "DistrictName": "Juneau Borough Schools",
+      "SchoolID": "227010",
+      "SchoolName": "Yaakoosge Daakahidi Alt. H.S."
+    },
+    {
+      "DistrictID": "22",
+      "DistrictName": "Juneau Borough Schools",
+      "SchoolID": "227020",
+      "SchoolName": "Johnson Youth Center"
+    },
+    {
+      "DistrictID": "22",
+      "DistrictName": "Juneau Borough Schools",
+      "SchoolID": "227030",
+      "SchoolName": "Montessori Borealis Public Alternative School"
+    },
+    {
+      "DistrictID": "22",
+      "DistrictName": "Juneau Borough Schools",
+      "SchoolID": "228010",
+      "SchoolName": "HomeBRIDGE"
+    },
+    {
+      "DistrictID": "22",
+      "DistrictName": "Juneau Borough Schools",
+      "SchoolID": "229010",
+      "SchoolName": "Juneau Community Charter School"
+    },
+    {
+      "DistrictID": "23",
+      "DistrictName": "Kake City Schools",
+      "SchoolID": "230010",
+      "SchoolName": "Kake Elementary & High School"
+    },
+    {
+      "DistrictID": "24",
+      "DistrictName": "Kenai Peninsula Borough Schools",
+      "SchoolID": "240010",
+      "SchoolName": "Hope School"
+    },
+    {
+      "DistrictID": "24",
+      "DistrictName": "Kenai Peninsula Borough Schools",
+      "SchoolID": "240020",
+      "SchoolName": "Chapman School"
+    },
+    {
+      "DistrictID": "24",
+      "DistrictName": "Kenai Peninsula Borough Schools",
+      "SchoolID": "240030",
+      "SchoolName": "McNeil Canyon Elementary"
+    },
+    {
+      "DistrictID": "24",
+      "DistrictName": "Kenai Peninsula Borough Schools",
+      "SchoolID": "240040",
+      "SchoolName": "Cooper Landing School"
+    },
+    {
+      "DistrictID": "24",
+      "DistrictName": "Kenai Peninsula Borough Schools",
+      "SchoolID": "240050",
+      "SchoolName": "Paul Banks Elementary"
+    },
+    {
+      "DistrictID": "24",
+      "DistrictName": "Kenai Peninsula Borough Schools",
+      "SchoolID": "240060",
+      "SchoolName": "Nanwalek School"
+    },
+    {
+      "DistrictID": "24",
+      "DistrictName": "Kenai Peninsula Borough Schools",
+      "SchoolID": "240070",
+      "SchoolName": "Razdolna School"
+    },
+    {
+      "DistrictID": "24",
+      "DistrictName": "Kenai Peninsula Borough Schools",
+      "SchoolID": "240080",
+      "SchoolName": "Homer High School"
+    },
+    {
+      "DistrictID": "24",
+      "DistrictName": "Kenai Peninsula Borough Schools",
+      "SchoolID": "240090",
+      "SchoolName": "Kenai Central High School"
+    },
+    {
+      "DistrictID": "24",
+      "DistrictName": "Kenai Peninsula Borough Schools",
+      "SchoolID": "240110",
+      "SchoolName": "Kenai Middle School"
+    },
+    {
+      "DistrictID": "24",
+      "DistrictName": "Kenai Peninsula Borough Schools",
+      "SchoolID": "240120",
+      "SchoolName": "Moose Pass School"
+    },
+    {
+      "DistrictID": "24",
+      "DistrictName": "Kenai Peninsula Borough Schools",
+      "SchoolID": "240130",
+      "SchoolName": "Nikolaevsk School"
+    },
+    {
+      "DistrictID": "24",
+      "DistrictName": "Kenai Peninsula Borough Schools",
+      "SchoolID": "240140",
+      "SchoolName": "Kalifornsky Beach Elementary"
+    },
+    {
+      "DistrictID": "24",
+      "DistrictName": "Kenai Peninsula Borough Schools",
+      "SchoolID": "240150",
+      "SchoolName": "Ninilchik School"
+    },
+    {
+      "DistrictID": "24",
+      "DistrictName": "Kenai Peninsula Borough Schools",
+      "SchoolID": "240180",
+      "SchoolName": "Port Graham School"
+    },
+    {
+      "DistrictID": "24",
+      "DistrictName": "Kenai Peninsula Borough Schools",
+      "SchoolID": "240190",
+      "SchoolName": "William H. Seward Elementary School"
+    },
+    {
+      "DistrictID": "24",
+      "DistrictName": "Kenai Peninsula Borough Schools",
+      "SchoolID": "240200",
+      "SchoolName": "Seward High School"
+    },
+    {
+      "DistrictID": "24",
+      "DistrictName": "Kenai Peninsula Borough Schools",
+      "SchoolID": "240210",
+      "SchoolName": "Soldotna Elementary"
+    },
+    {
+      "DistrictID": "24",
+      "DistrictName": "Kenai Peninsula Borough Schools",
+      "SchoolID": "240220",
+      "SchoolName": "Skyview Middle School"
+    },
+    {
+      "DistrictID": "24",
+      "DistrictName": "Kenai Peninsula Borough Schools",
+      "SchoolID": "240230",
+      "SchoolName": "Sterling Elementary"
+    },
+    {
+      "DistrictID": "24",
+      "DistrictName": "Kenai Peninsula Borough Schools",
+      "SchoolID": "240250",
+      "SchoolName": "Susan B English School"
+    },
+    {
+      "DistrictID": "24",
+      "DistrictName": "Kenai Peninsula Borough Schools",
+      "SchoolID": "240270",
+      "SchoolName": "Tustumena Elementary"
+    },
+    {
+      "DistrictID": "24",
+      "DistrictName": "Kenai Peninsula Borough Schools",
+      "SchoolID": "240280",
+      "SchoolName": "Tebughna School"
+    },
+    {
+      "DistrictID": "24",
+      "DistrictName": "Kenai Peninsula Borough Schools",
+      "SchoolID": "240300",
+      "SchoolName": "Soldotna High School"
+    },
+    {
+      "DistrictID": "24",
+      "DistrictName": "Kenai Peninsula Borough Schools",
+      "SchoolID": "240310",
+      "SchoolName": "Redoubt Elementary"
+    },
+    {
+      "DistrictID": "24",
+      "DistrictName": "Kenai Peninsula Borough Schools",
+      "SchoolID": "240320",
+      "SchoolName": "Homer Middle School"
+    },
+    {
+      "DistrictID": "24",
+      "DistrictName": "Kenai Peninsula Borough Schools",
+      "SchoolID": "240350",
+      "SchoolName": "Nikiski North Star Elementary"
+    },
+    {
+      "DistrictID": "24",
+      "DistrictName": "Kenai Peninsula Borough Schools",
+      "SchoolID": "240370",
+      "SchoolName": "Mt. View Elementary"
+    },
+    {
+      "DistrictID": "24",
+      "DistrictName": "Kenai Peninsula Borough Schools",
+      "SchoolID": "240380",
+      "SchoolName": "Voznesenka School"
+    },
+    {
+      "DistrictID": "24",
+      "DistrictName": "Kenai Peninsula Borough Schools",
+      "SchoolID": "240390",
+      "SchoolName": "Nikiski Middle/Senior High School"
+    },
+    {
+      "DistrictID": "24",
+      "DistrictName": "Kenai Peninsula Borough Schools",
+      "SchoolID": "240420",
+      "SchoolName": "Kachemak Selo School"
+    },
+    {
+      "DistrictID": "24",
+      "DistrictName": "Kenai Peninsula Borough Schools",
+      "SchoolID": "240490",
+      "SchoolName": "West Homer Elementary"
+    },
+    {
+      "DistrictID": "24",
+      "DistrictName": "Kenai Peninsula Borough Schools",
+      "SchoolID": "240500",
+      "SchoolName": "Seward Middle School"
+    },
+    {
+      "DistrictID": "24",
+      "DistrictName": "Kenai Peninsula Borough Schools",
+      "SchoolID": "247010",
+      "SchoolName": "Connections"
+    },
+    {
+      "DistrictID": "24",
+      "DistrictName": "Kenai Peninsula Borough Schools",
+      "SchoolID": "247020",
+      "SchoolName": "Homer Flex School"
+    },
+    {
+      "DistrictID": "24",
+      "DistrictName": "Kenai Peninsula Borough Schools",
+      "SchoolID": "247030",
+      "SchoolName": "Kenai Alternative High School"
+    },
+    {
+      "DistrictID": "24",
+      "DistrictName": "Kenai Peninsula Borough Schools",
+      "SchoolID": "247050",
+      "SchoolName": "Marathon School"
+    },
+    {
+      "DistrictID": "24",
+      "DistrictName": "Kenai Peninsula Borough Schools",
+      "SchoolID": "247060",
+      "SchoolName": "River City Academy"
+    },
+    {
+      "DistrictID": "24",
+      "DistrictName": "Kenai Peninsula Borough Schools",
+      "SchoolID": "249010",
+      "SchoolName": "Aurora Borealis Charter School"
+    },
+    {
+      "DistrictID": "24",
+      "DistrictName": "Kenai Peninsula Borough Schools",
+      "SchoolID": "249030",
+      "SchoolName": "Fireweed Academy"
+    },
+    {
+      "DistrictID": "24",
+      "DistrictName": "Kenai Peninsula Borough Schools",
+      "SchoolID": "249040",
+      "SchoolName": "Soldotna Montessori Charter School"
+    },
+    {
+      "DistrictID": "24",
+      "DistrictName": "Kenai Peninsula Borough Schools",
+      "SchoolID": "249050",
+      "SchoolName": "Kaleidoscope School of Arts & Science"
+    },
+    {
+      "DistrictID": "25",
+      "DistrictName": "Ketchikan Gateway Borough Schools",
+      "SchoolID": "250010",
+      "SchoolName": "Houghtaling Elementary"
+    },
+    {
+      "DistrictID": "25",
+      "DistrictName": "Ketchikan Gateway Borough Schools",
+      "SchoolID": "250020",
+      "SchoolName": "Ketchikan High School"
+    },
+    {
+      "DistrictID": "25",
+      "DistrictName": "Ketchikan Gateway Borough Schools",
+      "SchoolID": "250040",
+      "SchoolName": "Schoenbar Middle School"
+    },
+    {
+      "DistrictID": "25",
+      "DistrictName": "Ketchikan Gateway Borough Schools",
+      "SchoolID": "250050",
+      "SchoolName": "Fawn Mountain Elementary"
+    },
+    {
+      "DistrictID": "25",
+      "DistrictName": "Ketchikan Gateway Borough Schools",
+      "SchoolID": "250100",
+      "SchoolName": "Point Higgins School"
+    },
+    {
+      "DistrictID": "25",
+      "DistrictName": "Ketchikan Gateway Borough Schools",
+      "SchoolID": "257010",
+      "SchoolName": "Revilla Jr/Sr High School"
+    },
+    {
+      "DistrictID": "25",
+      "DistrictName": "Ketchikan Gateway Borough Schools",
+      "SchoolID": "258010",
+      "SchoolName": "Fast Track"
+    },
+    {
+      "DistrictID": "25",
+      "DistrictName": "Ketchikan Gateway Borough Schools",
+      "SchoolID": "259010",
+      "SchoolName": "Ketchikan Charter School"
+    },
+    {
+      "DistrictID": "25",
+      "DistrictName": "Ketchikan Gateway Borough Schools",
+      "SchoolID": "259020",
+      "SchoolName": "Tongass School of Arts and Sciences Charter School"
+    },
+    {
+      "DistrictID": "27",
+      "DistrictName": "Klawock City Schools",
+      "SchoolID": "270010",
+      "SchoolName": "Klawock City School"
+    },
+    {
+      "DistrictID": "27",
+      "DistrictName": "Klawock City Schools",
+      "SchoolID": "278010",
+      "SchoolName": "Klawock Correspondence"
+    },
+    {
+      "DistrictID": "28",
+      "DistrictName": "Kodiak Island Borough Schools",
+      "SchoolID": "280010",
+      "SchoolName": "Akhiok School"
+    },
+    {
+      "DistrictID": "28",
+      "DistrictName": "Kodiak Island Borough Schools",
+      "SchoolID": "280020",
+      "SchoolName": "Chiniak School"
+    },
+    {
+      "DistrictID": "28",
+      "DistrictName": "Kodiak Island Borough Schools",
+      "SchoolID": "280030",
+      "SchoolName": "East Elementary"
+    },
+    {
+      "DistrictID": "28",
+      "DistrictName": "Kodiak Island Borough Schools",
+      "SchoolID": "280050",
+      "SchoolName": "Kodiak High School"
+    },
+    {
+      "DistrictID": "28",
+      "DistrictName": "Kodiak Island Borough Schools",
+      "SchoolID": "280060",
+      "SchoolName": "Peterson Elementary"
+    },
+    {
+      "DistrictID": "28",
+      "DistrictName": "Kodiak Island Borough Schools",
+      "SchoolID": "280070",
+      "SchoolName": "Kodiak Middle School"
+    },
+    {
+      "DistrictID": "28",
+      "DistrictName": "Kodiak Island Borough Schools",
+      "SchoolID": "280090",
+      "SchoolName": "Main Elementary"
+    },
+    {
+      "DistrictID": "28",
+      "DistrictName": "Kodiak Island Borough Schools",
+      "SchoolID": "280100",
+      "SchoolName": "Old Harbor School"
+    },
+    {
+      "DistrictID": "28",
+      "DistrictName": "Kodiak Island Borough Schools",
+      "SchoolID": "280110",
+      "SchoolName": "Ouzinkie School"
+    },
+    {
+      "DistrictID": "28",
+      "DistrictName": "Kodiak Island Borough Schools",
+      "SchoolID": "280120",
+      "SchoolName": "Port Lions School"
+    },
+    {
+      "DistrictID": "28",
+      "DistrictName": "Kodiak Island Borough Schools",
+      "SchoolID": "280180",
+      "SchoolName": "North Star Elementary"
+    },
+    {
+      "DistrictID": "28",
+      "DistrictName": "Kodiak Island Borough Schools",
+      "SchoolID": "288010",
+      "SchoolName": "AKTEACH"
+    },
+    {
+      "DistrictID": "29",
+      "DistrictName": "Kuspuk Schools",
+      "SchoolID": "290010",
+      "SchoolName": "Auntie Mary Nicoli Elementary"
+    },
+    {
+      "DistrictID": "29",
+      "DistrictName": "Kuspuk Schools",
+      "SchoolID": "290011",
+      "SchoolName": "Aniak Jr/Sr High School"
+    },
+    {
+      "DistrictID": "29",
+      "DistrictName": "Kuspuk Schools",
+      "SchoolID": "290020",
+      "SchoolName": "Crow Village Sam School"
+    },
+    {
+      "DistrictID": "29",
+      "DistrictName": "Kuspuk Schools",
+      "SchoolID": "290030",
+      "SchoolName": "Johnnie John Sr. School"
+    },
+    {
+      "DistrictID": "29",
+      "DistrictName": "Kuspuk Schools",
+      "SchoolID": "290040",
+      "SchoolName": "Joseph S. & Olinga Gregory Elementary"
+    },
+    {
+      "DistrictID": "29",
+      "DistrictName": "Kuspuk Schools",
+      "SchoolID": "290050",
+      "SchoolName": "Zackar Levi Elementary"
+    },
+    {
+      "DistrictID": "29",
+      "DistrictName": "Kuspuk Schools",
+      "SchoolID": "290070",
+      "SchoolName": "Jack Egnaty Sr. School"
+    },
+    {
+      "DistrictID": "29",
+      "DistrictName": "Kuspuk Schools",
+      "SchoolID": "290080",
+      "SchoolName": "Gusty Michael School"
+    },
+    {
+      "DistrictID": "29",
+      "DistrictName": "Kuspuk Schools",
+      "SchoolID": "290090",
+      "SchoolName": "George Morgan Sr. H.S."
+    },
+    {
+      "DistrictID": "30",
+      "DistrictName": "Lake and Peninsula Borough Schools",
+      "SchoolID": "300010",
+      "SchoolName": "Chignik Bay School"
+    },
+    {
+      "DistrictID": "30",
+      "DistrictName": "Lake and Peninsula Borough Schools",
+      "SchoolID": "300020",
+      "SchoolName": "Chignik Lagoon School"
+    },
+    {
+      "DistrictID": "30",
+      "DistrictName": "Lake and Peninsula Borough Schools",
+      "SchoolID": "300030",
+      "SchoolName": "Chignik Lake School"
+    },
+    {
+      "DistrictID": "30",
+      "DistrictName": "Lake and Peninsula Borough Schools",
+      "SchoolID": "300050",
+      "SchoolName": "Igiugig School"
+    },
+    {
+      "DistrictID": "30",
+      "DistrictName": "Lake and Peninsula Borough Schools",
+      "SchoolID": "300080",
+      "SchoolName": "Kokhanok School"
+    },
+    {
+      "DistrictID": "30",
+      "DistrictName": "Lake and Peninsula Borough Schools",
+      "SchoolID": "300090",
+      "SchoolName": "Newhalen School"
+    },
+    {
+      "DistrictID": "30",
+      "DistrictName": "Lake and Peninsula Borough Schools",
+      "SchoolID": "300100",
+      "SchoolName": "Nondalton School"
+    },
+    {
+      "DistrictID": "30",
+      "DistrictName": "Lake and Peninsula Borough Schools",
+      "SchoolID": "300110",
+      "SchoolName": "Tanalian School"
+    },
+    {
+      "DistrictID": "30",
+      "DistrictName": "Lake and Peninsula Borough Schools",
+      "SchoolID": "300120",
+      "SchoolName": "Perryville School"
+    },
+    {
+      "DistrictID": "30",
+      "DistrictName": "Lake and Peninsula Borough Schools",
+      "SchoolID": "300130",
+      "SchoolName": "Pilot Point School"
+    },
+    {
+      "DistrictID": "30",
+      "DistrictName": "Lake and Peninsula Borough Schools",
+      "SchoolID": "300140",
+      "SchoolName": "Meshik School"
+    },
+    {
+      "DistrictID": "30",
+      "DistrictName": "Lake and Peninsula Borough Schools",
+      "SchoolID": "300220",
+      "SchoolName": "Levelock School"
+    },
+    {
+      "DistrictID": "30",
+      "DistrictName": "Lake and Peninsula Borough Schools",
+      "SchoolID": "308010",
+      "SchoolName": "Lakeview Home School"
+    },
+    {
+      "DistrictID": "31",
+      "DistrictName": "Lower Kuskokwim Schools",
+      "SchoolID": "310030",
+      "SchoolName": "Joann A. Alexie Memorial School"
+    },
+    {
+      "DistrictID": "31",
+      "DistrictName": "Lower Kuskokwim Schools",
+      "SchoolID": "310040",
+      "SchoolName": "Negtemiut Elitnaurviat School"
+    },
+    {
+      "DistrictID": "31",
+      "DistrictName": "Lower Kuskokwim Schools",
+      "SchoolID": "310050",
+      "SchoolName": "Mikelnguut Elitnaurviat"
+    },
+    {
+      "DistrictID": "31",
+      "DistrictName": "Lower Kuskokwim Schools",
+      "SchoolID": "310060",
+      "SchoolName": "Gladys Jung Elementary"
+    },
+    {
+      "DistrictID": "31",
+      "DistrictName": "Lower Kuskokwim Schools",
+      "SchoolID": "310070",
+      "SchoolName": "Bethel Regional High School"
+    },
+    {
+      "DistrictID": "31",
+      "DistrictName": "Lower Kuskokwim Schools",
+      "SchoolID": "310080",
+      "SchoolName": "Chaputnguak School"
+    },
+    {
+      "DistrictID": "31",
+      "DistrictName": "Lower Kuskokwim Schools",
+      "SchoolID": "310090",
+      "SchoolName": "Eek School"
+    },
+    {
+      "DistrictID": "31",
+      "DistrictName": "Lower Kuskokwim Schools",
+      "SchoolID": "310100",
+      "SchoolName": "Rocky Mountain School"
+    },
+    {
+      "DistrictID": "31",
+      "DistrictName": "Lower Kuskokwim Schools",
+      "SchoolID": "310110",
+      "SchoolName": "Akula Elitnaurvik School"
+    },
+    {
+      "DistrictID": "31",
+      "DistrictName": "Lower Kuskokwim Schools",
+      "SchoolID": "310120",
+      "SchoolName": "Chief Paul Memorial School"
+    },
+    {
+      "DistrictID": "31",
+      "DistrictName": "Lower Kuskokwim Schools",
+      "SchoolID": "310130",
+      "SchoolName": "Ayagina'ar Elitnaurvik"
+    },
+    {
+      "DistrictID": "31",
+      "DistrictName": "Lower Kuskokwim Schools",
+      "SchoolID": "310140",
+      "SchoolName": "Ket'acik/Aapalluk Memorial School"
+    },
+    {
+      "DistrictID": "31",
+      "DistrictName": "Lower Kuskokwim Schools",
+      "SchoolID": "310150",
+      "SchoolName": "Kwigillingok School"
+    },
+    {
+      "DistrictID": "31",
+      "DistrictName": "Lower Kuskokwim Schools",
+      "SchoolID": "310160",
+      "SchoolName": "Nuniwarmiut School"
+    },
+    {
+      "DistrictID": "31",
+      "DistrictName": "Lower Kuskokwim Schools",
+      "SchoolID": "310170",
+      "SchoolName": "William Miller Memorial School"
+    },
+    {
+      "DistrictID": "31",
+      "DistrictName": "Lower Kuskokwim Schools",
+      "SchoolID": "310180",
+      "SchoolName": "Z. John Williams Memorial School"
+    },
+    {
+      "DistrictID": "31",
+      "DistrictName": "Lower Kuskokwim Schools",
+      "SchoolID": "310190",
+      "SchoolName": "Ayaprun School"
+    },
+    {
+      "DistrictID": "31",
+      "DistrictName": "Lower Kuskokwim Schools",
+      "SchoolID": "310200",
+      "SchoolName": "Lewis Angapak Memorial School"
+    },
+    {
+      "DistrictID": "31",
+      "DistrictName": "Lower Kuskokwim Schools",
+      "SchoolID": "310210",
+      "SchoolName": "Anna Tobeluk Memorial School"
+    },
+    {
+      "DistrictID": "31",
+      "DistrictName": "Lower Kuskokwim Schools",
+      "SchoolID": "310220",
+      "SchoolName": "Kuinerrarmiut Elitnaurviat"
+    },
+    {
+      "DistrictID": "31",
+      "DistrictName": "Lower Kuskokwim Schools",
+      "SchoolID": "310230",
+      "SchoolName": "Arviq School"
+    },
+    {
+      "DistrictID": "31",
+      "DistrictName": "Lower Kuskokwim Schools",
+      "SchoolID": "310240",
+      "SchoolName": "Akiuk Memorial School"
+    },
+    {
+      "DistrictID": "31",
+      "DistrictName": "Lower Kuskokwim Schools",
+      "SchoolID": "310250",
+      "SchoolName": "Nelson Island Area School"
+    },
+    {
+      "DistrictID": "31",
+      "DistrictName": "Lower Kuskokwim Schools",
+      "SchoolID": "310280",
+      "SchoolName": "Qugcuun Memorial School"
+    },
+    {
+      "DistrictID": "31",
+      "DistrictName": "Lower Kuskokwim Schools",
+      "SchoolID": "310290",
+      "SchoolName": "Mertarvik School"
+    },
+    {
+      "DistrictID": "31",
+      "DistrictName": "Lower Kuskokwim Schools",
+      "SchoolID": "310320",
+      "SchoolName": "Paul T. Albert Memorial School"
+    },
+    {
+      "DistrictID": "31",
+      "DistrictName": "Lower Kuskokwim Schools",
+      "SchoolID": "317010",
+      "SchoolName": "Kuskokwim Learning Academy"
+    },
+    {
+      "DistrictID": "31",
+      "DistrictName": "Lower Kuskokwim Schools",
+      "SchoolID": "317020",
+      "SchoolName": "Bethel Youth Facility"
+    },
+    {
+      "DistrictID": "31",
+      "DistrictName": "Lower Kuskokwim Schools",
+      "SchoolID": "319010",
+      "SchoolName": "Ayaprun Elitnaurvik"
+    },
+    {
+      "DistrictID": "32",
+      "DistrictName": "Lower Yukon Schools",
+      "SchoolID": "320010",
+      "SchoolName": "Alakanuk School"
+    },
+    {
+      "DistrictID": "32",
+      "DistrictName": "Lower Yukon Schools",
+      "SchoolID": "320040",
+      "SchoolName": "Emmonak School"
+    },
+    {
+      "DistrictID": "32",
+      "DistrictName": "Lower Yukon Schools",
+      "SchoolID": "320050",
+      "SchoolName": "Marshall School"
+    },
+    {
+      "DistrictID": "32",
+      "DistrictName": "Lower Yukon Schools",
+      "SchoolID": "320070",
+      "SchoolName": "Hooper Bay School"
+    },
+    {
+      "DistrictID": "32",
+      "DistrictName": "Lower Yukon Schools",
+      "SchoolID": "320080",
+      "SchoolName": "Kotlik School"
+    },
+    {
+      "DistrictID": "32",
+      "DistrictName": "Lower Yukon Schools",
+      "SchoolID": "320090",
+      "SchoolName": "Mountain Village School"
+    },
+    {
+      "DistrictID": "32",
+      "DistrictName": "Lower Yukon Schools",
+      "SchoolID": "320110",
+      "SchoolName": "Pilot Station School"
+    },
+    {
+      "DistrictID": "32",
+      "DistrictName": "Lower Yukon Schools",
+      "SchoolID": "320130",
+      "SchoolName": "Russian Mission School"
+    },
+    {
+      "DistrictID": "32",
+      "DistrictName": "Lower Yukon Schools",
+      "SchoolID": "320140",
+      "SchoolName": "Scammon Bay School"
+    },
+    {
+      "DistrictID": "32",
+      "DistrictName": "Lower Yukon Schools",
+      "SchoolID": "320150",
+      "SchoolName": "Nunam Iqua School"
+    },
+    {
+      "DistrictID": "32",
+      "DistrictName": "Lower Yukon Schools",
+      "SchoolID": "329010",
+      "SchoolName": "Hooper Bay Charter School"
+    },
+    {
+      "DistrictID": "33",
+      "DistrictName": "Mat-Su Borough Schools",
+      "SchoolID": "330020",
+      "SchoolName": "Palmer Middle School"
+    },
+    {
+      "DistrictID": "33",
+      "DistrictName": "Mat-Su Borough Schools",
+      "SchoolID": "330030",
+      "SchoolName": "Glacier View School"
+    },
+    {
+      "DistrictID": "33",
+      "DistrictName": "Mat-Su Borough Schools",
+      "SchoolID": "330040",
+      "SchoolName": "Iditarod Elementary"
+    },
+    {
+      "DistrictID": "33",
+      "DistrictName": "Mat-Su Borough Schools",
+      "SchoolID": "330050",
+      "SchoolName": "Palmer High School"
+    },
+    {
+      "DistrictID": "33",
+      "DistrictName": "Mat-Su Borough Schools",
+      "SchoolID": "330060",
+      "SchoolName": "Sherrod Elementary"
+    },
+    {
+      "DistrictID": "33",
+      "DistrictName": "Mat-Su Borough Schools",
+      "SchoolID": "330070",
+      "SchoolName": "Susitna Valley High"
+    },
+    {
+      "DistrictID": "33",
+      "DistrictName": "Mat-Su Borough Schools",
+      "SchoolID": "330080",
+      "SchoolName": "Swanson Elementary"
+    },
+    {
+      "DistrictID": "33",
+      "DistrictName": "Mat-Su Borough Schools",
+      "SchoolID": "330120",
+      "SchoolName": "Wasilla High School"
+    },
+    {
+      "DistrictID": "33",
+      "DistrictName": "Mat-Su Borough Schools",
+      "SchoolID": "330140",
+      "SchoolName": "Wasilla Middle School"
+    },
+    {
+      "DistrictID": "33",
+      "DistrictName": "Mat-Su Borough Schools",
+      "SchoolID": "330180",
+      "SchoolName": "Tanaina Elementary"
+    },
+    {
+      "DistrictID": "33",
+      "DistrictName": "Mat-Su Borough Schools",
+      "SchoolID": "330190",
+      "SchoolName": "Snowshoe Elementary"
+    },
+    {
+      "DistrictID": "33",
+      "DistrictName": "Mat-Su Borough Schools",
+      "SchoolID": "330250",
+      "SchoolName": "Houston High School"
+    },
+    {
+      "DistrictID": "33",
+      "DistrictName": "Mat-Su Borough Schools",
+      "SchoolID": "330260",
+      "SchoolName": "Colony Middle School"
+    },
+    {
+      "DistrictID": "33",
+      "DistrictName": "Mat-Su Borough Schools",
+      "SchoolID": "330270",
+      "SchoolName": "Colony High School"
+    },
+    {
+      "DistrictID": "33",
+      "DistrictName": "Mat-Su Borough Schools",
+      "SchoolID": "330280",
+      "SchoolName": "Cottonwood Creek Elementary"
+    },
+    {
+      "DistrictID": "33",
+      "DistrictName": "Mat-Su Borough Schools",
+      "SchoolID": "330290",
+      "SchoolName": "Finger Lake Elementary"
+    },
+    {
+      "DistrictID": "33",
+      "DistrictName": "Mat-Su Borough Schools",
+      "SchoolID": "330300",
+      "SchoolName": "Pioneer Peak Elementary"
+    },
+    {
+      "DistrictID": "33",
+      "DistrictName": "Mat-Su Borough Schools",
+      "SchoolID": "330320",
+      "SchoolName": "Willow Elementary"
+    },
+    {
+      "DistrictID": "33",
+      "DistrictName": "Mat-Su Borough Schools",
+      "SchoolID": "330330",
+      "SchoolName": "Trapper Creek Elementary"
+    },
+    {
+      "DistrictID": "33",
+      "DistrictName": "Mat-Su Borough Schools",
+      "SchoolID": "330340",
+      "SchoolName": "Talkeetna Elementary"
+    },
+    {
+      "DistrictID": "33",
+      "DistrictName": "Mat-Su Borough Schools",
+      "SchoolID": "330350",
+      "SchoolName": "Butte Elementary"
+    },
+    {
+      "DistrictID": "33",
+      "DistrictName": "Mat-Su Borough Schools",
+      "SchoolID": "330360",
+      "SchoolName": "Sutton Elementary"
+    },
+    {
+      "DistrictID": "33",
+      "DistrictName": "Mat-Su Borough Schools",
+      "SchoolID": "330370",
+      "SchoolName": "Beryozova School"
+    },
+    {
+      "DistrictID": "33",
+      "DistrictName": "Mat-Su Borough Schools",
+      "SchoolID": "330380",
+      "SchoolName": "Big Lake Elementary"
+    },
+    {
+      "DistrictID": "33",
+      "DistrictName": "Mat-Su Borough Schools",
+      "SchoolID": "330390",
+      "SchoolName": "Goose Bay Elementary"
+    },
+    {
+      "DistrictID": "33",
+      "DistrictName": "Mat-Su Borough Schools",
+      "SchoolID": "330420",
+      "SchoolName": "Meadow Lakes Elementary"
+    },
+    {
+      "DistrictID": "33",
+      "DistrictName": "Mat-Su Borough Schools",
+      "SchoolID": "330430",
+      "SchoolName": "Larson Elementary"
+    },
+    {
+      "DistrictID": "33",
+      "DistrictName": "Mat-Su Borough Schools",
+      "SchoolID": "330440",
+      "SchoolName": "Teeland Middle School"
+    },
+    {
+      "DistrictID": "33",
+      "DistrictName": "Mat-Su Borough Schools",
+      "SchoolID": "330450",
+      "SchoolName": "Houston Middle School"
+    },
+    {
+      "DistrictID": "33",
+      "DistrictName": "Mat-Su Borough Schools",
+      "SchoolID": "330500",
+      "SchoolName": "John Shaw Elementary"
+    },
+    {
+      "DistrictID": "33",
+      "DistrictName": "Mat-Su Borough Schools",
+      "SchoolID": "330510",
+      "SchoolName": "Knik Elementary School"
+    },
+    {
+      "DistrictID": "33",
+      "DistrictName": "Mat-Su Borough Schools",
+      "SchoolID": "330520",
+      "SchoolName": "Mat-Su Career & Tech Ed High School"
+    },
+    {
+      "DistrictID": "33",
+      "DistrictName": "Mat-Su Borough Schools",
+      "SchoolID": "330530",
+      "SchoolName": "Fred and Sara Machetanz Elementary School"
+    },
+    {
+      "DistrictID": "33",
+      "DistrictName": "Mat-Su Borough Schools",
+      "SchoolID": "330540",
+      "SchoolName": "Joe Redington Senior Jr/Sr High School"
+    },
+    {
+      "DistrictID": "33",
+      "DistrictName": "Mat-Su Borough Schools",
+      "SchoolID": "330550",
+      "SchoolName": "Dena’ina Elementary School"
+    },
+    {
+      "DistrictID": "33",
+      "DistrictName": "Mat-Su Borough Schools",
+      "SchoolID": "337010",
+      "SchoolName": "Burchell High School"
+    },
+    {
+      "DistrictID": "33",
+      "DistrictName": "Mat-Su Borough Schools",
+      "SchoolID": "337020",
+      "SchoolName": "Valley Pathways"
+    },
+    {
+      "DistrictID": "33",
+      "DistrictName": "Mat-Su Borough Schools",
+      "SchoolID": "337030",
+      "SchoolName": "Mat-Su Youth Facility"
+    },
+    {
+      "DistrictID": "33",
+      "DistrictName": "Mat-Su Borough Schools",
+      "SchoolID": "337050",
+      "SchoolName": "American Charter Academy"
+    },
+    {
+      "DistrictID": "33",
+      "DistrictName": "Mat-Su Borough Schools",
+      "SchoolID": "337060",
+      "SchoolName": "Mat-Su Day School"
+    },
+    {
+      "DistrictID": "33",
+      "DistrictName": "Mat-Su Borough Schools",
+      "SchoolID": "337070",
+      "SchoolName": "Mat-Su Middle College School"
+    },
+    {
+      "DistrictID": "33",
+      "DistrictName": "Mat-Su Borough Schools",
+      "SchoolID": "338010",
+      "SchoolName": "Mat-Su Central School"
+    },
+    {
+      "DistrictID": "33",
+      "DistrictName": "Mat-Su Borough Schools",
+      "SchoolID": "339010",
+      "SchoolName": "Academy Charter School"
+    },
+    {
+      "DistrictID": "33",
+      "DistrictName": "Mat-Su Borough Schools",
+      "SchoolID": "339020",
+      "SchoolName": "Midnight Sun Family Learning Center"
+    },
+    {
+      "DistrictID": "33",
+      "DistrictName": "Mat-Su Borough Schools",
+      "SchoolID": "339030",
+      "SchoolName": "Twindly Bridge Charter School"
+    },
+    {
+      "DistrictID": "33",
+      "DistrictName": "Mat-Su Borough Schools",
+      "SchoolID": "339040",
+      "SchoolName": "Fronteras Charter School"
+    },
+    {
+      "DistrictID": "33",
+      "DistrictName": "Mat-Su Borough Schools",
+      "SchoolID": "339050",
+      "SchoolName": "Birchtree Charter School"
+    },
+    {
+      "DistrictID": "34",
+      "DistrictName": "Nenana City Schools",
+      "SchoolID": "340010",
+      "SchoolName": "Nenana City School"
+    },
+    {
+      "DistrictID": "34",
+      "DistrictName": "Nenana City Schools",
+      "SchoolID": "348010",
+      "SchoolName": "CyberLynx Correspondence Program"
+    },
+    {
+      "DistrictID": "35",
+      "DistrictName": "Nome Public Schools",
+      "SchoolID": "350010",
+      "SchoolName": "Nome Elementary"
+    },
+    {
+      "DistrictID": "35",
+      "DistrictName": "Nome Public Schools",
+      "SchoolID": "350020",
+      "SchoolName": "Nome-Beltz Middle/High"
+    },
+    {
+      "DistrictID": "35",
+      "DistrictName": "Nome Public Schools",
+      "SchoolID": "358010",
+      "SchoolName": "Extensions Correspondence"
+    },
+    {
+      "DistrictID": "35",
+      "DistrictName": "Nome Public Schools",
+      "SchoolID": "359010",
+      "SchoolName": "Anvil City Science Academy"
+    },
+    {
+      "DistrictID": "36",
+      "DistrictName": "North Slope Borough Schools",
+      "SchoolID": "360010",
+      "SchoolName": "Nunamiut School"
+    },
+    {
+      "DistrictID": "36",
+      "DistrictName": "North Slope Borough Schools",
+      "SchoolID": "360020",
+      "SchoolName": "Fred Ipalook Elementary"
+    },
+    {
+      "DistrictID": "36",
+      "DistrictName": "North Slope Borough Schools",
+      "SchoolID": "360030",
+      "SchoolName": "Barrow High School"
+    },
+    {
+      "DistrictID": "36",
+      "DistrictName": "North Slope Borough Schools",
+      "SchoolID": "360040",
+      "SchoolName": "Harold Kaveolook School"
+    },
+    {
+      "DistrictID": "36",
+      "DistrictName": "North Slope Borough Schools",
+      "SchoolID": "360050",
+      "SchoolName": "Nuiqsut Trapper School"
+    },
+    {
+      "DistrictID": "36",
+      "DistrictName": "North Slope Borough Schools",
+      "SchoolID": "360060",
+      "SchoolName": "Tikigaq School"
+    },
+    {
+      "DistrictID": "36",
+      "DistrictName": "North Slope Borough Schools",
+      "SchoolID": "360070",
+      "SchoolName": "Kali School"
+    },
+    {
+      "DistrictID": "36",
+      "DistrictName": "North Slope Borough Schools",
+      "SchoolID": "360090",
+      "SchoolName": "Meade River School"
+    },
+    {
+      "DistrictID": "36",
+      "DistrictName": "North Slope Borough Schools",
+      "SchoolID": "360100",
+      "SchoolName": "Alak School"
+    },
+    {
+      "DistrictID": "36",
+      "DistrictName": "North Slope Borough Schools",
+      "SchoolID": "360120",
+      "SchoolName": "Eben Hopson Middle School"
+    },
+    {
+      "DistrictID": "36",
+      "DistrictName": "North Slope Borough Schools",
+      "SchoolID": "367010",
+      "SchoolName": "Kiita Learning Community"
+    },
+    {
+      "DistrictID": "37",
+      "DistrictName": "Northwest Arctic Borough Schools",
+      "SchoolID": "370010",
+      "SchoolName": "Ambler School"
+    },
+    {
+      "DistrictID": "37",
+      "DistrictName": "Northwest Arctic Borough Schools",
+      "SchoolID": "370020",
+      "SchoolName": "Buckland School"
+    },
+    {
+      "DistrictID": "37",
+      "DistrictName": "Northwest Arctic Borough Schools",
+      "SchoolID": "370030",
+      "SchoolName": "Deering School"
+    },
+    {
+      "DistrictID": "37",
+      "DistrictName": "Northwest Arctic Borough Schools",
+      "SchoolID": "370040",
+      "SchoolName": "Kiana School"
+    },
+    {
+      "DistrictID": "37",
+      "DistrictName": "Northwest Arctic Borough Schools",
+      "SchoolID": "370060",
+      "SchoolName": "McQueen School"
+    },
+    {
+      "DistrictID": "37",
+      "DistrictName": "Northwest Arctic Borough Schools",
+      "SchoolID": "370070",
+      "SchoolName": "Kobuk School"
+    },
+    {
+      "DistrictID": "37",
+      "DistrictName": "Northwest Arctic Borough Schools",
+      "SchoolID": "370080",
+      "SchoolName": "June Nelson Elementary"
+    },
+    {
+      "DistrictID": "37",
+      "DistrictName": "Northwest Arctic Borough Schools",
+      "SchoolID": "370090",
+      "SchoolName": "Napaaqtugmiut School"
+    },
+    {
+      "DistrictID": "37",
+      "DistrictName": "Northwest Arctic Borough Schools",
+      "SchoolID": "370100",
+      "SchoolName": "Aqqaluk High/Noorvik Elementary"
+    },
+    {
+      "DistrictID": "37",
+      "DistrictName": "Northwest Arctic Borough Schools",
+      "SchoolID": "370110",
+      "SchoolName": "Shungnak School"
+    },
+    {
+      "DistrictID": "37",
+      "DistrictName": "Northwest Arctic Borough Schools",
+      "SchoolID": "370150",
+      "SchoolName": "Kotzebue Middle/High School"
+    },
+    {
+      "DistrictID": "37",
+      "DistrictName": "Northwest Arctic Borough Schools",
+      "SchoolID": "370210",
+      "SchoolName": "Davis-Ramoth School"
+    },
+    {
+      "DistrictID": "37",
+      "DistrictName": "Northwest Arctic Borough Schools",
+      "SchoolID": "378020",
+      "SchoolName": "NWABSD Home School"
+    },
+    {
+      "DistrictID": "38",
+      "DistrictName": "Pelican City Schools",
+      "SchoolID": "380010",
+      "SchoolName": "Pelican School"
+    },
+    {
+      "DistrictID": "39",
+      "DistrictName": "Petersburg Borough Schools",
+      "SchoolID": "390010",
+      "SchoolName": "Rae C. Stedman Elementary"
+    },
+    {
+      "DistrictID": "39",
+      "DistrictName": "Petersburg Borough Schools",
+      "SchoolID": "390020",
+      "SchoolName": "Petersburg High School"
+    },
+    {
+      "DistrictID": "39",
+      "DistrictName": "Petersburg Borough Schools",
+      "SchoolID": "390030",
+      "SchoolName": "Mitkof Middle School"
+    },
+    {
+      "DistrictID": "40",
+      "DistrictName": "Pribilof Schools",
+      "SchoolID": "400020",
+      "SchoolName": "St Paul School"
+    },
+    {
+      "DistrictID": "40",
+      "DistrictName": "Pribilof Schools",
+      "SchoolID": "408010",
+      "SchoolName": "Pribilof Correspondence School"
+    },
+    {
+      "DistrictID": "42",
+      "DistrictName": "Sitka Borough Schools",
+      "SchoolID": "420010",
+      "SchoolName": "Baranof Elementary"
+    },
+    {
+      "DistrictID": "42",
+      "DistrictName": "Sitka Borough Schools",
+      "SchoolID": "420020",
+      "SchoolName": "Blatchley Middle School"
+    },
+    {
+      "DistrictID": "42",
+      "DistrictName": "Sitka Borough Schools",
+      "SchoolID": "420130",
+      "SchoolName": "Sitka High School"
+    },
+    {
+      "DistrictID": "42",
+      "DistrictName": "Sitka Borough Schools",
+      "SchoolID": "420170",
+      "SchoolName": "Keet Gooshi Heen Elementary"
+    },
+    {
+      "DistrictID": "42",
+      "DistrictName": "Sitka Borough Schools",
+      "SchoolID": "427010",
+      "SchoolName": "Pacific High School"
+    },
+    {
+      "DistrictID": "42",
+      "DistrictName": "Sitka Borough Schools",
+      "SchoolID": "428010",
+      "SchoolName": "Sitka REACH"
+    },
+    {
+      "DistrictID": "43",
+      "DistrictName": "Skagway Schools",
+      "SchoolID": "430010",
+      "SchoolName": "Skagway School"
+    },
+    {
+      "DistrictID": "44",
+      "DistrictName": "Southeast Island Schools",
+      "SchoolID": "440020",
+      "SchoolName": "Howard Valentine Coffman Cove School"
+    },
+    {
+      "DistrictID": "44",
+      "DistrictName": "Southeast Island Schools",
+      "SchoolID": "440090",
+      "SchoolName": "Barry Craig Stewart Kasaan School"
+    },
+    {
+      "DistrictID": "44",
+      "DistrictName": "Southeast Island Schools",
+      "SchoolID": "440160",
+      "SchoolName": "Thorne Bay School"
+    },
+    {
+      "DistrictID": "44",
+      "DistrictName": "Southeast Island Schools",
+      "SchoolID": "440190",
+      "SchoolName": "Whale Pass School"
+    },
+    {
+      "DistrictID": "44",
+      "DistrictName": "Southeast Island Schools",
+      "SchoolID": "440230",
+      "SchoolName": "Port Alexander School"
+    },
+    {
+      "DistrictID": "44",
+      "DistrictName": "Southeast Island Schools",
+      "SchoolID": "440250",
+      "SchoolName": "Hollis School"
+    },
+    {
+      "DistrictID": "44",
+      "DistrictName": "Southeast Island Schools",
+      "SchoolID": "440270",
+      "SchoolName": "Naukati School"
+    },
+    {
+      "DistrictID": "44",
+      "DistrictName": "Southeast Island Schools",
+      "SchoolID": "448010",
+      "SchoolName": "AK-TRAILS Correspondence"
+    },
+    {
+      "DistrictID": "45",
+      "DistrictName": "Southwest Region Schools",
+      "SchoolID": "450020",
+      "SchoolName": "Aleknagik School"
+    },
+    {
+      "DistrictID": "45",
+      "DistrictName": "Southwest Region Schools",
+      "SchoolID": "450030",
+      "SchoolName": "Clarks Point School"
+    },
+    {
+      "DistrictID": "45",
+      "DistrictName": "Southwest Region Schools",
+      "SchoolID": "450040",
+      "SchoolName": "William 'Sonny' Nelson School"
+    },
+    {
+      "DistrictID": "45",
+      "DistrictName": "Southwest Region Schools",
+      "SchoolID": "450050",
+      "SchoolName": "Koliganek School"
+    },
+    {
+      "DistrictID": "45",
+      "DistrictName": "Southwest Region Schools",
+      "SchoolID": "450070",
+      "SchoolName": "Manokotak School"
+    },
+    {
+      "DistrictID": "45",
+      "DistrictName": "Southwest Region Schools",
+      "SchoolID": "450080",
+      "SchoolName": "Chief Ivan Blunka School"
+    },
+    {
+      "DistrictID": "45",
+      "DistrictName": "Southwest Region Schools",
+      "SchoolID": "450110",
+      "SchoolName": "Togiak School"
+    },
+    {
+      "DistrictID": "45",
+      "DistrictName": "Southwest Region Schools",
+      "SchoolID": "450120",
+      "SchoolName": "Twin Hills School"
+    },
+    {
+      "DistrictID": "46",
+      "DistrictName": "Saint Mary's Schools",
+      "SchoolID": "460010",
+      "SchoolName": "Saint Mary's School"
+    },
+    {
+      "DistrictID": "47",
+      "DistrictName": "Unalaska City Schools",
+      "SchoolID": "470010",
+      "SchoolName": "Eagle's View Elementary School"
+    },
+    {
+      "DistrictID": "47",
+      "DistrictName": "Unalaska City Schools",
+      "SchoolID": "470020",
+      "SchoolName": "Unalaska Jr/Sr High School"
+    },
+    {
+      "DistrictID": "48",
+      "DistrictName": "Valdez City Schools",
+      "SchoolID": "480030",
+      "SchoolName": "Valdez High School"
+    },
+    {
+      "DistrictID": "48",
+      "DistrictName": "Valdez City Schools",
+      "SchoolID": "480040",
+      "SchoolName": "George H. Gilson Middle School"
+    },
+    {
+      "DistrictID": "48",
+      "DistrictName": "Valdez City Schools",
+      "SchoolID": "480050",
+      "SchoolName": "Hermon Hutchens Elementary"
+    },
+    {
+      "DistrictID": "48",
+      "DistrictName": "Valdez City Schools",
+      "SchoolID": "488010",
+      "SchoolName": "Valdez Home School"
+    },
+    {
+      "DistrictID": "49",
+      "DistrictName": "Wrangell City Schools",
+      "SchoolID": "490010",
+      "SchoolName": "Evergreen Elementary"
+    },
+    {
+      "DistrictID": "49",
+      "DistrictName": "Wrangell City Schools",
+      "SchoolID": "490020",
+      "SchoolName": "Wrangell High School"
+    },
+    {
+      "DistrictID": "49",
+      "DistrictName": "Wrangell City Schools",
+      "SchoolID": "490030",
+      "SchoolName": "Stikine Middle School"
+    },
+    {
+      "DistrictID": "50",
+      "DistrictName": "Yakutat City Schools",
+      "SchoolID": "500010",
+      "SchoolName": "Yakutat School"
+    },
+    {
+      "DistrictID": "50",
+      "DistrictName": "Yakutat City Schools",
+      "SchoolID": "508010",
+      "SchoolName": "LEAD Correspondence"
+    },
+    {
+      "DistrictID": "51",
+      "DistrictName": "Yukon Flats Schools",
+      "SchoolID": "510010",
+      "SchoolName": "Arctic Village School"
+    },
+    {
+      "DistrictID": "51",
+      "DistrictName": "Yukon Flats Schools",
+      "SchoolID": "510040",
+      "SchoolName": "Tsuk Taih School"
+    },
+    {
+      "DistrictID": "51",
+      "DistrictName": "Yukon Flats Schools",
+      "SchoolID": "510050",
+      "SchoolName": "Circle School"
+    },
+    {
+      "DistrictID": "51",
+      "DistrictName": "Yukon Flats Schools",
+      "SchoolID": "510060",
+      "SchoolName": "John Fredson School"
+    },
+    {
+      "DistrictID": "51",
+      "DistrictName": "Yukon Flats Schools",
+      "SchoolID": "510070",
+      "SchoolName": "Fort Yukon School"
+    },
+    {
+      "DistrictID": "51",
+      "DistrictName": "Yukon Flats Schools",
+      "SchoolID": "510140",
+      "SchoolName": "Cruikshank School"
+    },
+    {
+      "DistrictID": "52",
+      "DistrictName": "Yukon-Koyukuk Schools",
+      "SchoolID": "520010",
+      "SchoolName": "Allakaket School"
+    },
+    {
+      "DistrictID": "52",
+      "DistrictName": "Yukon-Koyukuk Schools",
+      "SchoolID": "520030",
+      "SchoolName": "Johnny Oldman School"
+    },
+    {
+      "DistrictID": "52",
+      "DistrictName": "Yukon-Koyukuk Schools",
+      "SchoolID": "520040",
+      "SchoolName": "Jimmy Huntington School"
+    },
+    {
+      "DistrictID": "52",
+      "DistrictName": "Yukon-Koyukuk Schools",
+      "SchoolID": "520050",
+      "SchoolName": "Kaltag School"
+    },
+    {
+      "DistrictID": "52",
+      "DistrictName": "Yukon-Koyukuk Schools",
+      "SchoolID": "520060",
+      "SchoolName": "Ella B. Vernetti School"
+    },
+    {
+      "DistrictID": "52",
+      "DistrictName": "Yukon-Koyukuk Schools",
+      "SchoolID": "520080",
+      "SchoolName": "Minto School"
+    },
+    {
+      "DistrictID": "52",
+      "DistrictName": "Yukon-Koyukuk Schools",
+      "SchoolID": "520090",
+      "SchoolName": "Andrew K. Demoski School"
+    },
+    {
+      "DistrictID": "52",
+      "DistrictName": "Yukon-Koyukuk Schools",
+      "SchoolID": "520110",
+      "SchoolName": "Merreline A Kangas School"
+    },
+    {
+      "DistrictID": "52",
+      "DistrictName": "Yukon-Koyukuk Schools",
+      "SchoolID": "520120",
+      "SchoolName": "Rampart School"
+    },
+    {
+      "DistrictID": "52",
+      "DistrictName": "Yukon-Koyukuk Schools",
+      "SchoolID": "528010",
+      "SchoolName": "Raven School"
+    },
+    {
+      "DistrictID": "53",
+      "DistrictName": "Tanana Schools",
+      "SchoolID": "530010",
+      "SchoolName": "Maudrey J. Sommer School"
+    },
+    {
+      "DistrictID": "54",
+      "DistrictName": "Yupiit Schools",
+      "SchoolID": "540010",
+      "SchoolName": "Akiachak School"
+    },
+    {
+      "DistrictID": "54",
+      "DistrictName": "Yupiit Schools",
+      "SchoolID": "540030",
+      "SchoolName": "Akiak School"
+    },
+    {
+      "DistrictID": "54",
+      "DistrictName": "Yupiit Schools",
+      "SchoolID": "540040",
+      "SchoolName": "Tuluksak School"
+    },
+    {
+      "DistrictID": "55",
+      "DistrictName": "Kashunamiut Schools",
+      "SchoolID": "550010",
+      "SchoolName": "Chevak School"
+    },
+    {
+      "DistrictID": "56",
+      "DistrictName": "Aleutians East Borough Schools",
+      "SchoolID": "560010",
+      "SchoolName": "King Cove School"
+    },
+    {
+      "DistrictID": "56",
+      "DistrictName": "Aleutians East Borough Schools",
+      "SchoolID": "560020",
+      "SchoolName": "Sand Point School"
+    },
+    {
+      "DistrictID": "56",
+      "DistrictName": "Aleutians East Borough Schools",
+      "SchoolID": "560030",
+      "SchoolName": "Akutan School"
+    },
+    {
+      "DistrictID": "56",
+      "DistrictName": "Aleutians East Borough Schools",
+      "SchoolID": "560050",
+      "SchoolName": "False Pass School"
+    },
+    {
+      "DistrictID": "98",
+      "DistrictName": "Mount Edgecumbe",
+      "SchoolID": "980000",
+      "SchoolName": "Mt. Edgecumbe High School"
+    }
+  ]
+}

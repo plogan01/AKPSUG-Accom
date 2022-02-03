@@ -1,0 +1,83 @@
+[~[tlist_sql;
+	SELECT
+		NVL(ak.TEST_DISTRICT_NAME,(SELECT value FROM PREFS WHERE name='districtname' AND ROWNUM = 1)) AS district,
+		NVL(ak.TEST_SCHOOL_NAME, sch.name) AS school,
+		NVL(ak.TEST_SCHOOL_NUMBER, s.schoolid) AS schoolid,
+		CASE
+			WHEN scf.pscore_legal_last_name IS NOT NULL
+			THEN scf.pscore_legal_last_name || ', ' || scf.pscore_legal_first_name || ' ' || scf.pscore_legal_middle_name
+			ELSE s.lastfirst
+		END AS lastfirst,
+		s.dcid,
+		s.grade_level,
+		s.home_room,
+		CASE x.lep
+			WHEN 'L1' THEN 'Y'
+			WHEN 'LP' THEN 'Y'
+			ELSE 'N'
+		END AS ELL,
+		CASE 
+			WHEN (x.disability_code > 0 AND x.disability_code < 15) THEN 'Y'
+			ELSE 'N'
+		END AS SP,
+		CASE WHEN ak.ELA_TTS = 1 THEN 'Y' ELSE 'N' END AS "ELATTS",
+		CASE WHEN ak.MA_TTS = 1 THEN 'Y' ELSE 'N' END AS "MATTS",
+		CASE WHEN ak.ELA_ASL = 1 THEN 'Y' ELSE 'N' END AS "ELAASL",
+		CASE WHEN ak.MA_ASL = 1 THEN 'Y' ELSE 'N' END AS "MAASL",
+		CASE WHEN ak.ELA_POD = 1 THEN 'Y' ELSE 'N' END AS "ELAPOD",
+		CASE WHEN ak.MA_POD = 1 THEN 'Y' ELSE 'N' END AS "MAPOD",
+		CASE WHEN ak.ELA_BRAILLE = 1 THEN 'Y' ELSE 'N' END AS "ELABRAILLE",
+		CASE WHEN ak.MA_BRAILLE = 1 THEN 'Y' ELSE 'N' END AS "MABRAILLE",
+		CASE WHEN ak.ELA_NON_EMBED = 1 THEN 'Y' ELSE 'N' END AS "ELAONE",
+		CASE WHEN ak.MA_NON_EMBED = 1 THEN 'Y' ELSE 'N' END AS "MAONE",
+		ak.ELA_NOTE,
+		ak.MA_NOTE,
+		NVL(ak.ELA_REG_OVERRIDE, 'Y') AS "ELAOVERRIDE",
+		NVL(ak.MA_REG_OVERRIDE, 'Y') AS "MAOVERRIDE",
+		ak.ELA_NOT_TESTED AS elanotest,
+		ak.MA_NOT_TESTED AS manotest
+
+	FROM Students s
+	JOIN Schools sch
+		ON s.schoolid = sch.school_number
+	LEFT OUTER JOIN S_AK_STU_X x
+		ON s.dcid = x.studentsdcid
+	LEFT OUTER JOIN U_AKPSUG_AKSTAR ak
+		ON s.dcid = ak.studentsdcid
+	LEFT OUTER JOIN studentcorefields scf 
+		ON scf.studentsdcid=s.dcid
+
+	WHERE s.schoolid = ~(curschoolid)
+	  AND sch.state_excludefromreporting != 1
+	  AND s.enroll_status = 0
+	  AND s.grade_level IN (3,4,5,6,7,8,9)
+]
+
+  {
+	"district": "~(district;json)",
+	"school": "~(school;json)",
+	"schoolid": "~(schoolid;json)",
+	"lastfirst": "~(lastfirst;json)",
+	"dcid": "~(dcid;json)",
+	"grade_level": "~(grade_level;json)",
+	"homeroom": "~(homeroom;json)",
+	"ell": "~(ell;json)",
+	"sp": "~(sp;json)",
+	"elatts": "~(elatts;json)",
+	"matts": "~(matts;json)",
+	"elaasl": "~(elaacl;json)",
+	"maasl": "~(maasl;json)",
+	"elapod": "~(elapod;json)",
+	"mapod": "~(mapod;json)",
+	"elabraille": "~(elabraille;json)",
+	"mabraille": "~(mabraille;json)",
+	"elaone": "~(elaone;json)",
+	"maone": "~(maone;json)",
+	"elanote": "~(elanote;json)",
+	"manote": "~(manote;json)",
+	"elaoverride": "~(elaoverride;json)",
+	"maoverride": "~(maoverride;json)",
+	"elanotest": "~(elanotest;json)",
+	"manotest": "~(manotest;json)"
+  },
+[/tlist_sql]{}]

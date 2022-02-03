@@ -1,0 +1,99 @@
+School Year,Test Administration Code,District Student ID,Alaska Student ID,District Code - Testing Location,District Name - Testing Location,District Code - Enrolled Location,District Name - Enrolled Location,School Code - Testing Location,School Name - Testing Location,School Code - Enrolled Location,School Name - Enrolled Location,Student Last Name,Student First Name,Student Middle Name ,Student Date of Birth,Student Gender,Student Grade,Student Ethnic Group Code,Economic Disadvantage,504 Plan,IEP,Primary Disability,Migrant,Parent/Guardian on Active Duty Military Status,English Learner,ELA Registration,ELA - Embedded Accommodation - Text to Speech Flag,ELA - Embedded Accommodation - ASL Flag,ELA - Embedded Accommodation - Braille,ELA - Embedded Accommodation - Print On Demand,ELA - Non-embedded Accommodations,ELA - Special Circumstance Code,Mathematics Registration,MA - Embedded Accommodation - Text to Speech Flag,MA - Embedded Accommodation - ASL Flag,MA - Embedded Accommodation - Braille,MA - Embedded Accommodation - Print On Demand,MA - Non-embedded Accommodations,MA - Special Circumstance Code
+~[tlist_sql;SELECT 
+                akpref.yearid + 1991                                                                                            AS "year",
+                akpref.testcode                                                                                                 AS "testcode",
+                st.student_number                                                                                               AS "districtstuid",
+                st.state_studentnumber                                                                                          AS "statestuid",
+                NVL(akstar.test_district_number, (SELECT value FROM PREFS WHERE name='districtnumber' AND ROWNUM = 1))          AS "dctest",
+                NVL(akstar.test_district_name, (SELECT value FROM PREFS WHERE name='districtname' AND ROWNUM = 1))              AS "dntest",
+                (SELECT value FROM PREFS WHERE name='districtnumber' AND ROWNUM = 1)                                            AS "dcenroll",
+                (SELECT value FROM PREFS WHERE name='districtname' AND ROWNUM = 1)                                              AS "dnenroll",
+                CASE
+                    WHEN akstar.test_school_number IS NOT NULL THEN TO_NUMBER(akstar.test_school_number)
+                    WHEN sch.alternate_school_number > 0 THEN sch.alternate_school_number
+                    ELSE st.schoolid
+                END                                                                                                             AS "sctest",
+                CASE
+                    WHEN akstar.test_school_name IS NOT NULL THEN akstar.test_school_name
+                    WHEN sch.alternate_school_number > 0 
+                        THEN (SELECT name FROM Schools WHERE school_number = sch.alternate_School_number)
+                    ELSE sch.name
+                END                                                                                                             AS "sntest",
+                CASE 
+                    WHEN sch.alternate_school_number > 0 THEN sch.alternate_school_number
+                    ELSE sch.school_number 
+                END                                                                                                             AS "scenroll",
+                CASE 
+                    WHEN sch.alternate_school_number > 0 
+                        THEN (SELECT name FROM Schools WHERE school_number = sch.alternate_School_number)
+                    ELSE sch.name 
+                END                                                                                                             AS "snenroll",
+                CASE
+                    WHEN scf.pscore_legal_last_name IS NOT NULL
+                        THEN scf.pscore_legal_last_name
+                    ELSE st.last_name
+                END                                                                                                             AS "last",
+                CASE
+                    WHEN scf.pscore_legal_first_name IS NOT NULL
+                        THEN scf.pscore_legal_first_name
+                    ELSE st.first_name
+                END                                                                                                             AS "first",
+                CASE
+                    WHEN scf.pscore_legal_middle_name IS NOT NULL
+                        THEN scf.pscore_legal_middle_name
+                    ELSE st.middle_name
+                END                                                                                                             AS "middle",
+                TO_CHAR(st.DOB,'MM/DD/YYYY')                                                                                    AS "dob",
+                CASE
+                    WHEN scf.pscore_legal_gender IS NOT NULL
+                        THEN scf.pscore_legal_gender
+                    ELSE st.gender
+                END                                                                                                             AS "gender",
+                st.Grade_Level                                                                                                  AS "grade",
+                st.Ethnicity                                                                                                    AS "race",
+                NVL(ak.Econ, 'N')                                                                                               AS "econ",
+                CASE 
+                    WHEN ak.Section504 = 'Y' THEN 'Y'
+                    WHEN ak.Section504 = '1' THEN 'Y'
+                    ELSE 'N'
+                END                                                                                                             AS "504",
+                CASE 
+                    WHEN ak.Disability_Code IN ('02','03','04','05','06','07','08','09','10','11','12','13','14') THEN 'Y'
+                    ELSE 'N'
+                END                                                                                                             AS "iep",
+                NVL(TO_NUMBER(ak.Disability_Code), 0)                                                                           AS "disability",
+                NVL(ak.Migrant, 'N')                                                                                            AS "migrant",
+                NVL(ak.activeduty_pg, 'N')                                                                                      AS "active",
+                NVL(ak.LEP, 'X')                                                                                                AS "ell",
+                NVL(akstar.ELA_REG_OVERRIDE, 'Y')                                                                               AS "elareg",
+                CASE WHEN akstar.ELA_TTS = 1 THEN'Y' ELSE 'N' END                                                               AS "elatts",
+                CASE WHEN akstar.ELA_ASL = 1 THEN'Y' ELSE 'N' END                                                               AS "elaasl",
+                CASE WHEN akstar.ELA_BRAILLE = 1 THEN'Y' ELSE 'N' END                                                           AS "elabraille",
+                CASE WHEN akstar.ELA_POD = 1 THEN'Y' ELSE 'N' END                                                               AS "elapod",
+                CASE WHEN akstar.ELA_NON_EMBED = 1 THEN'Y' ELSE 'N' END                                                         AS "elanon",
+                NVL(akstar.ELA_NOT_TESTED, '')                                                                                  AS "elacode",
+                NVL(akstar.MA_REG_OVERRIDE, 'Y')                                                                                AS "mareg",
+                CASE WHEN akstar.MA_TTS = 1 THEN'Y' ELSE 'N' END                                                                AS "matts",
+                CASE WHEN akstar.MA_ASL = 1 THEN'Y' ELSE 'N' END                                                                AS "maasl",
+                CASE WHEN akstar.MA_BRAILLE = 1 THEN'Y' ELSE 'N' END                                                            AS "mabraille",
+                CASE WHEN akstar.MA_POD = 1 THEN'Y' ELSE 'N' END                                                                AS "mapod",
+                CASE WHEN akstar.MA_NON_EMBED = 1 THEN'Y' ELSE 'N' END                                                          AS "manon",
+                NVL(akstar.MA_NOT_TESTED, '')                                                                                   AS "macode"
+  
+            FROM Students st
+                JOIN S_AK_STU_X ak
+                    ON st.dcid = ak.StudentsDCID
+                LEFT OUTER JOIN Schools sch
+                    ON st.schoolid = sch.school_number
+                JOIN U_AKPSUG_AKSTAR_PREF akpref
+                    ON (SELECT yearid FROM Terms WHERE schoolid = 0 AND TRUNC(SYSDATE) BETWEEN firstday and lastday AND ROWNUM = 1) = akpref.yearid
+                LEFT OUTER JOIN U_AKPSUG_AKSTAR akstar
+                    ON st.dcid = akstar.studentsdcid
+                LEFT OUTER JOIN StudentCoreFields scf
+                    ON st.dcid = scf.studentsdcid
+            WHERE sch.state_excludefromreporting != 1
+                AND st.enroll_status = 0
+                AND st.grade_level IN (3,4,5,6,7,8,9)
+                AND (ak.AlternateAssessment !='Y' OR ak.AlternateAssessment IS NULL)
+            ORDER BY sch.school_number, st.grade_level, st.last_name]~(year),~(testcode),~(districtstuid),~(statestuid),~(dctest),~(dntest),~(dcenroll),~(dnenroll),~(sctest),~(sntest),~(scenroll),~(snenroll),~(last),~(first),~(middle),~(dob),~(gender),~(grade),~(race),~(econ),~(504),~(iep),~(disability),~(migrant),~(active),~(ell),~(elareg),~(elatts),~(elaasl),~(elabraille),~(elapod),~(elanon),~(elacode),~(mareg),~(matts),~(maasl),~(mabraille),~(mapod),~(manon),~(macode)
+[/tlist_sql]
