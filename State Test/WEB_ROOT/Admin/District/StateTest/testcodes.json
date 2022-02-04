@@ -3,7 +3,7 @@
       a.yearid, 
       TO_CHAR(a.yearid + 1991) AS Year,
       a.testcode
-    FROM U_AKPSUG_AKSTAR_PREF a ORDER BY a.yearid DESC]
+    FROM U_AKPSUG_AKTEST_PREF a ORDER BY a.yearid DESC]
   {
     "id": "~(id;json)",
     "yearid": "~(yearid;json)",

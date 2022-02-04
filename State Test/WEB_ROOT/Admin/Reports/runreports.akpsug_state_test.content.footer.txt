@@ -1,0 +1,8 @@
+~[if#notDistrict.~(curschoolid)=0]
+[else#notDistrict]
+	<script>
+		$j(document).ready(function(){
+			$j('.button-row' ).before('<table class="linkDescList"><tr><th>State Test Reports</th><th>Description</th></tr><tr><td><a href="/admin/reports/statetest/accommodations.html">State Test Accommodations</a></td><td>Generate a report of State Report Student Accommodations by site</td></tr></table>');
+		});
+	</script>
+[/if#notDistrict]

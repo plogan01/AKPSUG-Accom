@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>PEAKS Student Accommodations</title>
+    <title>State Test Student Accommodations</title>
     <!-- required scripts -->
     ~[wc:commonscripts]
     <!-- Required style sheets: screen.css, and print.css -->
@@ -9,24 +9,24 @@
 </head>
 <body>
     ~[wc:admin_header_css]
-    <!-- breadcrumb start --><a href="/admin/home.html" target="_top">Start Page</a> &gt; <a href="/admin/Reports/runreports.html" target="_top">System Reports</a> &gt; Student PEAKS Accommodations<!-- breadcrumb end -->
+    <!-- breadcrumb start --><a href="/admin/home.html" target="_top">Start Page</a> &gt; <a href="/admin/Reports/runreports.html" target="_top">System Reports</a> &gt; State Test Student Accommodations<!-- breadcrumb end -->
     <!-- start of main menu and content -->
     ~[wc:admin_navigation_css]
     <!-- Start of Page -->
-    <h1>PEAKS Student Accommodations</h1>
+    <h1>State Test Student Accommodations</h1>
     <!-- start of content area -->
     ~[if#notDistrict.~(curschoolid)=0]
     <div class="box-round">
         <h2>This report cannot be run at the district level</h2>
     </div>
     [else#notDistrict]
-    <div class="box-round" ng-controller="reportCont" data-require-path="/scripts/akpsug/report.js" data-module-name="reportApp" ng-cloak>
+    <div class="box-round" ng-controller="reportCont" data-require-path="/scripts/akpsug/StateTest/report.js" data-module-name="reportApp" ng-cloak>
         <div ng-if="accomList.length > 0">
             <div ng-if="(accomList | filter: {schoolid: schoolID}).length > 0">
                 <button export-to-csv>Export to Excel</button>
                 <table class="grid" id="computer">
                     <tr>
-                        <th colspan="16">AK STAR Student Test Accommodations for ~(schoolname)</th>
+                        <th colspan="21">State Test Student Test Accommodations for ~(schoolname)</th>
                     </tr>
                     <tr>
                         <th>
@@ -77,6 +77,15 @@
                         <th>
                             <a href="" ng_click='sort="maoverride"; sortReverse = !sortReverse'>MATH<br />Not Testing</a>
                         </th>
+                        <th>
+                            <a href="" ng_click='sort="sctts"; sortReverse = !sortReverse'>Science TTS</a>
+                        </th>
+                        <th>
+                            <a href="" ng_click='sort="scpod"; sortReverse = !sortReverse'>Science Print<br />On Demand</a>
+                        </th>
+                        <th>
+                            <a href="" ng_click='sort="scone"; sortReverse = !sortReverse'>Science<br />Non-Embedded</a>
+                        </th>
                     </tr>
                     <tr ng_repeat="a in accomList | filter: {schoolid: schoolID} | orderBy:sort:sortReverse ">
                         <td><a href="/admin/students/home.html?frn=001{{a.dcid}}" target="_blank">{{a.lastfirst}}</a></td>
@@ -101,6 +110,12 @@
                         </td>
                         <td>{{a.elaoverride}}<span ng-if="a.elaoverride === 'N'"> - {{a.elanotest}}</span></td>
                         <td>{{a.maoverride}}<span ng-if="a.maoverride === 'N'"> - {{a.manotest}}</span></td>
+                        <td>{{a.sctts}}</td>
+                        <td>{{a.scpod}}</td>
+                        <td>
+                            <span ng-if="a.scone === 'Y'">{{a.scnote}}</span>
+                            <span ng-if="a.scone === 'N'">N/A</span>
+                        </td>
                     </tr>
                 </table>
             </div>
@@ -108,7 +123,7 @@
                 <button export-to-csv>Export to Excel</button>
                 <table class="grid" id="paper">
                     <tr>
-                        <th colspan="18">AK STAR Student Test Accommodations for students testing at other schools or districts</th>
+                        <th colspan="21">State Test Student Test Accommodations for students testing at other schools or districts</th>
                     </tr>
                     <tr>
                         <th>
@@ -165,6 +180,15 @@
                         <th>
                             <a href="" ng_click='sort="maoverride"; sortReverse = !sortReverse'>MATH<br />Not Testing</a>
                         </th>
+                        <th>
+                            <a href="" ng_click='sort="sctts"; sortReverse = !sortReverse'>Science TTS</a>
+                        </th>
+                        <th>
+                            <a href="" ng_click='sort="scpod"; sortReverse = !sortReverse'>Science Print<br />On Demand</a>
+                        </th>
+                        <th>
+                            <a href="" ng_click='sort="scone"; sortReverse = !sortReverse'>Science<br />Non-Embedded</a>
+                        </th>
                     </tr>
                     <tr ng_repeat="a in accomList | orderBy:sort:sortReverse | filter: {schoolid: '!' + schoolID}">
                         <td>{{a.district}}</td>
@@ -191,11 +215,17 @@
                         </td>
                         <td>{{a.elaoverride}}<span ng-if="a.elaoverride === 'N'"> - {{a.elanotest}}</span></td>
                         <td>{{a.maoverride}}<span ng-if="a.maoverride === 'N'"> - {{a.manotest}}</span></td>
+                        <td>{{a.sctts}}</td>
+                        <td>{{a.scpod}}</td>
+                        <td>
+                            <span ng-if="a.scone === 'Y'">{{a.scnote}}</span>
+                            <span ng-if="a.scone === 'N'">N/A</span>
+                        </td>
                     </tr>
                 </table>
             </div>
         </div>
-        <div ng-if="accomList.length == 0"><h2>There are no accommodations for this school.</h2></div>
+        <div ng-if="accomList.length == 0"><h2>There are no state student test accommodations for this school.</h2></div>
     </div>
     <input class="hidden" id="schoolid" value="~(curschoolid)" />
     [/if#notDistrict]

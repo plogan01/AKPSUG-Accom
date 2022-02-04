@@ -2,7 +2,7 @@
 	$j('a[href*="misc-district.html"]').closest('tr').after(
 		'<!-- BEGIN link for AK STAR Defaults -->\
 		<tr>\
-			<td><a href="/admin/district/statetest/AKSTARPrefs.html">AK STAR Settings</a></td>\
+			<td><a href="/admin/district/statetest/TestPrefs.html">Alaska State Test Settings</a></td>\
 			<td>Set the Test Administration Code for AK STAR Testing.</td>\
 		</tr>\
 		<!-- END link for AK STAR Defaults -->'

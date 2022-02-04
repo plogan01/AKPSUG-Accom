@@ -6,18 +6,15 @@ define(['angular', 'components/shared/index'], function (angular) {
     //This will create a controller which will be used in our app
     accomApp.controller('accomCont', function ($scope, getService) {
         loadingDialog();
-
+        var grade = $j('#grade').val() * 1;
+        if (grade === 5 || grade === 8 || grade === 10) { $scope.science = true; } else { $scope.science = false; }
+        if (grade > 2 && grade < 10) { $scope.akStar = true; } else { $scope.akStar = false; }
         if ($j('#elaOverride').val() === 'N') { $scope.elaOverride = true; } else { $scope.elaOverride = false; }
         if ($j('#maOverride').val() === 'N') { $scope.maOverride = true; } else { $scope.maOverride = false; }
         $scope.elaReason = $j('#elaReason').val();
         $scope.maReason = $j('#maReason').val();
-        $scope.testDistrict = {};
-        $scope.testDistrict.DistrictName = $j('#districtName').val();
-        $scope.testDistrict.DistrictID = $j('#districtNumber').val();
+       
         
-        $scope.testSchool = {};
-        $scope.testSchool.SchoolName = $j('#schoolName').val();
-        $scope.testSchool.SchoolID = $j('#schoolNumber').val();
         $scope.warning = '';
         $scope.reasons = [
             { value: "", disp: "" },
@@ -32,14 +29,13 @@ define(['angular', 'components/shared/index'], function (angular) {
         $scope.schools = [];
 
 
-        getService.getData('/admin/students/statetest/schools.json ? ').then(function (retData) {
+        getService.getData('/admin/students/statetest/schools.json?').then(function (retData) {
             $scope.schools = retData.data;
+            var district = $j('#districtNumber').val();
+            var school = $j('#schoolNumber').val();
+            if (district) { $scope.testDistrict = setSelect('DistrictID', district); }
+            if (school) { $scope.testSchool = setSelect('SchoolID', school); }
             closeLoading();
-            if ($scope.testDistrict.DistrictID > 0) {
-                $scope.locationOverride = true;
-                $scope.testDistrict = setSelect('DistrictID', $scope.testDistrict.DistrictID);
-                $scope.testSchool = setSelect('SchoolID', $scope.testSchool.SchoolID);
-            }
         });
 
         $scope.locChange = function () {
@@ -106,6 +102,7 @@ define(['angular', 'components/shared/index'], function (angular) {
             for (var i = 0, len = $scope.schools.length; i < len; i++) {
                 if ($scope.schools[i][query] === ID) {
                     result = $scope.schools[i];
+                    $scope.locationOverride = true;
                     break;
                 }
             }

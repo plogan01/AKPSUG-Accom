@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Alaska State Test Administration</title>
+    <!-- required scripts -->
+    ~[wc:commonscripts]
+    <!-- Required style sheets: screen.css, and print.css -->
+    <link href="/images/css/screen.css" rel="stylesheet" media="screen">
+    <link href="/images/css/print.css" rel="stylesheet" media="print">
+</head>
+<body>
+    ~[wc:admin_header_frame_css]
+    <!-- breadcrumb start -->
+    <a href="/admin/home.html" target="_top">Start Page</a> &gt; <a href="/admin/students/home.html?selectstudent=nosearch" target="_top">Student Selection</a> &gt; Alaska State Test Administration
+    <!-- breadcrumb end -->
+    ~[wc:admin_navigation_frame_css]
+    <!-- start of main menu and content -->
+    ~[wc:title_student_begin_css]Alaska State Test Administration~[wc:title_student_end_css]
+
+
+    <form action="/~[self.page]?frn=~(studentfrn)&changesSaved=true" method="POST">
+        <!-- start of content area -->
+        ~[if.gpv.changesSaved=true]
+            <div class="feedback-confirm">~[text:psx.common.changes_recorded]</div>
+        [/if]
+        <div class="box-round"  ng-controller="accomCont" data-require-path="/scripts/AKPSUG/StateTest/accomm.js" data-module-name="accomApp">
+            <div ng-show="akStar">
+                <h2>Student Participation</h2>
+                <table class="grid">
+                    <tr>
+                        <th colspan="2">Testing School and District Override</th>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <label for="outside">Student will be testing at a school or District other than where they are enrolled?</label>
+                            <input type="checkbox" id="outside" ng-model="locationOverride" ng-change="locChange()" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="otherDistrict">Testing District</label>
+                            <select id="otherDistrict" ng-model="testDistrict" ng-change="locChange()" ng-disabled="!locationOverride" ng-options="d as d.DistrictName for d in schools | unique:'DistrictName'"></select>
+                            <input type="hidden" name="[STUDENTS.U_AKPSUG_AKTEST]TEST_DISTRICT_NAME" value="" id="districtName" />
+                            <input type="hidden" name="[STUDENTS.U_AKPSUG_AKTEST]TEST_DISTRICT_NUMBER" value="" id="districtNumber" />
+                        </td>
+                        <td>
+                            <label for="otherSchool">Testing School</label>
+                            <select id="otherSchool" ng-model="testSchool" ng-change="locChange()" ng-disabled="!testDistrict.DistrictID > 0" ng-options="s as s.SchoolName for s in schools |filter:{ DistrictID : testDistrict.DistrictID}"></select>
+                            <input type="hidden" name="[STUDENTS.U_AKPSUG_AKTEST]TEST_SCHOOL_NAME" value="" id="schoolName" />
+                            <input type="hidden" name="[STUDENTS.U_AKPSUG_AKTEST]TEST_SCHOOL_NUMBER" value="" id="schoolNumber" />
+                        </td>
+                    </tr>
+                </table>
+                <div id="feedback-error" class="feedback-error alert-dismissable" data-ng-if="warning.length > 0" ng-cloak>
+                    {{warning}}
+                </div>
+                <table class="grid">
+                    <tr>
+                        <th colspan="2">Test Participation Override (All students will be participating in the AK STAR assessment unless there is a valid reason)</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="ela">Student will NOT be participating in the ELA portion of the Assessment (requires reason)</label>
+                            <input type="checkbox" id="ela" ng-model="elaOverride" ng-change="testOverride()" />
+                            <input type="hidden" name="[STUDENTS.U_AKPSUG_AKTEST]ELA_REG_OVERRIDE" value="" id="elaOverride" />
+                        </td>
+                        <td>
+                            <label for="ma">Student will NOT be participating in the MA portion of the Assessment (requires reason)</label>
+                            <input type="checkbox" id="ma" ng-model="maOverride" ng-change="testOverride()" />
+                            <input type="hidden" name="[STUDENTS.U_AKPSUG_AKTEST]MA_REG_OVERRIDE" value="" id="maOverride" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="elaR">Why is the student not participating in the ELA Assessment?</label>
+                            <select  id="elaR" ng-model="elaReason" ng-change="testOverride()" ng-disabled="!elaOverride" ng-options="r.value as r.disp for r in reasons"></select>
+                            <input type="hidden" name="[STUDENTS.U_AKPSUG_AKTEST]ELA_NOT_TESTED" value="" id="elaReason" />
+                        </td>
+                        <td>
+                            <label for="maR">Why is the student not participating in the MATH Assessment?</label>
+                            <select id="maR" ng-model="maReason" ng-change="testOverride()" ng-disabled="!maOverride" ng-options="r.value as r.disp for r in reasons"></select>
+                            <input type="hidden" name="[STUDENTS.U_AKPSUG_AKTEST]MA_NOT_TESTED" value="" id="maReason" />
+                        </td>
+                    </tr>
+                </table>
+                <h2>Student AK STAR Test Accommodations</h2>
+                <table class="grid">
+                    <tr>
+                        <td>
+                            <input type="checkbox" name="[STUDENTS.U_AKPSUG_AKTEST]ELA_TTS" id="elaTTS" value="1" />
+                            <label for="elaTTS">ELA - Text to Speech</label>
+                        </td>
+                        <td>
+                            <input type="checkbox" name="[STUDENTS.U_AKPSUG_AKTEST]MA_TTS" id="maTTS" value="1" />
+                            <label for="maTTS">Math - Text to Speech</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="checkbox" name="[STUDENTS.U_AKPSUG_AKTEST]ELA_ASL" id="elaASL" value="1" />
+                            <label for="elaASL">ELA - ASL Translation Videos</label>
+                        </td>
+                        <td>
+                            <input type="checkbox" name="[STUDENTS.U_AKPSUG_AKTEST]MA_ASL" id="maASL" value="1" />
+                            <label for="maASL">Math - ASL Translation Videos</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="checkbox" name="[STUDENTS.U_AKPSUG_AKTEST]ELA_BRAILLE" id="elaBraille" value="1" />
+                            <label for="elaBraille">ELA - Braille</label>
+                        </td>
+                        <td>
+                            <input type="checkbox" name="[STUDENTS.U_AKPSUG_AKTEST]MA_BRAILLE" id="maBraille" value="1" />
+                            <label for="maBraille">Math - Braille</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="checkbox" name="[STUDENTS.U_AKPSUG_AKTEST]ELA_POD" id="elaPOD" value="1" />
+                            <label for="elaPOD">ELA - Print on Demand</label>
+                        </td>
+                        <td>
+                            <input type="checkbox" name="[STUDENTS.U_AKPSUG_AKTEST]MA_POD" id="maPOD" value="1" />
+                            <label for="maPOD">Math - Print on Demand</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="checkbox" name="[STUDENTS.U_AKPSUG_AKTEST]ELA_NON_EMBED" id="elaONE" value="1" />
+                            <label for="elaONE">ELA - Other Non-Embedded (add note below)</label>
+                        </td>
+                        <td>
+                            <input type="checkbox" name="[STUDENTS.U_AKPSUG_AKTEST]MA_NON_EMBED" id="maONE" value="1" />
+                            <label for="maONE">Math - Other Non-Embedded (add note below)</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="elaNote">ELA - Non-Embedded Note</label>
+                            <textarea id="elaNote" name="[STUDENTS.U_AKPSUG_AKTEST]ELA_NOTE"></textarea>
+                        </td>
+                        <td>
+                            <label for="maNote">Math - Non-Embedded Note</label>
+                            <textarea id="maNote" name="[STUDENTS.U_AKPSUG_AKTEST]MA_NOTE"></textarea>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div ng-show="science">
+                <h2>Student Science Test Accommodations</h2>
+                <table class="grid">
+                    <tr>
+                        <td>
+                            <input type="checkbox" name="[STUDENTS.U_AKPSUG_AKTEST]SC_TTS" id="sctts" value="1" />
+                            <label for="sctts">Science - Text to Speech</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="checkbox" name="[STUDENTS.U_AKPSUG_AKTEST]SC_POD" id="scpod" value="1" />
+                            <label for="scpod">Science - Print on Demand</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="checkbox" name="[STUDENTS.U_AKPSUG_AKTEST]SC_NON_EMBED" id="scone" value="1" />
+                            <label for="scone">Science - Other Non-Embedded (add note below)</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="scNote">Science - Non-Embedded Note</label>
+                            <textarea id="scNote" name="[STUDENTS.U_AKPSUG_AKTEST]SC_NOTE"></textarea>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="button-row"><input type="hidden" name="ac" value="prim">~[submitbutton]</div>
+        </div>
+    </form>
+    <input type="hidden" id="grade" value="~([Students]grade_level)" />
+
+    <!-- end of content area -->
+    ~[wc:admin_footer_frame_css]
+</body>
+</html>

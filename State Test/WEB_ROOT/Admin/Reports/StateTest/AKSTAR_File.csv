@@ -4,7 +4,7 @@ School Year,Test Administration Code,District Student ID,Alaska Student ID,Distr
                 akpref.testcode                                                                                                 AS "testcode",
                 st.student_number                                                                                               AS "districtstuid",
                 st.state_studentnumber                                                                                          AS "statestuid",
-                NVL(akstar.test_district_number, (SELECT value FROM PREFS WHERE name='districtnumber' AND ROWNUM = 1))          AS "dctest",
+                NVL(akstar.test_district_number, (SELECT TO_NUMBER(value) FROM PREFS WHERE name='districtnumber' AND ROWNUM = 1)) AS "dctest",
                 NVL(akstar.test_district_name, (SELECT value FROM PREFS WHERE name='districtname' AND ROWNUM = 1))              AS "dntest",
                 (SELECT value FROM PREFS WHERE name='districtnumber' AND ROWNUM = 1)                                            AS "dcenroll",
                 (SELECT value FROM PREFS WHERE name='districtname' AND ROWNUM = 1)                                              AS "dnenroll",
@@ -66,18 +66,18 @@ School Year,Test Administration Code,District Student ID,Alaska Student ID,Distr
                 NVL(ak.activeduty_pg, 'N')                                                                                      AS "active",
                 NVL(ak.LEP, 'X')                                                                                                AS "ell",
                 NVL(akstar.ELA_REG_OVERRIDE, 'Y')                                                                               AS "elareg",
-                CASE WHEN akstar.ELA_TTS = 1 THEN'Y' ELSE 'N' END                                                               AS "elatts",
-                CASE WHEN akstar.ELA_ASL = 1 THEN'Y' ELSE 'N' END                                                               AS "elaasl",
-                CASE WHEN akstar.ELA_BRAILLE = 1 THEN'Y' ELSE 'N' END                                                           AS "elabraille",
-                CASE WHEN akstar.ELA_POD = 1 THEN'Y' ELSE 'N' END                                                               AS "elapod",
-                CASE WHEN akstar.ELA_NON_EMBED = 1 THEN'Y' ELSE 'N' END                                                         AS "elanon",
+                NVL(DECODE(akstar.ELA_TTS, 1, 'Y'), 'N')                                                                        AS "elatts",
+                NVL(DECODE(akstar.ELA_ASL, 1, 'Y'), 'N')                                                                        AS "elaasl",
+                NVL(DECODE(akstar.ELA_BRAILLE, 1, 'Y'), 'N')                                                                    AS "elabraille",
+                NVL(DECODE(akstar.ELA_POD, 1, 'Y'), 'N')                                                                        AS "elapod",
+                NVL(DECODE(akstar.ELA_NON_EMBED, 1, 'Y'), 'N')                                                                  AS "elanon",
                 NVL(akstar.ELA_NOT_TESTED, '')                                                                                  AS "elacode",
                 NVL(akstar.MA_REG_OVERRIDE, 'Y')                                                                                AS "mareg",
-                CASE WHEN akstar.MA_TTS = 1 THEN'Y' ELSE 'N' END                                                                AS "matts",
-                CASE WHEN akstar.MA_ASL = 1 THEN'Y' ELSE 'N' END                                                                AS "maasl",
-                CASE WHEN akstar.MA_BRAILLE = 1 THEN'Y' ELSE 'N' END                                                            AS "mabraille",
-                CASE WHEN akstar.MA_POD = 1 THEN'Y' ELSE 'N' END                                                                AS "mapod",
-                CASE WHEN akstar.MA_NON_EMBED = 1 THEN'Y' ELSE 'N' END                                                          AS "manon",
+                NVL(DECODE(akstar.MA_TTS, 1, 'Y'), 'N')                                                                         AS "matts",
+                NVL(DECODE(akstar.MA_ASL, 1, 'Y'), 'N')                                                                         AS "maasl",
+                NVL(DECODE(akstar.MA_BRAILLE, 1, 'Y'), 'N')                                                                     AS "mabraille",
+                NVL(DECODE(akstar.MA_POD, 1, 'Y'), 'N')                                                                         AS "mapod",
+                NVL(DECODE(akstar.MA_NON_EMBED, 1, 'Y'), 'N')                                                                   AS "manon",
                 NVL(akstar.MA_NOT_TESTED, '')                                                                                   AS "macode"
   
             FROM Students st
@@ -85,9 +85,9 @@ School Year,Test Administration Code,District Student ID,Alaska Student ID,Distr
                     ON st.dcid = ak.StudentsDCID
                 LEFT OUTER JOIN Schools sch
                     ON st.schoolid = sch.school_number
-                JOIN U_AKPSUG_AKSTAR_PREF akpref
+                JOIN U_AKPSUG_AKTEST_PREF akpref
                     ON (SELECT yearid FROM Terms WHERE schoolid = 0 AND TRUNC(SYSDATE) BETWEEN firstday and lastday AND ROWNUM = 1) = akpref.yearid
-                LEFT OUTER JOIN U_AKPSUG_AKSTAR akstar
+                LEFT OUTER JOIN U_AKPSUG_AKTEST akstar
                     ON st.dcid = akstar.studentsdcid
                 LEFT OUTER JOIN StudentCoreFields scf
                     ON st.dcid = scf.studentsdcid
