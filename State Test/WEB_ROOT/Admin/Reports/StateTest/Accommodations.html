@@ -72,10 +72,10 @@
                             <a href="" ng_click='sort="maone"; sortReverse = !sortReverse'>MATH<br />Non-Embedded</a>
                         </th>
                         <th>
-                            <a href="" ng_click='sort="elaoverride"; sortReverse = !sortReverse'>ELA<br />Not Testing</a>
+                            <a href="" ng_click='sort="elaoverride"; sortReverse = !sortReverse'>ELA<br />Participation</a>
                         </th>
                         <th>
-                            <a href="" ng_click='sort="maoverride"; sortReverse = !sortReverse'>MATH<br />Not Testing</a>
+                            <a href="" ng_click='sort="maoverride"; sortReverse = !sortReverse'>MATH<br />Participation</a>
                         </th>
                         <th>
                             <a href="" ng_click='sort="sctts"; sortReverse = !sortReverse'>Science TTS</a>
@@ -96,26 +96,17 @@
                         <td>{{a.elaasl}}</td>
                         <td>{{a.elapod}}</td>
                         <td>{{a.elabraille}}</td>
-                        <td>
-                            <span ng-if="a.elaone === 'Y'">{{a.elanote}}</span>
-                            <span ng-if="a.elaone === 'N'">N/A</span>
-                        </td>
+                        <td>{{a.elanote}}</td>
                         <td>{{a.matts}}</td>
                         <td>{{a.maasl}}</td>
                         <td>{{a.mapod}}</td>
                         <td>{{a.mabraille}}</td>
-                        <td>
-                            <span ng-if="a.maone === 'Y'">{{a.manote}}</span>
-                            <span ng-if="a.maone === 'N'">N/A</span>
-                        </td>
+                        <td>{{a.manote}}</td>
                         <td>{{a.elaoverride}}<span ng-if="a.elaoverride === 'N'"> - {{a.elanotest}}</span></td>
                         <td>{{a.maoverride}}<span ng-if="a.maoverride === 'N'"> - {{a.manotest}}</span></td>
                         <td>{{a.sctts}}</td>
                         <td>{{a.scpod}}</td>
-                        <td>
-                            <span ng-if="a.scone === 'Y'">{{a.scnote}}</span>
-                            <span ng-if="a.scone === 'N'">N/A</span>
-                        </td>
+                        <td>{{a.scnote}}</td>
                     </tr>
                 </table>
             </div>
@@ -175,10 +166,10 @@
                             <a href="" ng_click='sort="maone"; sortReverse = !sortReverse'>MATH<br />Non-Embedded</a>
                         </th>
                         <th>
-                            <a href="" ng_click='sort="elaoverride"; sortReverse = !sortReverse'>ELA<br />Not Testing</a>
+                            <a href="" ng_click='sort="elaoverride"; sortReverse = !sortReverse'>ELA<br />Participation</a>
                         </th>
                         <th>
-                            <a href="" ng_click='sort="maoverride"; sortReverse = !sortReverse'>MATH<br />Not Testing</a>
+                            <a href="" ng_click='sort="maoverride"; sortReverse = !sortReverse'>MATH<br />Participation</a>
                         </th>
                         <th>
                             <a href="" ng_click='sort="sctts"; sortReverse = !sortReverse'>Science TTS</a>
@@ -201,26 +192,17 @@
                         <td>{{a.elaasl}}</td>
                         <td>{{a.elapod}}</td>
                         <td>{{a.elabraille}}</td>
-                        <td>
-                            <span ng-if="a.elaone === 'Y'">{{a.elanote}}</span>
-                            <span ng-if="a.elaone === 'N'">N/A</span>
-                        </td>
+                        <td>{{a.elanote}}</td>
                         <td>{{a.matts}}</td>
                         <td>{{a.maasl}}</td>
                         <td>{{a.mapod}}</td>
                         <td>{{a.mabraille}}</td>
-                        <td>
-                            <span ng-if="a.maone === 'Y'">{{a.manote}}</span>
-                            <span ng-if="a.maone === 'N'">N/A</span>
-                        </td>
+                        <td>{{a.manote}}</td>
                         <td>{{a.elaoverride}}<span ng-if="a.elaoverride === 'N'"> - {{a.elanotest}}</span></td>
                         <td>{{a.maoverride}}<span ng-if="a.maoverride === 'N'"> - {{a.manotest}}</span></td>
                         <td>{{a.sctts}}</td>
                         <td>{{a.scpod}}</td>
-                        <td>
-                            <span ng-if="a.scone === 'Y'">{{a.scnote}}</span>
-                            <span ng-if="a.scone === 'N'">N/A</span>
-                        </td>
+                        <td>{{a.scnote}}</td>
                     </tr>
                 </table>
             </div>

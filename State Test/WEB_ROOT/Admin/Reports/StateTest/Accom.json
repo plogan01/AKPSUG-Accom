@@ -20,26 +20,99 @@
 			WHEN (x.disability_code > 0 AND x.disability_code < 15) THEN 'Y'
 			ELSE 'N'
 		END AS SP,
-		CASE WHEN ak.ELA_TTS = 1 THEN 'Y' ELSE 'N' END AS "ELATTS",
-		CASE WHEN ak.MA_TTS = 1 THEN 'Y' ELSE 'N' END AS "MATTS",
-		CASE WHEN ak.ELA_ASL = 1 THEN 'Y' ELSE 'N' END AS "ELAASL",
-		CASE WHEN ak.MA_ASL = 1 THEN 'Y' ELSE 'N' END AS "MAASL",
-		CASE WHEN ak.ELA_POD = 1 THEN 'Y' ELSE 'N' END AS "ELAPOD",
-		CASE WHEN ak.MA_POD = 1 THEN 'Y' ELSE 'N' END AS "MAPOD",
-		CASE WHEN ak.ELA_BRAILLE = 1 THEN 'Y' ELSE 'N' END AS "ELABRAILLE",
-		CASE WHEN ak.MA_BRAILLE = 1 THEN 'Y' ELSE 'N' END AS "MABRAILLE",
-		CASE WHEN ak.ELA_NON_EMBED = 1 THEN 'Y' ELSE 'N' END AS "ELAONE",
-		CASE WHEN ak.MA_NON_EMBED = 1 THEN 'Y' ELSE 'N' END AS "MAONE",
-		ak.ELA_NOTE,
-		ak.MA_NOTE,
-		NVL(ak.ELA_REG_OVERRIDE, 'Y') AS "ELAOVERRIDE",
-		NVL(ak.MA_REG_OVERRIDE, 'Y') AS "MAOVERRIDE",
-		ak.ELA_NOT_TESTED AS elanotest,
-		ak.MA_NOT_TESTED AS manotest,
-		CASE WHEN ak.SC_TTS = 1 THEN 'Y' ELSE 'N' END AS "SCTTS",
-		CASE WHEN ak.SC_POD = 1 THEN 'Y' ELSE 'N' END AS "SCPOD",
-		CASE WHEN ak.SC_NON_EMBED = 1 THEN 'Y' ELSE 'N' END AS "SCONE",
-		ak.SC_NOTE
+		CASE 
+            WHEN s.grade_level < 10 THEN
+                CASE WHEN ak.ELA_TTS = 1 THEN 'Y' ELSE 'N' END 
+            ELSE 'N/A' 
+        END AS "ELATTS",
+        CASE 
+            WHEN s.grade_level < 10 THEN
+                CASE WHEN ak.MA_TTS = 1 THEN 'Y' ELSE 'N' END 
+            ELSE 'N/A'
+        END AS "MATTS",
+        CASE 
+            WHEN s.grade_level < 10 THEN
+                CASE WHEN ak.ELA_ASL = 1 THEN 'Y' ELSE 'N' END 
+            ELSE 'N/A'
+        END AS "ELAASL",
+		CASE 
+            WHEN s.grade_level < 10 THEN
+                CASE WHEN ak.MA_ASL = 1 THEN 'Y' ELSE 'N' END
+            ELSE 'N/A'
+        END AS "MAASL",
+        CASE 
+            WHEN s.grade_level < 10 THEN
+                CASE WHEN ak.ELA_POD = 1 THEN 'Y' ELSE 'N' END 
+            ELSE 'N/A'
+        END AS "ELAPOD",
+        CASE 
+            WHEN s.grade_level < 10 THEN
+                CASE WHEN ak.MA_POD = 1 THEN 'Y' ELSE 'N' END 
+            ELSE 'N/A'
+        END AS "MAPOD",
+		CASE 
+            WHEN s.grade_level < 10 THEN
+                CASE WHEN ak.ELA_BRAILLE = 1 THEN 'Y' ELSE 'N' END 
+            ELSE 'N/A'
+        END AS "ELABRAILLE",
+		CASE 
+            WHEN s.grade_level < 10 THEN
+                CASE WHEN ak.MA_BRAILLE = 1 THEN 'Y' ELSE 'N' END 
+            ELSE 'N/A'
+        END AS "MABRAILLE",
+        CASE 
+            WHEN s.grade_level < 10 THEN
+                CASE WHEN ak.ELA_NON_EMBED = 1 THEN 'Y' ELSE 'N' END 
+            ELSE 'N/A'
+        END AS "ELAONE",
+        CASE 
+            WHEN s.grade_level < 10 THEN
+                CASE WHEN ak.MA_NON_EMBED = 1 THEN 'Y' ELSE 'N' END 
+            ELSE 'N/A'
+        END AS "MAONE",
+		CASE 
+            WHEN s.grade_level < 10 THEN ak.ELA_NOTE
+            ELSE 'N/A'
+        END AS ELA_NOTE,
+		CASE 
+            WHEN s.grade_level < 10 THEN ak.MA_NOTE
+            ELSE'N/A'
+        END AS MA_NOTE,
+		CASE 
+            WHEN s.grade_level < 10 THEN NVL(ak.ELA_REG_OVERRIDE, 'Y') 
+            ELSE 'N/A'
+        END AS ELAOVERRIDE,
+		CASE 
+            WHEN s.grade_level < 10 THEN NVL(ak.MA_REG_OVERRIDE, 'Y') 
+            ELSE 'N/A'
+        END AS MAOVERRIDE,
+		CASE 
+            WHEN s.grade_level < 10 THEN ak.ELA_NOT_TESTED 
+            ELSE 'N/A' 
+        END AS elanotest,
+		CASE 
+            WHEN s.grade_level < 10 THEN ak.MA_NOT_TESTED 
+            ELSE 'N/A'
+        END AS manotest,
+        CASE 
+            WHEN s.grade_level IN (5,8,10) THEN
+                CASE WHEN ak.SC_TTS = 1 THEN 'Y' ELSE 'N' END 
+            ELSE 'N/A'
+        END AS "SCTTS",
+        CASE 
+            WHEN s.grade_level IN (5,8,10) THEN
+                CASE WHEN ak.SC_POD = 1 THEN 'Y' ELSE 'N' END 
+            ELSE 'N/A'
+        END AS "SCPOD",
+        CASE 
+            WHEN s.grade_level IN (5,8,10) THEN
+                CASE WHEN ak.SC_NON_EMBED = 1 THEN 'Y' ELSE 'N' END 
+            ELSE 'N/A'
+        END AS "SCONE",
+		CASE 
+            WHEN s.grade_level IN (5,8,10) THEN ak.SC_NOTE
+            ELSE 'N/A'
+        END AS SC_NOTE
 	FROM Students s
 	JOIN Schools sch
 		ON s.schoolid = sch.school_number
@@ -53,7 +126,7 @@
 	WHERE s.schoolid = ~(curschoolid)
 	  AND sch.state_excludefromreporting != 1
 	  AND s.enroll_status = 0
-	  AND s.grade_level IN (3,4,5,6,7,8,9)
+	  AND s.grade_level IN (3,4,5,6,7,8,9,10)
 ]
 
 	{
