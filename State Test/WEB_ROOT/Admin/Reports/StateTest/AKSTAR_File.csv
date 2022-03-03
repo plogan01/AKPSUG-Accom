@@ -1,4 +1,4 @@
-School Year,Test Administration Code,District Student ID,Alaska Student ID,District Code - Testing Location,District Name - Testing Location,District Code - Enrolled Location,District Name - Enrolled Location,School Code - Testing Location,School Name - Testing Location,School Code - Enrolled Location,School Name - Enrolled Location,Student Last Name,Student First Name,Student Middle Name ,Student Date of Birth,Student Gender,Student Grade,Student Ethnic Group Code,Economic Disadvantage,504 Plan,IEP,Primary Disability,Migrant,Parent/Guardian on Active Duty Military Status,English Learner,ELA Registration,ELA - Embedded Accommodation - Text to Speech Flag,ELA - Embedded Accommodation - ASL Flag,ELA - Embedded Accommodation - Braille,ELA - Embedded Accommodation - Print On Demand,ELA - Non-embedded Accommodations,ELA - Special Circumstance Code,Mathematics Registration,MA - Embedded Accommodation - Text to Speech Flag,MA - Embedded Accommodation - ASL Flag,MA - Embedded Accommodation - Braille,MA - Embedded Accommodation - Print On Demand,MA - Non-embedded Accommodations,MA - Special Circumstance Code
+School Year,Test Administration Code,District Student ID,Alaska Student ID,District Code - Testing Location,District Name - Testing Location,District Code - Enrolled Location,District Name - Enrolled Location,School Code - Testing Location,School Name - Testing Location,School Code - Enrolled Location,School Name - Enrolled Location,Student Last Name,Student First Name,Student Middle Name ,Student Date of Birth,Student Gender,Student Grade,Student Ethnic Group Code,Economic Disadvantage,504 Plan,IEP,Primary Disability,Migrant,Parent/Guardian on Active Duty Military Status,English Learner,ELA Registration,ELA - Embedded Accommodation - Text to Speech Flag,ELA - Embedded Accommodation - ASL Flag,ELA - Embedded Accommodation - Braille,ELA - Embedded Accommodation - Print On Demand,ELA - Non-embedded Accommodations,ELA - Special Circumstance Code,Mathematics Registration,MA - Embedded Accommodation - Text to Speech Flag,MA - Embedded Accommodation - ASL Flag,MA - Embedded Accommodation - Braille,MA - Embedded Accommodation - Print On Demand,MA - Non-embedded Accommodations,MA - Special Circumstance Code,Action
 ~[tlist_sql;SELECT 
                 akpref.yearid + 1991                                                                                            AS "year",
                 akpref.testcode                                                                                                 AS "testcode",
@@ -40,8 +40,8 @@ School Year,Test Administration Code,District Student ID,Alaska Student ID,Distr
                 END                                                                                                             AS "first",
                 CASE
                     WHEN scf.pscore_legal_middle_name IS NOT NULL
-                        THEN scf.pscore_legal_middle_name
-                    ELSE st.middle_name
+                        THEN SUBSTR(scf.pscore_legal_middle_name, 0, 20)
+                    ELSE SUBSTR(st.middle_name,0,20)
                 END                                                                                                             AS "middle",
                 TO_CHAR(st.DOB,'MM/DD/YYYY')                                                                                    AS "dob",
                 CASE
@@ -78,7 +78,8 @@ School Year,Test Administration Code,District Student ID,Alaska Student ID,Distr
                 NVL(DECODE(akstar.MA_BRAILLE, 1, 'Y'), 'N')                                                                     AS "mabraille",
                 NVL(DECODE(akstar.MA_POD, 1, 'Y'), 'N')                                                                         AS "mapod",
                 NVL(DECODE(akstar.MA_NON_EMBED, 1, 'Y'), 'N')                                                                   AS "manon",
-                NVL(akstar.MA_NOT_TESTED, '')                                                                                   AS "macode"
+                NVL(akstar.MA_NOT_TESTED, '')                                                                                   AS "macode",
+                ''                                                                                                              AS "action"
   
             FROM Students st
                 JOIN S_AK_STU_X ak
@@ -95,5 +96,5 @@ School Year,Test Administration Code,District Student ID,Alaska Student ID,Distr
                 AND st.enroll_status = 0
                 AND st.grade_level IN (3,4,5,6,7,8,9)
                 AND (ak.AlternateAssessment !='Y' OR ak.AlternateAssessment IS NULL)
-            ORDER BY sch.school_number, st.grade_level, st.last_name]~(year),~(testcode),~(districtstuid),~(statestuid),~(dctest),~(dntest),~(dcenroll),~(dnenroll),~(sctest),~(sntest),~(scenroll),~(snenroll),~(last),~(first),~(middle),~(dob),~(gender),~(grade),~(race),~(econ),~(504),~(iep),~(disability),~(migrant),~(active),~(ell),~(elareg),~(elatts),~(elaasl),~(elabraille),~(elapod),~(elanon),~(elacode),~(mareg),~(matts),~(maasl),~(mabraille),~(mapod),~(manon),~(macode)
+            ORDER BY sch.school_number, st.grade_level, st.last_name]~(year),~(testcode),~(districtstuid),~(statestuid),~(dctest),~(dntest),~(dcenroll),~(dnenroll),~(sctest),~(sntest),~(scenroll),~(snenroll),~(last),~(first),~(middle),~(dob),~(gender),~(grade),~(race),~(econ),~(504),~(iep),~(disability),~(migrant),~(active),~(ell),~(elareg),~(elatts),~(elaasl),~(elabraille),~(elapod),~(elanon),~(elacode),~(mareg),~(matts),~(maasl),~(mabraille),~(mapod),~(manon),~(macode),~(action)
 [/tlist_sql]

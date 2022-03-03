@@ -40,13 +40,13 @@ define(['angular', 'components/shared/index'], function (angular) {
 
         $scope.locChange = function () {
 
-            if ($scope.testDistrict.DistrictID > 0) {
+            if (typeof $scope.testDistrict !== 'undefined' && $scope.testDistrict.DistrictID > 0) {
                 $j('#districtName').val($scope.testDistrict.DistrictName);
                 $j('#districtNumber').val($scope.testDistrict.DistrictID);
             } else {
                 $scope.testSchool = {};
             }
-            if ($scope.testSchool.SchoolID > 0) {
+            if (typeof $scope.testSchool !== 'undefined' && $scope.testSchool.SchoolID > 0) {
                 $j('#schoolName').val($scope.testSchool.SchoolName);
                 $j('#schoolNumber').val($scope.testSchool.SchoolID);
             }
