@@ -5,9 +5,9 @@ School Year,Test Administration Code,District Student ID,Alaska Student ID,Distr
                 st.student_number                                                                                               AS "districtstuid",
                 st.state_studentnumber                                                                                          AS "statestuid",
                 NVL(akstar.test_district_number, (SELECT TO_NUMBER(value) FROM PREFS WHERE name='districtnumber' AND ROWNUM = 1)) AS "dctest",
-                NVL(akstar.test_district_name, (SELECT value FROM PREFS WHERE name='districtname' AND ROWNUM = 1))              AS "dntest",
-                (SELECT value FROM PREFS WHERE name='districtnumber' AND ROWNUM = 1)                                            AS "dcenroll",
-                (SELECT value FROM PREFS WHERE name='districtname' AND ROWNUM = 1)                                              AS "dnenroll",
+                NVL(akstar.test_district_name, (SELECT DBMS_LOB.SUBSTR(value, 4000) FROM PREFS WHERE name='districtname' AND ROWNUM = 1))              AS "dntest",
+                (SELECT DBMS_LOB.SUBSTR(value, 4000) FROM PREFS WHERE name='districtnumber' AND ROWNUM = 1)                     AS "dcenroll",
+                (SELECT DBMS_LOB.SUBSTR(value, 4000) FROM PREFS WHERE name='districtname' AND ROWNUM = 1)                       AS "dnenroll",
                 CASE
                     WHEN akstar.test_school_number IS NOT NULL THEN TO_NUMBER(akstar.test_school_number)
                     WHEN sch.alternate_school_number > 0 THEN sch.alternate_school_number
@@ -96,5 +96,6 @@ School Year,Test Administration Code,District Student ID,Alaska Student ID,Distr
                 AND st.enroll_status = 0
                 AND st.grade_level IN (3,4,5,6,7,8,9)
                 AND (ak.AlternateAssessment !='Y' OR ak.AlternateAssessment IS NULL)
+                AND st.State_ExcludeFromReporting != 1
             ORDER BY sch.school_number, st.grade_level, st.last_name]~(year),~(testcode),~(districtstuid),~(statestuid),~(dctest),~(dntest),~(dcenroll),~(dnenroll),~(sctest),~(sntest),~(scenroll),~(snenroll),~(last),~(first),~(middle),~(dob),~(gender),~(grade),~(race),~(econ),~(504),~(iep),~(disability),~(migrant),~(active),~(ell),~(elareg),~(elatts),~(elaasl),~(elabraille),~(elapod),~(elanon),~(elacode),~(mareg),~(matts),~(maasl),~(mabraille),~(mapod),~(manon),~(macode),~(action)
 [/tlist_sql]

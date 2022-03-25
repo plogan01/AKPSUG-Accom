@@ -1,6 +1,6 @@
 District Code,School Code,AKSID,District Student ID,Student Last Name,Student First Name,Student Middle Name,Suffix,Gender,Date of Birth,Grade,Race/Ethnicity,Disability Status,504 Plan,English Learner Status,Economically Disadvantaged Status,Migrant Status,Parent/Guardian on Active Duty Military Status,Science - Text-To-Speech,Science - Student provided non-embedded accommodation(s) as noted in IEP or 504 plan.,Science - Print on Demand
 ~[tlist_sql;SELECT 
-                (SELECT value FROM PREFS WHERE name='districtnumber' AND ROWNUM = 1) AS "District",
+                (SELECT DBMS_LOB.SUBSTR(value, 4000) FROM PREFS WHERE name='districtnumber' AND ROWNUM = 1) AS "District",
                 CASE 
                     WHEN sch.alternate_school_number > 0 THEN sch.alternate_school_number
                     ELSE sch.school_number 
@@ -91,5 +91,6 @@ District Code,School Code,AKSID,District Student ID,Student Last Name,Student Fi
                 AND st.enroll_status = 0
                 AND st.grade_level IN (5,8,10)
                 AND (ak.AlternateAssessment !='Y' OR ak.AlternateAssessment IS NULL)
+                AND st.State_ExcludeFromReporting != 1
             ORDER BY sch.school_number, st.grade_level, st.last_name]~(district),~(school),~(aksid),~(student_id),~(last),~(first),~(middle),~(suffix),~(gender),~(dob),~(grade),~(race),~(disability),~(504),~(ell),~(econ),~(migrant),~(military),~(sci_tts),~(sci_other),~(sci_pod)
 [/tlist_sql]
