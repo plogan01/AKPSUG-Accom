@@ -1,0 +1,5 @@
+<script type="text/javascript">
+	$j(document).ready(function() {	
+		$j('#btn-navRecommendations').after('<li><a href="/teachers/statetest/accommodations.html" id="Accom" title="State Test Accommodations">State Test Accommodations</a></li>');
+	});
+</script>

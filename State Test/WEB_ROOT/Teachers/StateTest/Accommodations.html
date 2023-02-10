@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>State Test Accommodations</title>
+    <!-- required scripts -->
+    ~[wc:commonscripts]
+    <!-- Required style sheets: screen.css, and print.css -->
+    <link href="/images/css/screen.css" rel="stylesheet" media="screen">
+    <link href="/images/css/print.css" rel="stylesheet" media="print">
+    <style>
+        .break {
+            page-break-after: always;
+        }
+        .positive {
+            font-weight : bold;
+            background-color : yellow !important;
+        }
+    </style>
+</head>
+<body>
+    ~[wc:teachers_header_css]
+    ~[wc:teachers_navigation_css]
+    <!-- sets active navigation tab -->
+    ~[SetPostValue:tabname=home]
+    ~[wc:teachers_nav_css]
+    <div class="box-round" ng-controller="reportCont" data-require-path="/scripts/akpsug/StateTest/teacherreport.js" data-module-name="reportApp" ng-cloak>
+        <div ng-if="accomList.length > 0">
+            <div ng-if="(accomList).length > 0">
+                <table class="grid break" ng-repeat="course in accomList | unique : 'class'">
+                   <tr>
+                       <th colspan="15">{{course.class}}</th>
+                   </tr>
+                   <tr>
+                       <th>Student</th>
+                       <th>Grade</th>
+                       <th>ELA Text <br />To Speech</th>
+                       <th>ELA Print <br />On Demand</th>
+                       <th>ELA <br />Braille</th>
+                       <th>ELA ASL</th>
+                       <th>ELA Non-Embedded <br /> Description</th>
+                       <th>Math Text <br />To Speech</th>
+                       <th>Math Print <br />On Demand</th>
+                       <th>Math <br />Braille</th>
+                       <th>Math ASL</th>
+                       <th>Math Non-Embedded <br /> Description</th>
+                       <th>Science Text <br />To Speech</th>
+                       <th>Science Print <br />On Demand</th>
+                       <th>Science Non-Embedded <br /> Description</th>
+                   </tr>
+                   <tr ng-repeat="stu in accomList | filter: {'class' : course.class}">
+                       <td>{{stu.student}}</td>
+                       <td>{{stu.grade}}</td>
+                       <td ng-class="getClass(stu.elatts);">{{stu.elatts}}</td>
+                       <td ng-class="getClass(stu.elapod);">{{stu.elapod}}</td>
+                       <td ng-class="getClass(stu.elabraille);">{{stu.elabraille}}</td>
+                       <td ng-class="getClass(stu.elaasl);">{{stu.elaasl}}</td>
+                       <td ng-class="getClass(stu.elaone);">{{stu.elanote}}</td>
+                       <td ng-class="getClass(stu.matts);">{{stu.matts}}</td>
+                       <td ng-class="getClass(stu.mapod);">{{stu.mapod}}</td>
+                       <td ng-class="getClass(stu.mabraille);">{{stu.mabraille}}</td>
+                       <td ng-class="getClass(stu.maasl);">{{stu.maasl}}</td>
+                       <td ng-class="getClass(stu.manote);">{{stu.manote}}</td>
+                       <td ng-class="getClass(stu.sctts);">{{stu.sctts}}</td>
+                       <td ng-class="getClass(stu.scpod);">{{stu.scpod}}</td>
+                       <td ng-class="getClass(stu.scone);">{{stu.scnote}}</td>
+                   </tr>
+                </table>
+            </div>
+        </div>
+        <div ng-if="accomList.length == 0"><h2>There are no state student test accommodations for this school.</h2></div>
+    </div>
+    <input class="hidden" id="teacher" value="~[x:users_dcid]" />
+    <!-- end of content area -->
+    ~[wc:admin_footer_css]
+</body>
+</html>

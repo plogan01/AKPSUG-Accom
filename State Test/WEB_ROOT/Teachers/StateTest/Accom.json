@@ -1,0 +1,154 @@
+[~[tlist_sql;
+	SELECT
+    SUBSTR(sec.expression,0,1),
+    c.course_name,
+    s.lastfirst,
+    s.grade_level,
+    CASE 
+        WHEN s.grade_level < 10 THEN
+            CASE WHEN ak.ELA_TTS = 1 THEN 'Y' ELSE 'N' END 
+        ELSE 'N/A' 
+    END AS "ELATTS",
+    CASE 
+        WHEN s.grade_level < 10 THEN
+            CASE WHEN ak.MA_TTS = 1 THEN 'Y' ELSE 'N' END 
+        ELSE 'N/A'
+    END AS "MATTS",
+    CASE 
+        WHEN s.grade_level < 10 THEN
+            CASE WHEN ak.ELA_ASL = 1 THEN 'Y' ELSE 'N' END 
+        ELSE 'N/A'
+    END AS "ELAASL",
+    CASE 
+        WHEN s.grade_level < 10 THEN
+            CASE WHEN ak.MA_ASL = 1 THEN 'Y' ELSE 'N' END
+        ELSE 'N/A'
+    END AS "MAASL",
+    CASE 
+        WHEN s.grade_level < 10 THEN
+            CASE WHEN ak.ELA_POD = 1 THEN 'Y' ELSE 'N' END 
+        ELSE 'N/A'
+    END AS "ELAPOD",
+    CASE 
+        WHEN s.grade_level < 10 THEN
+            CASE WHEN ak.MA_POD = 1 THEN 'Y' ELSE 'N' END 
+        ELSE 'N/A'
+    END AS "MAPOD",
+		CASE 
+        WHEN s.grade_level < 10 THEN
+            CASE WHEN ak.ELA_BRAILLE = 1 THEN 'Y' ELSE 'N' END 
+        ELSE 'N/A'
+    END AS "ELABRAILLE",
+		CASE 
+        WHEN s.grade_level < 10 THEN
+            CASE WHEN ak.MA_BRAILLE = 1 THEN 'Y' ELSE 'N' END 
+        ELSE 'N/A'
+    END AS "MABRAILLE",
+    CASE 
+        WHEN s.grade_level < 10 THEN
+            CASE WHEN ak.ELA_NON_EMBED = 1 THEN 'Y' ELSE 'N' END 
+        ELSE 'N/A'
+    END AS "ELAONE",
+    CASE 
+        WHEN s.grade_level < 10 THEN
+            CASE WHEN ak.MA_NON_EMBED = 1 THEN 'Y' ELSE 'N' END 
+        ELSE 'N/A'
+    END AS "MAONE",
+		CASE 
+            WHEN s.grade_level < 10 THEN ak.ELA_NOTE
+            ELSE 'N/A'
+        END AS ELA_NOTE,
+		CASE 
+        WHEN s.grade_level < 10 THEN ak.MA_NOTE
+        ELSE'N/A'
+    END AS MA_NOTE,
+    CASE 
+        WHEN s.grade_level IN (5,8,10) THEN
+            CASE WHEN ak.SC_TTS = 1 THEN 'Y' ELSE 'N' END 
+        ELSE 'N/A'
+    END AS "SCTTS",
+    CASE 
+        WHEN s.grade_level IN (5,8,10) THEN
+            CASE WHEN ak.SC_POD = 1 THEN 'Y' ELSE 'N' END 
+        ELSE 'N/A'
+    END AS "SCPOD",
+    CASE 
+        WHEN s.grade_level IN (5,8,10) THEN
+            CASE WHEN ak.SC_NON_EMBED = 1 THEN 'Y' ELSE 'N' END 
+        ELSE 'N/A'
+    END AS "SCONE",
+		CASE 
+        WHEN s.grade_level IN (5,8,10) THEN ak.SC_NOTE
+        ELSE 'N/A'
+    END AS SC_NOTE
+    
+FROM CC cc
+    JOIN sections sec
+        ON cc.sectionid = sec.id
+    JOIN Teachers t
+        ON sec.teacher = t.id
+    JOIN Courses c
+        ON sec.course_number = c.course_number
+    JOIN Students s
+        ON cc.studentid = s.id
+    LEFT OUTER JOIN U_AKPSUG_AKTEST ak
+        ON s.dcid = ak.studentsdcid    
+        
+WHERE 
+    sec.termid IN (SELECT ID FROM Terms WHERE SYSDATE BETWEEN Firstday and LastDay AND SchoolID = ~(curschoolid))
+AND
+    sec.no_of_students > 0
+AND
+    t.users_dcid = ~(gpv.dcid)
+AND (
+    ak.ELA_TTS = 1
+  OR
+    ak.ELA_POD = 1
+  OR
+    ak.ELA_ASL = 1
+  OR
+    ak.ELA_Braille = 1
+  OR
+    ak.ELA_NON_Embed = 1
+  OR
+    ak.MA_TTS = 1
+  OR
+    ak.MA_POD = 1
+  OR
+    ak.MA_ASL = 1
+  OR
+    ak.MA_Braille = 1
+  OR
+    ak.MA_NON_Embed = 1
+  OR
+    ak.SC_TTS = 1
+  OR
+    ak.SC_POD = 1
+  OR
+    ak.SC_NON_Embed = 1
+)       
+ORDER BY SUBSTR(sec.expression,0,1), s.lastfirst
+]
+
+	{
+		"class": "~(expression;json) - ~(course;json)",
+		"student": "~(student;json)",
+		"grade": "~(grade;json)",
+		"elatts": "~(elatts;json)",
+		"matts": "~(matts;json)",
+		"elaasl": "~(elaacl;json)",
+		"maasl": "~(maasl;json)",
+		"elapod": "~(elapod;json)",
+		"mapod": "~(mapod;json)",
+		"elabraille": "~(elabraille;json)",
+		"mabraille": "~(mabraille;json)",
+		"elaone": "~(elaone;json)",
+		"maone": "~(maone;json)",
+		"elanote": "~(elanote;json)",
+		"manote": "~(manote;json)",
+		"sctts": "~(sctts;json)",
+		"scpod": "~(scpod;json)",
+		"scone": "~(scone;json)",
+		"scnote": "~(scnote;json)"
+	},
+[/tlist_sql]{}]
