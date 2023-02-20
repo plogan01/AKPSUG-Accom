@@ -8,7 +8,7 @@
     <link href="/images/css/screen.css" rel="stylesheet" media="screen">
     <link href="/images/css/print.css" rel="stylesheet" media="print">
 </head>
-<body>
+<body ng-controller="accomCont" data-require-path="/scripts/AKPSUG/StateTest/accomm.js" data-module-name="accomApp">
     ~[wc:admin_header_frame_css]
     <!-- breadcrumb start -->
     <a href="/admin/home.html" target="_top">Start Page</a> &gt; <a href="/admin/students/home.html?selectstudent=nosearch" target="_top">Student Selection</a> &gt; Alaska State Test Administration
@@ -16,14 +16,14 @@
     ~[wc:admin_navigation_frame_css]
     <!-- start of main menu and content -->
     ~[wc:title_student_begin_css]Alaska State Test Administration~[wc:title_student_end_css]
+    <div class="box-round" ng-show="!akStar && !science"><h3>This student is not eligible to take the AKStar and AK Science Tests</h3></div>
 
-
-    <form action="/~[self.page]?frn=~(studentfrn)&changesSaved=true" method="POST">
+    <form action="/~[self.page]?frn=~(studentfrn)&changesSaved=true" method="POST" ng-show="akStar || science">
         <!-- start of content area -->
         ~[if.gpv.changesSaved=true]
             <div class="feedback-confirm">~[text:psx.common.changes_recorded]</div>
         [/if]
-        <div class="box-round"  ng-controller="accomCont" data-require-path="/scripts/AKPSUG/StateTest/accomm.js" data-module-name="accomApp">
+        <div class="box-round">
             <div ng-show="akStar">
                 <h2>Student Participation</h2>
                 <table class="grid">

@@ -1,5 +1,5 @@
 <script>
 	$j(document).ready(function(){
-		$j('.linkDescList :first' ).append('<tr><td><a href="/admin/reports/statetest/akstar_file.csv">AK STAR Roster File</a></td><td>1.0</td><td>Generate a csv file for upload to MAP for the AK STAR test.</td></tr><tr><td><a href="/admin/reports/statetest/drc_msu.csv">DRC MSU File</a></td><td>1.0</td><td>Generate a csv file for upload to DRC</td></tr>');
+		$j('.linkDescList').first().next('table').after('<table class="linkDescList"><tr><th>State Test Roster Files</th><th>Version</th><th>Descrition</th></tr><tr><td><a href="/admin/reports/statetest/akstar_file.csv">AK STAR Roster File</a></td><td>1.0</td><td>Generate a csv file for upload to MAP for the AK STAR test.</td></tr><tr><td><a href="/admin/reports/statetest/drc_msu.csv">DRC MSU File</a></td><td>1.0</td><td>Generate a csv file for upload to DRC</td></tr>');
 	});
 </script>
