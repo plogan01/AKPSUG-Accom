@@ -31,10 +31,7 @@ District Code,School Code,AKSID,District Student ID,Student Last Name,Student Fi
                 TO_CHAR(st.DOB,'MM/DD/YYYY') AS "Date of Birth",
                 st.Grade_Level AS "Grade",
                 st.Ethnicity AS "Race",
-                CASE 
-                    WHEN ak.Disability_Code IS NULL THEN '00'
-                    ELSE TO_CHAR(ak.Disability_Code)
-                END AS "Disability",
+                NVL2(ak.Disability_Code, TO_NUMBER(ak.Disability_Code), 0) AS "Disability",
                 CASE 
                     WHEN ak.Section504 = 'Y' THEN 'Y'
                     WHEN ak.Section504 = '1' THEN 'Y'
@@ -53,7 +50,7 @@ District Code,School Code,AKSID,District Student ID,Student Last Name,Student Fi
                     ELSE ak.Migrant
                     END AS "Migrant",
                 CASE 
-                    WHEN ak.Activeduty_pg IS NOT NULL THEN ak.Activeduty_pg
+                    WHEN ak.Activeduty_pg = 'Y' THEN 'Y'
                     ELSE 'N'
                 END AS "Military",
                 CASE 

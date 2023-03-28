@@ -61,9 +61,12 @@ School Year,Test Administration Code,District Student ID,Alaska Student ID,Distr
                     WHEN ak.Disability_Code IN ('02','03','04','05','06','07','08','09','10','11','12','13','14') THEN 'Y'
                     ELSE 'N'
                 END                                                                                                             AS "iep",
-                NVL(TO_NUMBER(ak.Disability_Code), 0)                                                                           AS "disability",
+                NVL2(ak.Disability_Code, TO_NUMBER(ak.Disability_Code), 0)                                                      AS "disability",
                 NVL(ak.Migrant, 'N')                                                                                            AS "migrant",
-                NVL(ak.activeduty_pg, 'N')                                                                                      AS "active",
+                CASE ak.activeduty_pg 
+                    WHEN 'Y' THEN 'Y'
+                    ELSE 'N'
+                END                                                                                                             AS "active",
                 NVL(ak.LEP, 'X')                                                                                                AS "ell",
                 NVL(akstar.ELA_REG_OVERRIDE, 'Y')                                                                               AS "elareg",
                 NVL(DECODE(akstar.ELA_TTS, 1, 'Y'), 'N')                                                                        AS "elatts",
