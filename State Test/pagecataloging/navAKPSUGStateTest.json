@@ -1,0 +1,15 @@
+{
+	"pages": [
+		{
+			"htmlID": "navAKPSUGStateTestSetup",
+			"parentHTMLID": "navDistrictManagementDistrictSetup",
+			"title": "Alaska State Test Settings",
+			"pageURL": "/admin/district/StateTest/testprefs.html",
+			"districtLevelContext": "2",
+			"sortOrder": "050",
+			"contextType": "",
+			"requireContext": "",
+			"version": "24.02.13"
+		}
+	]
+}
