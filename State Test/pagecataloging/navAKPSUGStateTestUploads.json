@@ -1,0 +1,24 @@
+{
+	"pages": [
+		{
+		"htmlID": "navAKPSUGStateTestSettings",
+		"parentHTMLID": "navDistrictManagementAcademicsTests",
+		"title": "Alaska State Test Settings",
+		"pageURL": "/admin/district/statetest/TestPrefs.html",
+		"sortOrder": "50",
+		"contextType": "",
+		"requireContext": "",
+		"version": "23.03.28"
+		},
+		{
+		"htmlID": "navAKPSUGStateTestStudentAccommodations",
+		"parentHTMLID": "navStudentAcademicPerformanceSection",
+		"title": "AK Test Administration",
+		"pageURL": "/admin/students/StateTest/accomm.html?frn=~(studentfrn)",
+		"sortOrder": "700",
+		"contextType": "student",
+		"requireContext": "student",
+		"version": "23.03.28"
+		}
+	]
+}
