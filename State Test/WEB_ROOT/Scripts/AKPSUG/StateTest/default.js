@@ -11,7 +11,7 @@ define(['angular', 'components/shared/index'], function (angular) {
 
         $scope.codeList = [];
 
-        getService.getData('/admin/district/statetest/testcodes.json').then(function (retData) {
+        getService.getData('/admin/district/statetest/json/testcodes.json').then(function (retData) {
             loadingDialog();
             retData.pop();
             $scope.codeList = retData;
@@ -20,7 +20,7 @@ define(['angular', 'components/shared/index'], function (angular) {
         
         $scope.codeSubmit = function (formID) {
             var dataString = $j(formID).serialize();
-            postService.postData('/admin/district/statetest/testcodes.json', dataString).then(function (retData) {
+            postService.postData('/admin/district/statetest/json/testcodes.json', dataString).then(function (retData) {
                 retData.pop();
                 $scope.codeList = retData;
                 psDialogClose();

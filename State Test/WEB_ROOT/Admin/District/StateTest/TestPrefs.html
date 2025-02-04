@@ -23,13 +23,16 @@
                 <th><a class="button" title="Edit" href="" ng-click="openDialog(-1, yearid, year)">Add Code</a></th>
                 <th>School Year</th>
                 <th>Test Code</th>
+                <th>Grade Level Override?</th>
             </tr>
             <tr ng-repeat="c in codeList">
-                <td><a class="button" title="Edit" href="" ng-click="openDialog(c.id, c.yearid, c.year)">Edit</a></td>
-                <td>{{c.year}}</td>
-                <td>{{c.testcode}}</td>
+                <td class="center"><a class="button" title="Edit" href="" ng-click="openDialog(c.id, c.yearid, c.year)">Edit</a></td>
+                <td class="center">{{c.year}}</td>
+                <td class="center">{{c.testcode}}</td>
+                <td class="center">{{c.gradeOverride}}</td>
             </tr>
         </table>
+        <p>Use the Grade Level Override to show all testing options for all students, regardless of their grade.</p>
     </div>
 
     <input class="hidden" id="yearid" value="~(curyearid)" />

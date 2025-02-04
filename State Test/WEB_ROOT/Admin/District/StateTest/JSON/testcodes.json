@@ -2,12 +2,14 @@
       a.id,
       a.yearid, 
       TO_CHAR(a.yearid + 1991) AS Year,
+      CASE WHEN gradeOverride = 1 THEN 'Yes' ELSE 'No' END,
       a.testcode
     FROM U_AKPSUG_AKTEST_PREF a ORDER BY a.yearid DESC]
   {
     "id": "~(id;json)",
     "yearid": "~(yearid;json)",
     "year": "~(year;json)",
+    "gradeOverride": "~(gradeOverride;json)",
     "testcode": "~(testcode;json)"
   },
 [/tlist_sql]{}]

@@ -11,8 +11,10 @@ define(['angular', 'components/shared/index'], function (angular) {
         if (grade > 2 && grade < 10) { $scope.akStar = true; } else { $scope.akStar = false; }
         if ($j('#elaOverride').val() === 'N') { $scope.elaOverride = true; } else { $scope.elaOverride = false; }
         if ($j('#maOverride').val() === 'N') { $scope.maOverride = true; } else { $scope.maOverride = false; }
+        if ($j('#scOverride').val() === 'N') { $scope.scOverride = true; } else { $scope.scOverride = false; }
         $scope.elaReason = $j('#elaReason').val();
         $scope.maReason = $j('#maReason').val();
+        $scope.gradeAlert = '';
        
         
         $scope.warning = '';
@@ -26,10 +28,31 @@ define(['angular', 'components/shared/index'], function (angular) {
             { value: "UTT", disp: "Absent" }
         ];
 
+        $scope.scReasons = [
+            { value: "", disp: "" },
+            { value: "MED", disp: "Medical Waiver" },
+            { value: "INV", disp: "Invalidation" },
+            { value: "PRF", disp: "Parent Refusal" },
+            { value: "ABS", disp: "Absent" },
+            { value: "SRF", disp: "Student Refusal" },
+            { value: "NOA", disp: "Not Attempted" },
+            { value: "TRN", disp: "Student Transfer" }
+        ];
+
         $scope.schools = [];
 
+        getService.getData('/admin/students/statetest/json/testPref.json?').then(function (retData) {
+            var pref = retData[0].override;
+            if (pref && pref === '1') {
+                if (!$scope.science || !$scope.akStar) {
+                    $scope.science = true;
+                    $scope.akStar = true;
+                    $scope.gradeAlert = 'This student is not currently eligible for some (or all) state tests. Test Accommodations are available due to a District Override setting.';
+                }
+            }
+        });
 
-        getService.getData('/admin/students/statetest/schools.json?').then(function (retData) {
+        getService.getData('/admin/students/statetest/json/schools.json?').then(function (retData) {
             $scope.schools = retData.data;
             var district = $j('#districtNumber').val();
             var school = $j('#schoolNumber').val();
@@ -93,6 +116,28 @@ define(['angular', 'components/shared/index'], function (angular) {
                 $scope.warning = '';
                 $j('#elaReason').val('');
                 $j('#maReason').val('');
+            }
+
+        };
+
+        $scope.scTestOverride = function () {
+
+            if ($scope.scOverride) {
+                $j('#scOverride').val('N');
+                if ($scope.elaReason.length < 3) {
+                    $scope.scWarning = 'You must select a reason why the student is not participating in the Science Assessment.';
+                } else {
+                    $scope.scWarning = '';
+                    $j('#scReason').val($scope.elaReason);
+                }
+            } else {
+                $j('#scOverride').val('');
+                $scope.scReason = '';
+                $j('#scReason').val();
+            }
+            if (!$scope.scOverride) {
+                $scope.scWarning = '';
+                $j('#scReason').val('');
             }
 
         };

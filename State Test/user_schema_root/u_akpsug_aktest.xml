@@ -20,10 +20,13 @@
     <field name="MA_NOTE" type="String" length="4000"/>
     <field name="MA_NOT_TESTED" type="String" length="10"/>
 
+    <field name="SC_REG_OVERRIDE" type="String" length="2"/>
+    <field name="SC_NOT_TESTED" type="String" length="10"/>
     <field name="SC_TTS" type="String" length="2"/>
     <field name="SC_POD" type="String" length="2"/>
     <field name="SC_NON_EMBED" type="String" length="2"/>
     <field name="SC_NOTE" type="String" length="4000"/>
+    <field name="SC_GROUP" type="String" length="50"/>
 
     <field name="TEST_SCHOOL_NUMBER" type="Integer"/>
     <field name="TEST_SCHOOL_NAME" type="String" length="100"/>
@@ -34,5 +37,6 @@
   <extendedTable type="standalone" dbTableName="U_AKPSUG_AKTEST_PREF" childName="U_AKPSUG_AKTEST_PREF" comment="">
     <field name="YearID" type="Integer"/>
     <field name="TESTCODE" type="String" length="100"/>
+    <field name="gradeOverride" type="boolean" />
   </extendedTable>
 </psExtension>

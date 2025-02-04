@@ -10,7 +10,7 @@ define(['angular', 'components/shared/index'], function (angular) {
 
 		loadingDialog();
 
-		getService.getData('/admin/reports/statetest/accom.json').then(function(retData){
+		getService.getData('/admin/reports/statetest/json/accom.json').then(function(retData){
 			retData.pop();
 			$scope.accomList = retData;
 			closeLoading();

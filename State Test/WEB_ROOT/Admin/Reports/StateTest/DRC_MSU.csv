@@ -1,93 +1,103 @@
-District Code,School Code,AKSID,District Student ID,Student Last Name,Student First Name,Student Middle Name,Suffix,Gender,Date of Birth,Grade,Race/Ethnicity,Disability Status,504 Plan,English Learner Status,Economically Disadvantaged Status,Migrant Status,Parent/Guardian on Active Duty Military Status,Science - Text-To-Speech,Science - Student provided non-embedded accommodation(s) as noted in IEP or 504 plan.,Science - Print on Demand
+District Code,School Code,AKSID,District Student ID,Student Last Name,Student First Name,Student Middle Name,Suffix,Gender,Date Of Birth,Grade,Ethnicity - Hispanic/Latino,Race - American Indian/Alaskan Native,Race - Asian,Race - Black/African American,Race - Pacific Islander\Hawaiian,Race - White,Disability Satus,504 Plan,IEP Status,English Learner Status,Economically Disadvantage Status,Migrant Status,Parent/Guardian on Active Duty Military Status,Science Accommodations,Special Circumstances,Registration Name,State Defined Optional Data
 ~[tlist_sql;SELECT 
-                (SELECT DBMS_LOB.SUBSTR(value, 4000) FROM PREFS WHERE name='districtnumber' AND ROWNUM = 1) AS "District",
-                CASE 
+                NVL(akstar.test_district_number, (SELECT TO_NUMBER(value) FROM PREFS WHERE name='districtnumber' AND ROWNUM = 1)),
+                CASE
+                    WHEN akstar.test_school_number IS NOT NULL THEN TO_NUMBER(akstar.test_school_number)
                     WHEN sch.alternate_school_number > 0 THEN sch.alternate_school_number
-                    ELSE sch.school_number 
-                END AS "SchoolCode",
-                st.state_studentnumber AS "AKSID",
-                st.student_number AS "DistrictID",
+                    ELSE st.schoolid
+                END,
+                st.state_studentnumber,
+                st.student_number,
                 CASE
                     WHEN scf.pscore_legal_last_name IS NOT NULL
                         THEN scf.pscore_legal_last_name
                     ELSE st.last_name
-                END AS "Last Name",
+                END,
                 CASE
                     WHEN scf.pscore_legal_first_name IS NOT NULL
                         THEN scf.pscore_legal_first_name
                     ELSE st.first_name
-                END AS "First Name",
+                END,
                 CASE
                     WHEN scf.pscore_legal_middle_name IS NOT NULL
-                        THEN scf.pscore_legal_middle_name
-                    ELSE st.middle_name
-                END AS "Middle Name",
-                ak.suffix AS "Suffix",
+                        THEN SUBSTR(scf.pscore_legal_middle_name, 0, 20)
+                    ELSE SUBSTR(st.middle_name,0,20)																				
+                END,
+                CASE
+                    WHEN scf.pscore_legal_suffix IS NOT NULL
+                        THEN SUBSTR(scf.pscore_legal_suffix, 0, 20)
+                    ELSE SUBSTR(ak.suffix,0,20)																						
+                END,
                 CASE
                     WHEN scf.pscore_legal_gender IS NOT NULL
                         THEN scf.pscore_legal_gender
                     ELSE st.gender
-                END AS "Gender",
-                TO_CHAR(st.DOB,'MM/DD/YYYY') AS "Date of Birth",
-                st.Grade_Level AS "Grade",
-                st.Ethnicity AS "Race",
-                NVL2(ak.Disability_Code, TO_NUMBER(ak.Disability_Code), 0) AS "Disability",
+                END,
+                TO_CHAR(st.DOB,'MM/DD/YYYY'),
+                st.Grade_Level,
+                CASE WHEN st.fedethnicity = 1 THEN 'Y' ELSE '' END,
+                ''																													AS "Race - American Indian/Alaskan Native",
+                ''																													AS "Race - Asian",
+                ''																													AS "Race - Black/African American",
+                ''																													AS "Race - Pacific Islander\Hawaiian",
+                ''																													AS "Race - White",
+                CASE 
+                    WHEN ak.Disability_Code IN ('02','03','04','05','06','07','08','09','10','11','12','13','14') THEN 
+                    CASE 
+                    	WHEN ak.transfer_ge_date IS NULL THEN TO_NUMBER(ak.disability_code)
+                    	WHEN ak.transfer_ge_date > SYSDATE THEN TO_NUMBER(ak.disability_code)
+                    	ELSE 0 END
+                    ELSE 0
+                END,
                 CASE 
                     WHEN ak.Section504 = 'Y' THEN 'Y'
                     WHEN ak.Section504 = '1' THEN 'Y'
                     ELSE 'N'
-                END AS "504",
+                END,
                 CASE 
-                    WHEN ak.LEP IS NOT NULL THEN ak.LEP
-                    ELSE 'X' 
-                END AS "ELL" ,
-                CASE 
-                    WHEN ak.Econ = 'Y' THEN 'Y'  
-                    ELSE 'N' 
-                END AS "Econ",
-                CASE 
-                    WHEN ak.Migrant IS NULL THEN 'N' 
-                    ELSE ak.Migrant
-                    END AS "Migrant",
-                CASE 
-                    WHEN ak.Activeduty_pg = 'Y' THEN 'Y'
+                    WHEN ak.Disability_Code IN ('02','03','04','05','06','07','08','09','10','11','12','13','14') THEN 
+                    CASE 
+                    	WHEN ak.transfer_ge_date IS NULL THEN 'Y'
+                    	WHEN ak.transfer_ge_date > SYSDATE THEN 'Y'
+                    	ELSE 'N' END
                     ELSE 'N'
-                END AS "Military",
-                CASE 
-                    WHEN st.grade_level IN (5,8,10) THEN
-                        CASE 
-                            WHEN test.SC_TTS = 1 THEN 'Y'
-                            ELSE 'N' END
+                END,
+                NVL(ak.LEP, 'X'),
+                NVL(ak.Econ, 'N'),
+                NVL(ak.Migrant, 'N'),
+                CASE ak.activeduty_pg 
+                    WHEN 'Y' THEN 'Y'
                     ELSE 'N'
-                END AS "SCTTS",
-				CASE 
-                    WHEN st.grade_level IN (5,8,10) THEN
-                        CASE 
-                            WHEN test.SC_NON_EMBED = 1 THEN 'Y'
-                            ELSE 'N' END
-                    ELSE 'N'
-                END AS "SCONE",
-                CASE 
-                    WHEN st.grade_level IN (5,8,10) THEN
-                        CASE 
-                            WHEN test.SC_POD = 1 THEN 'Y'
-                            ELSE 'N' END
-                    ELSE 'N'
-                END AS "SCPOD"
+            	END,
+                CASE
+                	WHEN akstar.sc_non_embed = 1 THEN
+                	CASE 
+                		WHEN akstar.sc_pod = 1 THEN 'SPN|POD'
+                		WHEN akstar.sc_tts = 1 THEN 'SPN|TTS'
+                		ELSE 'SPN' END
+                	WHEN akstar.sc_pod = 1 THEN 'POD'
+                	WHEN akstar.sc_tts = 1 THEN 'TTS'
+                	ELSE '' 
+                END,
+                akstar.sc_not_tested,
+                akstar.sc_group,
+                st.Ethnicity                                                                                                        
   
             FROM Students st
                 JOIN S_AK_STU_X ak
                     ON st.dcid = ak.StudentsDCID
                 LEFT OUTER JOIN Schools sch
                     ON st.schoolid = sch.school_number
-                LEFT OUTER JOIN U_AKPSUG_AKTEST test
-                    ON st.dcid = test.studentsdcid
+                JOIN U_AKPSUG_AKTEST_PREF akpref
+                    ON (SELECT yearid FROM Terms WHERE schoolid = 0 AND TRUNC(SYSDATE) BETWEEN firstday and lastday AND ROWNUM = 1) = akpref.yearid
+                LEFT OUTER JOIN U_AKPSUG_AKTEST akstar
+                    ON st.dcid = akstar.studentsdcid
                 LEFT OUTER JOIN StudentCoreFields scf
                     ON st.dcid = scf.studentsdcid
             WHERE sch.state_excludefromreporting != 1
                 AND st.enroll_status = 0
-                AND st.grade_level IN (5,8,10)
+                AND st.grade_level IN (3,4,5,6,7,8,9)
                 AND (ak.AlternateAssessment !='Y' OR ak.AlternateAssessment IS NULL)
                 AND st.State_ExcludeFromReporting != 1
-            ORDER BY sch.school_number, st.grade_level, st.last_name]~(district),~(school),~(aksid),~(student_id),~(last),~(first),~(middle),~(suffix),~(gender),~(dob),~(grade),~(race),~(disability),~(504),~(ell),~(econ),~(migrant),~(military),~(sci_tts),~(sci_other),~(sci_pod)
+            ORDER BY sch.school_number, st.grade_level, st.last_name]~(districtCode),~(schoolCode),~(aksid),~(districtStudentID),~(last),~(first),~(middle),~(suffix),~(gender),~(dob),~(grade_level),~(fedethnicity),~(race1),~(race2),~(race3),~(race4),~(race5),~(disability),~(504),~(iep),~(ell),~(econ),~(activeDuty),~(accommodations),~(not_tested),~(group),~(sdoption),~(else)
 [/tlist_sql]

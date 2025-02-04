@@ -17,11 +17,13 @@
     <!-- start of main menu and content -->
     ~[wc:title_student_begin_css]Alaska State Test Administration~[wc:title_student_end_css]
     <div class="box-round" ng-show="!akStar && !science"><h3>This student is not eligible to take the AKStar and AK Science Tests</h3></div>
-
+    <div id="feedback-error" class="feedback-error alert-dismissable" data-ng-if="gradeAlert.length > 0" ng-cloak>
+        {{gradeAlert}}
+    </div>
     <form action="/~[self.page]?frn=~(studentfrn)&changesSaved=true" method="POST" ng-show="akStar || science">
         <!-- start of content area -->
         ~[if.gpv.changesSaved=true]
-            <div class="feedback-confirm">~[text:psx.common.changes_recorded]</div>
+        <div class="feedback-confirm">~[text:psx.common.changes_recorded]</div>
         [/if]
         <div class="box-round">
             <div ng-show="akStar">
@@ -73,7 +75,7 @@
                     <tr>
                         <td>
                             <label for="elaR">Why is the student not participating in the ELA Assessment?</label>
-                            <select  id="elaR" ng-model="elaReason" ng-change="testOverride()" ng-disabled="!elaOverride" ng-options="r.value as r.disp for r in reasons"></select>
+                            <select id="elaR" ng-model="elaReason" ng-change="testOverride()" ng-disabled="!elaOverride" ng-options="r.value as r.disp for r in reasons"></select>
                             <input type="hidden" name="[STUDENTS.U_AKPSUG_AKTEST]ELA_NOT_TESTED" value="" id="elaReason" />
                         </td>
                         <td>
@@ -148,6 +150,28 @@
                 </table>
             </div>
             <div ng-show="science">
+                <div id="feedback-error" class="feedback-error alert-dismissable" data-ng-if="scWarning.length > 0" ng-cloak>
+                    {{scWarning}}
+                </div>
+                <table class="grid">
+                    <tr>
+                        <th colspan="2">Test Participation Override (All students will be participating in the AK Science assessment unless there is a valid reason)</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="sc">Student will NOT be participating in the Science Assessment (requires reason)</label>
+                            <input type="checkbox" id="sc" ng-model="scOverride" ng-change="scTestOverride()" />
+                            <input type="hidden" name="[STUDENTS.U_AKPSUG_AKTEST]SC_REG_OVERRIDE" value="" id="scOverride" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="scR">Why is the student not participating in the Science Assessment?</label>
+                            <select id="scR" ng-model="scReason" ng-change="testOverride()" ng-disabled="!scOverride" ng-options="r.value as r.disp for r in scReasons"></select>
+                            <input type="hidden" name="[STUDENTS.U_AKPSUG_AKTEST]SC_NOT_TESTED" value="" id="scReason" />
+                        </td>
+                    </tr>
+                </table>
                 <h2>Student Science Test Accommodations</h2>
                 <table class="grid">
                     <tr>
@@ -172,6 +196,12 @@
                         <td>
                             <label for="scNote">Science - Non-Embedded Note</label>
                             <textarea id="scNote" name="[STUDENTS.U_AKPSUG_AKTEST]SC_NOTE"></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="scNote">Science - Test Group Name</label>
+                            <input type="text" id="scGroup" name="[STUDENTS.U_AKPSUG_AKTEST]SC_GROUP" value="" />
                         </td>
                     </tr>
                 </table>

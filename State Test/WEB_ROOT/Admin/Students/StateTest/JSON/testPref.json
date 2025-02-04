@@ -1,0 +1,5 @@
+﻿[~[tlist_sql;SELECT gradeoverride FROM u_akpsug_aktest_pref WHERE yearid = ~(curyearid)]
+	{
+		"override": "~(override;json)"
+	},
+[/tlist_sql]{}]

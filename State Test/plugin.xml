@@ -3,7 +3,7 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
     description="AKPSUG State Test Accommodation and Roster Plugin" 
     name="AKPSUG State Test Accommodations" 
-    version="23.03.28" 
+    version="25.02.04" 
     xsi:schemaLocation="http://plugin.powerschool.pearson.com plugin.xsd">
   <publisher name="Alaska PowerSchool Users Group">
     <contact email="plogan01@kibsd.org"/>

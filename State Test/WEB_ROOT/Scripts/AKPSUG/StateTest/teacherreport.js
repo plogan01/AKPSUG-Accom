@@ -10,7 +10,7 @@ define(['angular', 'components/shared/index'], function (angular) {
 
         loadingDialog();
 
-        getService.getData('/teachers/statetest/accom.json?dcid=' + $scope.teacherID).then(function (retData) {
+        getService.getData('/teachers/statetest/json/accom.json?dcid=' + $scope.teacherID).then(function (retData) {
             retData.pop();
             $scope.accomList = retData;
             closeLoading();
