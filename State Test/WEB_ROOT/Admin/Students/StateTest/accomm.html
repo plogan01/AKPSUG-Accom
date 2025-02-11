@@ -63,24 +63,24 @@
                     <tr>
                         <td>
                             <label for="ela">Student will NOT be participating in the ELA portion of the Assessment (requires reason)</label>
-                            <input type="checkbox" id="ela" ng-model="elaOverride" ng-change="testOverride()" />
+                            <input type="checkbox" id="ela" ng-model="elaOverride" ng-change="elaTestOverride(elaOverride, elaReason)" />
                             <input type="hidden" name="[STUDENTS.U_AKPSUG_AKTEST]ELA_REG_OVERRIDE" value="" id="elaOverride" />
                         </td>
                         <td>
                             <label for="ma">Student will NOT be participating in the MA portion of the Assessment (requires reason)</label>
-                            <input type="checkbox" id="ma" ng-model="maOverride" ng-change="testOverride()" />
+                            <input type="checkbox" id="ma" ng-model="maOverride" ng-change="maTestOverride(maOverride, maReason)" />
                             <input type="hidden" name="[STUDENTS.U_AKPSUG_AKTEST]MA_REG_OVERRIDE" value="" id="maOverride" />
                         </td>
                     </tr>
                     <tr>
                         <td>
                             <label for="elaR">Why is the student not participating in the ELA Assessment?</label>
-                            <select id="elaR" ng-model="elaReason" ng-change="testOverride()" ng-disabled="!elaOverride" ng-options="r.value as r.disp for r in reasons"></select>
+                            <select id="elaR" ng-model="elaReason" ng-change="elaTestOverride(elaOverride, elaReason)" ng-disabled="!elaOverride" ng-options="r.value as r.disp for r in reasons"></select>
                             <input type="hidden" name="[STUDENTS.U_AKPSUG_AKTEST]ELA_NOT_TESTED" value="" id="elaReason" />
                         </td>
                         <td>
                             <label for="maR">Why is the student not participating in the MATH Assessment?</label>
-                            <select id="maR" ng-model="maReason" ng-change="testOverride()" ng-disabled="!maOverride" ng-options="r.value as r.disp for r in reasons"></select>
+                            <select id="maR" ng-model="maReason" ng-change="maTestOverride(maOverride, maReason)" ng-disabled="!maOverride" ng-options="r.value as r.disp for r in reasons"></select>
                             <input type="hidden" name="[STUDENTS.U_AKPSUG_AKTEST]MA_NOT_TESTED" value="" id="maReason" />
                         </td>
                     </tr>
@@ -160,14 +160,14 @@
                     <tr>
                         <td>
                             <label for="sc">Student will NOT be participating in the Science Assessment (requires reason)</label>
-                            <input type="checkbox" id="sc" ng-model="scOverride" ng-change="scTestOverride()" />
+                            <input type="checkbox" id="sc" ng-model="scOverride" ng-change="scTestOverride(scOverride, scReason)" />
                             <input type="hidden" name="[STUDENTS.U_AKPSUG_AKTEST]SC_REG_OVERRIDE" value="" id="scOverride" />
                         </td>
                     </tr>
                     <tr>
                         <td>
                             <label for="scR">Why is the student not participating in the Science Assessment?</label>
-                            <select id="scR" ng-model="scReason" ng-change="testOverride()" ng-disabled="!scOverride" ng-options="r.value as r.disp for r in scReasons"></select>
+                            <select id="scR" ng-model="scReason" ng-change="scTestOverride(scOverride, scReason)" ng-disabled="!scOverride" ng-options="r.value as r.disp for r in scReasons"></select>
                             <input type="hidden" name="[STUDENTS.U_AKPSUG_AKTEST]SC_NOT_TESTED" value="" id="scReason" />
                         </td>
                     </tr>

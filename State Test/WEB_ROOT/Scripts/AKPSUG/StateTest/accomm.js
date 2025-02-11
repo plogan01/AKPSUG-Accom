@@ -14,6 +14,7 @@ define(['angular', 'components/shared/index'], function (angular) {
         if ($j('#scOverride').val() === 'N') { $scope.scOverride = true; } else { $scope.scOverride = false; }
         $scope.elaReason = $j('#elaReason').val();
         $scope.maReason = $j('#maReason').val();
+        $scope.scReason = $j('#scReason').val();
         $scope.gradeAlert = '';
        
         
@@ -84,63 +85,58 @@ define(['angular', 'components/shared/index'], function (angular) {
 
         };
 
-        $scope.testOverride = function () {
+        $scope.elaTestOverride = function (test, val) {
 
-            if ($scope.elaOverride) {
+            if (test) {
                 $j('#elaOverride').val('N');
-                if ($scope.elaReason.length < 3) {
-                    $scope.warning = 'You must select a reason why the student is not participating in an assessment.';
+                if (val.length < 3) {
+                    $scope.warning = 'You must select a reason why the student is not participating in the ELA an assessment.';
                 } else {
                     $scope.warning = '';
-                    $j('#elaReason').val($scope.elaReason);
+                    $j('#elaReason').val(val);
                 }
             } else {
+                $scope.warning = '';
                 $j('#elaOverride').val('');
                 $scope.elaReason = '';
                 $j('#elaReason').val();
             }
-            if ($scope.maOverride) {
+        };
+
+        $scope.maTestOverride = function (test, val) {
+            if (test) {
                 $j('#maOverride').val('N');
-                if ($scope.maReason.length < 3) {
-                    $scope.warning = 'You must select a reason why the student is not participating in an assessment.';
+                if (val.length < 3) {
+                    $scope.warning = 'You must select a reason why the student is not participating in the Math assessment.';
                 } else {
                     $scope.warning = '';
-                    $j('#maReason').val($scope.maReason);
+                    $j('#maReason').val(val);
                 }
             } else {
+                $scope.warning = '';
                 $j('#maOverride').val('');
                 $scope.maReason = '';
                 $j('#maReason').val('');
             }
-            if (!$scope.elaOverride && !$scope.maOverride) {
-                $scope.warning = '';
-                $j('#elaReason').val('');
-                $j('#maReason').val('');
-            }
-
         };
 
-        $scope.scTestOverride = function () {
-
-            if ($scope.scOverride) {
+        $scope.scTestOverride = function (test, val) {
+            if (test) {
                 $j('#scOverride').val('N');
-                if ($scope.elaReason.length < 3) {
+                if (val.length < 3) {
                     $scope.scWarning = 'You must select a reason why the student is not participating in the Science Assessment.';
                 } else {
                     $scope.scWarning = '';
-                    $j('#scReason').val($scope.elaReason);
+                    $j('#scReason').val(val);
                 }
             } else {
+                $scope.scWarning = '';
                 $j('#scOverride').val('');
                 $scope.scReason = '';
-                $j('#scReason').val();
-            }
-            if (!$scope.scOverride) {
-                $scope.scWarning = '';
                 $j('#scReason').val('');
             }
-
         };
+
 
         function setSelect(query, ID) {
             var result = {};
