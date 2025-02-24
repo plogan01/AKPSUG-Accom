@@ -99,7 +99,7 @@ define(['angular', 'components/shared/index'], function (angular) {
                 $scope.warning = '';
                 $j('#elaOverride').val('');
                 $scope.elaReason = '';
-                $j('#elaReason').val();
+                $j('#elaReason').val('');
             }
         };
 
