@@ -26,7 +26,7 @@
         <div class="feedback-confirm">~[text:psx.common.changes_recorded]</div>
         [/if]
         <div class="box-round">
-            <div ng-show="akStar">
+            <div ng-show="akStar || science">
                 <h2>Student Participation</h2>
                 <table class="grid">
                     <tr>
@@ -56,98 +56,100 @@
                 <div id="feedback-error" class="feedback-error alert-dismissable" data-ng-if="warning.length > 0" ng-cloak>
                     {{warning}}
                 </div>
-                <table class="grid">
-                    <tr>
-                        <th colspan="2">Test Participation Override (All students will be participating in the AK STAR assessment unless there is a valid reason)</th>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label for="ela">Student will NOT be participating in the ELA portion of the Assessment (requires reason)</label>
-                            <input type="checkbox" id="ela" ng-model="elaOverride" ng-change="elaTestOverride(elaOverride, elaReason)" />
-                            <input type="hidden" name="[STUDENTS.U_AKPSUG_AKTEST]ELA_REG_OVERRIDE" value="" id="elaOverride" />
-                        </td>
-                        <td>
-                            <label for="ma">Student will NOT be participating in the MA portion of the Assessment (requires reason)</label>
-                            <input type="checkbox" id="ma" ng-model="maOverride" ng-change="maTestOverride(maOverride, maReason)" />
-                            <input type="hidden" name="[STUDENTS.U_AKPSUG_AKTEST]MA_REG_OVERRIDE" value="" id="maOverride" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label for="elaR">Why is the student not participating in the ELA Assessment?</label>
-                            <select id="elaR" ng-model="elaReason" ng-change="elaTestOverride(elaOverride, elaReason)" ng-disabled="!elaOverride" ng-options="r.value as r.disp for r in reasons"></select>
-                            <input type="hidden" name="[STUDENTS.U_AKPSUG_AKTEST]ELA_NOT_TESTED" value="" id="elaReason" />
-                        </td>
-                        <td>
-                            <label for="maR">Why is the student not participating in the MATH Assessment?</label>
-                            <select id="maR" ng-model="maReason" ng-change="maTestOverride(maOverride, maReason)" ng-disabled="!maOverride" ng-options="r.value as r.disp for r in reasons"></select>
-                            <input type="hidden" name="[STUDENTS.U_AKPSUG_AKTEST]MA_NOT_TESTED" value="" id="maReason" />
-                        </td>
-                    </tr>
-                </table>
-                <h2>Student AK STAR Test Accommodations</h2>
-                <table class="grid">
-                    <tr>
-                        <td>
-                            <input type="checkbox" name="[STUDENTS.U_AKPSUG_AKTEST]ELA_TTS" id="elaTTS" value="1" />
-                            <label for="elaTTS">ELA - Text to Speech</label>
-                        </td>
-                        <td>
-                            <input type="checkbox" name="[STUDENTS.U_AKPSUG_AKTEST]MA_TTS" id="maTTS" value="1" />
-                            <label for="maTTS">Math - Text to Speech</label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input type="checkbox" name="[STUDENTS.U_AKPSUG_AKTEST]ELA_ASL" id="elaASL" value="1" />
-                            <label for="elaASL">ELA - ASL Translation Videos</label>
-                        </td>
-                        <td>
-                            <input type="checkbox" name="[STUDENTS.U_AKPSUG_AKTEST]MA_ASL" id="maASL" value="1" />
-                            <label for="maASL">Math - ASL Translation Videos</label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input type="checkbox" name="[STUDENTS.U_AKPSUG_AKTEST]ELA_BRAILLE" id="elaBraille" value="1" />
-                            <label for="elaBraille">ELA - Braille</label>
-                        </td>
-                        <td>
-                            <input type="checkbox" name="[STUDENTS.U_AKPSUG_AKTEST]MA_BRAILLE" id="maBraille" value="1" />
-                            <label for="maBraille">Math - Braille</label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input type="checkbox" name="[STUDENTS.U_AKPSUG_AKTEST]ELA_POD" id="elaPOD" value="1" />
-                            <label for="elaPOD">ELA - Print on Demand</label>
-                        </td>
-                        <td>
-                            <input type="checkbox" name="[STUDENTS.U_AKPSUG_AKTEST]MA_POD" id="maPOD" value="1" />
-                            <label for="maPOD">Math - Print on Demand</label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input type="checkbox" name="[STUDENTS.U_AKPSUG_AKTEST]ELA_NON_EMBED" id="elaONE" value="1" />
-                            <label for="elaONE">ELA - Other Non-Embedded (add note below)</label>
-                        </td>
-                        <td>
-                            <input type="checkbox" name="[STUDENTS.U_AKPSUG_AKTEST]MA_NON_EMBED" id="maONE" value="1" />
-                            <label for="maONE">Math - Other Non-Embedded (add note below)</label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label for="elaNote">ELA - Non-Embedded Note</label>
-                            <textarea id="elaNote" name="[STUDENTS.U_AKPSUG_AKTEST]ELA_NOTE"></textarea>
-                        </td>
-                        <td>
-                            <label for="maNote">Math - Non-Embedded Note</label>
-                            <textarea id="maNote" name="[STUDENTS.U_AKPSUG_AKTEST]MA_NOTE"></textarea>
-                        </td>
-                    </tr>
-                </table>
+                <div ng-show="akStar">
+                    <table class="grid">
+                        <tr>
+                            <th colspan="2">Test Participation Override (All students will be participating in the AK STAR assessment unless there is a valid reason)</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="ela">Student will NOT be participating in the ELA portion of the Assessment (requires reason)</label>
+                                <input type="checkbox" id="ela" ng-model="elaOverride" ng-change="elaTestOverride(elaOverride, elaReason)" />
+                                <input type="hidden" name="[STUDENTS.U_AKPSUG_AKTEST]ELA_REG_OVERRIDE" value="" id="elaOverride" />
+                            </td>
+                            <td>
+                                <label for="ma">Student will NOT be participating in the MA portion of the Assessment (requires reason)</label>
+                                <input type="checkbox" id="ma" ng-model="maOverride" ng-change="maTestOverride(maOverride, maReason)" />
+                                <input type="hidden" name="[STUDENTS.U_AKPSUG_AKTEST]MA_REG_OVERRIDE" value="" id="maOverride" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="elaR">Why is the student not participating in the ELA Assessment?</label>
+                                <select id="elaR" ng-model="elaReason" ng-change="elaTestOverride(elaOverride, elaReason)" ng-disabled="!elaOverride" ng-options="r.value as r.disp for r in reasons"></select>
+                                <input type="hidden" name="[STUDENTS.U_AKPSUG_AKTEST]ELA_NOT_TESTED" value="" id="elaReason" />
+                            </td>
+                            <td>
+                                <label for="maR">Why is the student not participating in the MATH Assessment?</label>
+                                <select id="maR" ng-model="maReason" ng-change="maTestOverride(maOverride, maReason)" ng-disabled="!maOverride" ng-options="r.value as r.disp for r in reasons"></select>
+                                <input type="hidden" name="[STUDENTS.U_AKPSUG_AKTEST]MA_NOT_TESTED" value="" id="maReason" />
+                            </td>
+                        </tr>
+                    </table>
+                    <h2>Student AK STAR Test Accommodations</h2>
+                    <table class="grid">
+                        <tr>
+                            <td>
+                                <input type="checkbox" name="[STUDENTS.U_AKPSUG_AKTEST]ELA_TTS" id="elaTTS" value="1" />
+                                <label for="elaTTS">ELA - Text to Speech</label>
+                            </td>
+                            <td>
+                                <input type="checkbox" name="[STUDENTS.U_AKPSUG_AKTEST]MA_TTS" id="maTTS" value="1" />
+                                <label for="maTTS">Math - Text to Speech</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" name="[STUDENTS.U_AKPSUG_AKTEST]ELA_ASL" id="elaASL" value="1" />
+                                <label for="elaASL">ELA - ASL Translation Videos</label>
+                            </td>
+                            <td>
+                                <input type="checkbox" name="[STUDENTS.U_AKPSUG_AKTEST]MA_ASL" id="maASL" value="1" />
+                                <label for="maASL">Math - ASL Translation Videos</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" name="[STUDENTS.U_AKPSUG_AKTEST]ELA_BRAILLE" id="elaBraille" value="1" />
+                                <label for="elaBraille">ELA - Braille</label>
+                            </td>
+                            <td>
+                                <input type="checkbox" name="[STUDENTS.U_AKPSUG_AKTEST]MA_BRAILLE" id="maBraille" value="1" />
+                                <label for="maBraille">Math - Braille</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" name="[STUDENTS.U_AKPSUG_AKTEST]ELA_POD" id="elaPOD" value="1" />
+                                <label for="elaPOD">ELA - Print on Demand</label>
+                            </td>
+                            <td>
+                                <input type="checkbox" name="[STUDENTS.U_AKPSUG_AKTEST]MA_POD" id="maPOD" value="1" />
+                                <label for="maPOD">Math - Print on Demand</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" name="[STUDENTS.U_AKPSUG_AKTEST]ELA_NON_EMBED" id="elaONE" value="1" />
+                                <label for="elaONE">ELA - Other Non-Embedded (add note below)</label>
+                            </td>
+                            <td>
+                                <input type="checkbox" name="[STUDENTS.U_AKPSUG_AKTEST]MA_NON_EMBED" id="maONE" value="1" />
+                                <label for="maONE">Math - Other Non-Embedded (add note below)</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="elaNote">ELA - Non-Embedded Note</label>
+                                <textarea id="elaNote" name="[STUDENTS.U_AKPSUG_AKTEST]ELA_NOTE"></textarea>
+                            </td>
+                            <td>
+                                <label for="maNote">Math - Non-Embedded Note</label>
+                                <textarea id="maNote" name="[STUDENTS.U_AKPSUG_AKTEST]MA_NOTE"></textarea>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
             </div>
             <div ng-show="science">
                 <div id="feedback-error" class="feedback-error alert-dismissable" data-ng-if="scWarning.length > 0" ng-cloak>

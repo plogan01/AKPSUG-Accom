@@ -1,8 +1,7 @@
-District Code,School Code,AKSID,District Student ID,Student Last Name,Student First Name,Student Middle Name,Suffix,Gender,Date Of Birth,Grade,Ethnicity - Hispanic/Latino,Race - American Indian/Alaskan Native,Race - Asian,Race - Black/African American,Race - Pacific Islander/Hawaiian,Race - White,Disability Status,504 Plan,IEP Status,English Learner Status,Economically Disadvantaged Status,Migrant Status,Parent/Guardian on Active Duty Military Status,Science - Accommodations,Special Circumstances,Registration Name,State Defined Optional Data
+District Code,School Code,AKSID,District Student ID,Student Last Name,Student First Name,Student Middle Name,Suffix,Gender,Date Of Birth,Grade,Ethnicity - Hispanic/Latino,Race - American Indian/Alaskan Native,Race - Asian,Race - Black/African American,Race - Pacific Islander/Hawaiian,Race - White,Disability Status,504 Plan,IEP Status,English Learner Status,Economically Disadvantaged Status,Migrant Status,Parent/Guardian on Active Duty Military Status,Science - Accommodations,Special Circumstances,Registration Name,State Defined Optional Data,Alternate District,Altername School
 ~[tlist_sql;SELECT 
-                NVL(akstar.test_district_number, (SELECT TO_NUMBER(value) FROM PREFS WHERE name='districtnumber' AND ROWNUM = 1)),
+                (SELECT TO_NUMBER(value) FROM PREFS WHERE name='districtnumber' AND ROWNUM = 1),
                 CASE
-                    WHEN akstar.test_school_number IS NOT NULL THEN TO_NUMBER(akstar.test_school_number)
                     WHEN sch.alternate_school_number > 0 THEN sch.alternate_school_number
                     ELSE st.schoolid
                 END,
@@ -81,7 +80,9 @@ District Code,School Code,AKSID,District Student ID,Student Last Name,Student Fi
                 END,
                 akstar.sc_not_tested,
                 akstar.sc_group,
-                st.Ethnicity                                                                                                        
+                st.Ethnicity,
+                TO_NUMBER(akstar.test_district_number),
+                TO_NUMBER(akstar.test_school_number)
   
             FROM Students st
                 JOIN S_AK_STU_X ak
@@ -99,5 +100,5 @@ District Code,School Code,AKSID,District Student ID,Student Last Name,Student Fi
                 AND st.grade_level IN (5,8,10)
                 AND (ak.AlternateAssessment !='Y' OR ak.AlternateAssessment IS NULL)
                 AND st.State_ExcludeFromReporting != 1
-            ORDER BY sch.school_number, st.grade_level, st.last_name]~(districtCode),~(schoolCode),~(aksid),~(districtStudentID),~(last),~(first),~(middle),~(suffix),~(gender),~(dob),~(grade_level),~(fedethnicity),~(race1),~(race2),~(race3),~(race4),~(race5),~(disability),~(504),~(iep),~(ell),~(econ),~(activeDuty),~(accommodations),~(not_tested),~(group),~(sdoption),~(else)
+            ORDER BY sch.school_number, st.grade_level, st.last_name]~(districtCode),~(schoolCode),~(aksid),~(districtStudentID),~(last),~(first),~(middle),~(suffix),~(gender),~(dob),~(grade_level),~(fedethnicity),~(race1),~(race2),~(race3),~(race4),~(race5),~(disability),~(504),~(iep),~(ell),~(econ),~(migrant),~(activeDuty),~(accommodations),~(not_tested),~(group),~(sdoption),~(altdist),~(altschool)
 [/tlist_sql]
